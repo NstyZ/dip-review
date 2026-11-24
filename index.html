@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="数字图像处理期末刷题站：333 道题，覆盖 10 章；支持单选/判断即时判题、错题本、收藏、章节练习、37 题模拟考试与学习统计。">
+<meta property="og:title" content="数字图像处理 · 期末刷题站">
+<meta property="og:description" content="333 道题、10 章覆盖、296 份详解；章节练习、错题本、模拟考试与学习统计。">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b2545">
+<meta name="author" content="DIP Review">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b2545'/%3E%3Ctext x='32' y='40' font-size='22' text-anchor='middle' fill='%235eead4' font-family='Arial'%3EDIP%3C/text%3E%3C/svg%3E">
+<title>数字图像处理 · 期末刷题站</title>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+(function(){try{var t=localStorage.getItem('dip-quiz-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}else if(window.matchMedia&&matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}})();
+</script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark">DIP</div>
+      <div>
+        <div class="brand-title">数字图像处理</div>
+        <div class="brand-sub">Final Review Lab</div>
+      </div>
+    </div>
+    <nav class="nav" id="nav">
+      <div class="nav-label">学习</div>
+      <button class="nav-item" data-nav="home">
+        <svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-7h6v7"/></svg>
+        首页 <span class="count" id="navTotal">333</span>
+      </button>
+      <button class="nav-item" data-nav="random">
+        <svg viewBox="0 0 24 24"><path d="M4 6h4l8 12h4"/><path d="m17 15 3 3-3 3"/><path d="M4 18h3c2 0 3-1 4-3"/><path d="M14 9c1-2 2-3 4-3h2"/><path d="m17 3 3 3-3 3"/></svg>
+        随机练习
+      </button>
+      <button class="nav-item" data-nav="chapter">
+        <svg viewBox="0 0 24 24"><path d="M4 4h6v6H4z"/><path d="M14 4h6v6h-6z"/><path d="M4 14h6v6H4z"/><path d="M14 14h6v6h-6z"/></svg>
+        章节练习
+      </button>
+      <div class="nav-label">强化</div>
+      <button class="nav-item" data-nav="wrong">
+        <svg viewBox="0 0 24 24"><path d="M12 3 2.8 19h18.4z"/><path d="M12 8v5"/><path d="M12 16.5v.2"/></svg>
+        错题本 <span class="count" id="navWrong">0</span>
+      </button>
+      <button class="nav-item" data-nav="favorites">
+        <svg viewBox="0 0 24 24"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9z"/></svg>
+        收藏夹 <span class="count" id="navFav">0</span>
+      </button>
+      <button class="nav-item" data-nav="mock">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2"/><path d="M9 2h6"/><path d="M12 2v3"/></svg>
+        模拟考试 <span class="count">37</span>
+      </button>
+      <div class="nav-label">数据</div>
+      <button class="nav-item" data-nav="stats">
+        <svg viewBox="0 0 24 24"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></svg>
+        学习统计
+      </button>
+      <button class="nav-item" data-nav="settings">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4v-.2a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4 17l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.6-1H2.6v-4h.2a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4 7l2.8-2.8.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.6 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4h-.2a1.7 1.7 0 0 0-1.4 1z"/></svg>
+        设置
+      </button>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="mini-progress">
+        <div class="row"><span>总进度</span><b id="sideProgressText">0 / 333</b></div>
+        <div class="bar"><span id="sideProgressBar" style="width:0%"></span></div>
+        <div class="row" style="margin:6px 0 0"><span>客观题正确率</span><b id="sideAccuracy">—</b></div>
+      </div>
+      <div style="display:flex;gap:6px">
+        <button class="btn ghost sm" style="flex:1" data-nav="settings">偏好设置</button>
+        <button class="icon-btn" data-nav="settings" title="快捷键与设置" aria-label="设置">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8v.2"/></svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+  <div class="mobile-mask" id="mobileMask"></div>
+  <div class="main">
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="search-wrap">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+          <input id="searchInput" type="search" placeholder="搜索题干、选项或答案…" autocomplete="off" aria-label="搜索题库">
+          <kbd>/</kbd>
+        </div>
+        <div class="search-pop" id="searchPop"></div>
+      </div>
+      <div class="top-actions">
+        <button class="icon-btn hide-sm" id="helpBtn" title="快捷键" aria-label="快捷键">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.8 9a2.4 2.4 0 1 1 3.6 2.1c-.9.5-1.4 1-1.4 2"/><path d="M12 16.5v.2"/></svg>
+        </button>
+        <button class="icon-btn" id="themeBtn" title="切换主题" aria-label="切换主题">
+          <svg id="themeIcon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+        </button>
+        <button class="icon-btn" id="settingsBtn" title="设置" aria-label="设置">
+          <svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
+        </button>
+      </div>
+    </header>
+    <main class="content" id="view"></main>
+    <div class="footer-note">数字图像处理 · 期末刷题站 · 共 333 题 ｜ 进度保存在本机浏览器</div>
+  </div>
+</div>
+<div class="modal-mask" id="modalMask"></div>
+<div class="toast" id="toast"></div>
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,50 +1,45 @@
-# DIP 期末刷题站 · GitHub Pages
+# 数字图像处理 · 期末刷题站
 
-这是可直接部署到 GitHub Pages 的**纯静态网站**：无需 Node、Python 或后端，所有题目数据都在 `assets/data.js` 中，进度保存在访问者自己的浏览器 localStorage。
+**在线访问：<https://nstyz.github.io/dip-review/>**
 
-## 方式一：用脚本发布（推荐）
+面向《数字图像处理》期末复习的交互刷题站：覆盖第 1、2、3、4、5、6、9、10、11、12 章，共 **333 题**。
 
-1. 安装并登录 GitHub CLI（只需一次）：
-   - 安装：https://cli.github.com/
-   - 登录：`gh auth login`
-2. 在本文件夹打开 PowerShell，运行：
-   ```powershell
-   powershell -ExecutionPolicy Bypass -File .\发布到GitHub.ps1
-   ```
-3. 按提示输入仓库名（默认 `dip-review`）。脚本会创建公开仓库、推送代码，并尝试开启 GitHub Pages。
-4. 打开仓库的 **Settings → Pages**，确认：
-   - Source: **Deploy from a branch**
-   - Branch: **main**，Folder: **/ (root)**
-5. 约 1–2 分钟后访问：
-   ```
-   https://你的GitHub用户名.github.io/dip-review/
-   ```
+## 题库构成
 
-## 方式二：手动发布
+- 170 道单选
+- 64 道判断
+- 49 道填空
+- 13 道简答
+- 25 道计算
+- 12 道方案设计
 
-```bash
-git init -b main
-git add .
-git commit -m "Publish DIP quiz site"
-gh repo create dip-review --public --source=. --remote=origin --push
-```
+## 功能
 
-然后到仓库 **Settings → Pages**：
-- Source 选择 **Deploy from a branch**
-- Branch 选 **main**，目录选 **/ (root)**
-- 保存后等待 1–2 分钟
-
-## 内容说明
-
-- 333 道题：170 单选 + 64 判断 + 49 填空 + 13 简答 + 25 计算 + 12 方案设计
-- 单选/判断即时判题；填空/简答/计算/方案设计对照参考答案自评
-- 错题本、收藏夹、全局搜索、章节练习、37 题模拟卷、学习统计
-- 不包含老师原始课件 PDF；仓库里只有自己整理的静态网站文件
-- 所有链接均为相对路径，因此无论仓库名是什么都能在 `https://用户名.github.io/仓库名/` 下运行
+- 章节练习、随机 20 题、按题型专项
+- 单选 / 判断点击选项即时判题，答错自动进错题本
+- 填空、简答、计算、方案设计对照参考答案自评
+- 错题本、收藏夹、全局搜索、答题卡
+- 37 题 / 100 分 / 90 分钟模拟卷：客观题自动判分，主观题自评
+- 学习统计：总进度、客观题正确率、章节正确率、连续天数、最近 7 天
+- 进度保存在浏览器 localStorage；设置中可导出/导入
+- 深浅色主题、快捷键：<code>A–D / 1–4</code> 选选项，<code>←/→</code> 切题，<code>B</code> 收藏，<code>/</code> 搜索
 
 ## 本地预览
 
-```bash
-python -m http.server 8765
-# 打开 http://127.0.0.1:8765/
-```
+    python -m http.server 8765
+    # 打开 http://127.0.0.1:8765/
+
+## 部署
+
+本仓库是纯静态 GitHub Pages 站点，无需构建。GitHub Pages 配置：
+
+- Source: **Deploy from a branch**
+- Branch: **main**
+- Folder: **/ (root)**
+
+站点文件为 <code>index.html</code> + <code>assets/</code>；<code>.nojekyll</code> 用于关闭 Jekyll 处理。
+
+## 说明
+
+- 站点只包含自己整理的复习题库与解析，不包含老师原始课件 PDF。
+- 题目与解析仅用于课程复习；实际考试范围以教师通知为准。

@@ -217,7 +217,7 @@ function renderHome(){
     +'<p>从采样量化、空域频域，到形态学、分割、特征与分类。先章节打底，再错题回炉，最后用 90 分钟模拟卷收口。</p>'
     +'<div class="hero-actions">'
     +'<button class="btn primary" data-action="random">随机 20 题</button>'
-    +'<button class="btn ghost" data-action="mock">进入模拟考试</button>'
+    +'<button class="btn ghost" data-action="mock">进入模拟考试</button>'+'<a class="btn ghost" href="textbook.html">课本习题 403</a>'
     +(last?'<button class="btn ghost" data-action="resume">继续上次</button>':'')
     +'</div>'+heroStats+'</div>'
     +'<div class="kernel-card"><div class="kernel"><span>−1</span><span>0</span><span>1</span><span>−2</span><span>0</span><span>2</span><span>−1</span><span>0</span><span>1</span></div><small>SOBEL · EDGE</small></div></div></section>'
@@ -271,7 +271,7 @@ function renderCollection(kind){
   var rows=ids.map(function(id){
     var q=BY_ID[id];var rec=state.answers[id]||{};
     var status=rec.correct===true?"已答对":rec.correct===false?"待回炉":"未作答";
-    return '<div class="card card-pad" style="margin-bottom:9px"><div style="display:flex;gap:12px;align-items:flex-start"><div style="flex:1;min-width:0"><div class="q-meta" style="margin-bottom:7px"><span class="badge chapter">'+(q.chapter?("第"+q.chapter+"章"):esc(q.chapterName))+'</span><span class="badge type">'+esc(q.typeLabel)+'</span><span style="font-size:11px;color:var(--muted)">'+status+'</span></div><div style="font-size:13px;line-height:1.6;color:var(--ink-2);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">'+esc(q.stem)+'</div></div><button class="btn ghost sm" data-action="open-question" data-id="'+q.id+'">打开</button></div></div>';
+    return '<div class="card card-pad" style="margin-bottom:9px"><div style="display:flex;gap:12px;align-items:flex-start"><div style="flex:1;min-width:0"><div class="q-meta" style="margin-bottom:7px"><span class="badge chapter">'+(q.chapter?("第"+q.chapter+"章"):esc(q.chapterName))+'</span><span class="badge type">'+esc(q.typeLabel)+'</span>'+(q.origin?'<span class="badge origin">'+esc(q.origin)+'</span>':'')+'<span style="font-size:11px;color:var(--muted)">'+status+'</span></div><div style="font-size:13px;line-height:1.6;color:var(--ink-2);overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">'+esc(q.stem)+'</div></div><button class="btn ghost sm" data-action="open-question" data-id="'+q.id+'">打开</button></div></div>';
   }).join("");
   var empty='<div class="empty"><div class="big">◇</div><h3>'+title+'还是空的</h3><p>'+desc+'</p><button class="btn primary" data-action="random">先刷 20 道随机题</button></div>';
   qsel("#view").innerHTML=''
@@ -346,7 +346,7 @@ function renderPractice(){
   var locked=!!session.locked[q.id];
   var revealed=!!session.revealed[q.id];
   var selected=session.selected[q.id];
-  var qmeta='<div class="q-meta"><span class="badge chapter">'+(q.chapter?("第 "+q.chapter+" 章 · "+esc(q.chapterName)):esc(q.chapterName))+'</span><span class="badge type">'+esc(q.typeLabel)+'</span><span class="badge">第 '+(session.index+1)+' / '+total+' 题</span><span class="stars">'+'★'.repeat(q.stars||0)+'</span></div>';
+  var qmeta='<div class="q-meta"><span class="badge chapter">'+(q.chapter?("第 "+q.chapter+" 章 · "+esc(q.chapterName)):esc(q.chapterName))+'</span><span class="badge type">'+esc(q.typeLabel)+'</span>'+(q.origin?'<span class="badge origin">'+esc(q.origin)+'</span>':'')+'<span class="badge">第 '+(session.index+1)+' / '+total+' 题</span><span class="stars">'+'★'.repeat(q.stars||0)+'</span></div>';
   var body="";
   if(q.type==="single"){
     var opts=q.options.map(function(o){
@@ -449,7 +449,7 @@ function renderMockExam(){
   var q=currentQ();if(!q)return;
   var total=session.ids.length;
   var selected=session.selected[q.id];
-  var qmeta='<div class="q-meta"><span class="badge chapter">'+esc(q.chapterName)+'</span><span class="badge type">'+esc(q.typeLabel)+'</span><span class="badge">第 '+(session.index+1)+' / '+total+' 题</span></div>';
+  var qmeta='<div class="q-meta"><span class="badge chapter">'+esc(q.chapterName)+'</span><span class="badge type">'+esc(q.typeLabel)+'</span>'+(q.origin?'<span class="badge origin">'+esc(q.origin)+'</span>':'')+'<span class="badge">第 '+(session.index+1)+' / '+total+' 题</span></div>';
   var body="";
   if(q.type==="single"){
     body='<div class="options">'+q.options.map(function(o){return '<button class="option '+(selected===o.key?"selected":"")+'" data-action="mock-option" data-key="'+o.key+'"><span class="letter">'+o.key+'</span><span>'+o.html+'</span></button>';}).join("")+'</div>';

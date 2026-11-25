@@ -36,14 +36,14 @@ a{color:var(--teal)}
 .qcard details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}.qcard summary{cursor:pointer;color:var(--teal);font-size:12px;font-weight:800;outline:none}.answer{font-size:12.5px;color:#334e68;margin-top:7px}.answer p{margin:0 0 6px}.answer p:last-child{margin-bottom:0}
 .empty{display:none;background:#fff;border:1px dashed var(--line);border-radius:12px;padding:20px;text-align:center;color:var(--muted);font-size:13px}
 .foot{margin-top:30px;color:var(--muted);font-size:11.5px;line-height:1.9;border-top:1px solid var(--line);padding-top:14px}
-@media(max-width:760px){.tb-top{padding:0 12px;gap:7px}.tb-brand{font-size:13px}.tb-brand small{display:none}.tb-actions .tb-btn.ghost{display:none}.tb-wrap{padding:14px 12px 40px}.tb-hero{padding:24px 20px;border-radius:14px}.tb-stats{gap:14px 20px}.tb-stat b{font-size:22px}.chapter-grid,.card-grid{grid-template-columns:1fr}.tb-sec{margin-top:22px}.tb-sec h2{font-size:19px}.chapter-card{padding:13px 14px}.qcard{padding:13px 14px}}
+.allnums{background:#fff;border:1px solid var(--line);border-radius:13px;margin-top:12px;padding:12px 14px}.allnums summary{cursor:pointer;color:var(--teal);font-weight:800;font-size:13px;outline:none}.allnums-body{margin-top:10px}.allnums-group{font-size:11px;color:var(--muted);margin:9px 0 4px;font-weight:700}.numchip{display:inline-block;font-size:10px;background:#f3f6fa;border:1px solid var(--line);border-radius:5px;padding:1px 5px;margin:2px;color:#52657a;font-family:Georgia,serif}@media(max-width:760px){.tb-top{padding:0 12px;gap:7px}.tb-brand{font-size:13px}.tb-brand small{display:none}.tb-actions .tb-btn.ghost{display:none}.tb-wrap{padding:14px 12px 40px}.tb-hero{padding:24px 20px;border-radius:14px}.tb-stats{gap:14px 20px}.tb-stat b{font-size:22px}.chapter-grid,.card-grid{grid-template-columns:1fr}.tb-sec{margin-top:22px}.tb-sec h2{font-size:19px}.chapter-card{padding:13px 14px}.qcard{padding:13px 14px}}
 </style>
 </head>
 <body>
 <header class="tb-top"><a class="tb-back" href="index.html">← 刷题站</a><div class="tb-brand">课本习题 · 第四版<small>DIGITAL IMAGE PROCESSING · EXERCISE INDEX</small></div><div class="tb-actions"><a class="tb-btn ghost" href="review.html">复习精讲</a><a class="tb-btn" href="assets/DIP-review.pdf" download>下载 PDF</a></div></header>
 <main class="tb-wrap">
 <section class="tb-hero"><div class="tb-kicker">TEXTBOOK EXERCISES · GONZALEZ 4E</div><h1>课本习题，<br>先看全局再做题。</h1><p>根据你拍摄的 43 页课本习题照片整理。全量题号按章归档；老师《习题解答》中的 25 道重点题已整理成可展开的答案卡，另补 4 道第 5 章典型题。</p><div class="tb-stats"><div class="tb-stat"><b>9</b><span>章覆盖</span></div><div class="tb-stat"><b>403</b><span>道课本习题</span></div><div class="tb-stat"><b>43</b><span>页照片</span></div><div class="tb-stat"><b>29</b><span>道详解题</span></div></div></section>
-<section class="tb-sec"><div class="tb-sec-head"><div><h2>全量题号索引</h2><p>按课本章节列出连续题号范围；点卡片可筛选下方详解题。</p></div></div><div class="tb-note">说明：原题照片仅保存在本地学习资料中，未上传公网；这里提供题号、考点和老师解答题整理。题干如与教材原文有出入，以教材为准。</div><div class="chapter-grid" id="chapterGrid"></div></section>
+<section class="tb-sec"><div class="tb-sec-head"><div><h2>全量题号索引</h2><p>按课本章节列出连续题号范围；点卡片可筛选下方详解题。</p></div></div><div class="tb-note">说明：原题照片仅保存在本地学习资料中，未上传公网；这里提供题号、考点和老师解答题整理。题干如与教材原文有出入，以教材为准。</div><div class="chapter-grid" id="chapterGrid"></div><details class="allnums"><summary>展开全部 403 个题号（按章）</summary><div class="allnums-body" id="allNums"></div></details></section>
 <section class="tb-sec" id="selected"><div class="tb-sec-head"><div><h2>重点题与老师解答</h2><p>25 道来自《习题解答》的题 + 4 道第 5 章补充题；点“答案与要点”展开。</p></div></div><div class="toolbar"><input class="search" id="search" type="search" placeholder="搜索题号、关键词，如 直方图 / Hough / 12.33"><select class="filter" id="chapterFilter"><option value="">全部章节</option></select></div><div class="card-grid" id="selectedGrid"></div><div class="empty" id="empty">没有匹配的题，换个关键词试试。</div></section>
 <div class="foot">教材：Rafael C. Gonzalez、Richard E. Woods《数字图像处理》（第四版），阮秋琦、阮宇智等译，电子工业出版社，2020，ISBN 978-7-121-37747-1。<br>本页用于课程复习；题号依据课本第 4 版，题干为学习整理，不替代原书。</div>
 </main>
@@ -60,6 +60,7 @@ a{color:var(--teal)}
   cg.appendChild(card);
   var opt=document.createElement('option'); opt.value=String(c.num); opt.textContent='第 '+c.num+' 章 · '+c.name; cf.appendChild(opt);
  });
+ var an=document.getElementById('allNums'); D.chapters.forEach(function(c){var m=c.range.match(/(\d+)\.(\d+)[–-](\d+)\.(\d+)/); if(!m)return; var g=document.createElement('div');g.className='allnums-group';g.textContent='第 '+c.num+' 章 · '+c.range+'（'+c.count+' 题）';an.appendChild(g); for(var i=+m[2];i<=+m[4];i++){var sp=document.createElement('span');sp.className='numchip';sp.textContent=c.num+'.'+i;an.appendChild(sp);}});
  D.selected.forEach(function(q){
   var card=document.createElement('article'); card.className='qcard'; card.dataset.chapter=q.ch;
   card.dataset.search=(q.num+' '+q.title+' '+q.stem+' '+q.source+' '+q.answer.join(' ')).toLowerCase();

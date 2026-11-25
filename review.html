@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="数字图像处理期末复习精讲网页版：十章考点、公式、例题、答题模板，适配手机阅读。"><title>数字图像处理 · 期末复习精讲（网页版）</title><style>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="数字图像处理期末复习精讲网页版：十章考点、公式、例题、答题模板，适配手机阅读。"><title>数字图像处理 · 期末复习精讲（网页版）</title>
+<script>(function(){try{var t=localStorage.getItem("dip-review-theme");document.documentElement.setAttribute("data-theme",t||"dark");}catch(e){document.documentElement.setAttribute("data-theme","dark");}})();</script><style>
 
 @page { size:A4; margin:14mm 13.5mm 13mm 13.5mm; }
 *{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -197,8 +198,135 @@ b,strong{color:#0b2545}
  .review-doc .cover{page-break-after:always;border-radius:0}
 }
 
-</style></head><body>
-<div class="review-top"><a class="back-link" href="index.html">← 刷题站</a><div><div class="review-title">数字图像处理 · 期末复习精讲</div><div class="review-sub">WEB READING EDITION · 44 页内容（含课本习题附录）</div></div><div class="review-actions"><button class="toc-toggle" id="tocToggle">目录</button><a class="btn-download" href="assets/DIP-review.pdf" download>下载 PDF</a></div></div>
+</style><style id="themeStyles">
+/* ===== theme switch UI ===== */
+.theme-picker{display:flex;align-items:center;gap:6px;color:var(--web-muted);font-size:11px;white-space:nowrap}
+.theme-picker select{appearance:none;-webkit-appearance:none;border:1px solid var(--web-line);background:var(--panel,#fff);color:var(--web-ink);border-radius:8px;padding:7px 25px 7px 9px;font:inherit;font-size:11.5px;font-weight:700;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--web-muted) 50%),linear-gradient(135deg,var(--web-muted) 50%,transparent 50%);background-position:calc(100% - 12px) 50%,calc(100% - 8px) 50%;background-size:4px 4px,4px 4px;background-repeat:no-repeat}
+.theme-picker select:focus{outline:2px solid var(--web-teal);outline-offset:1px}
+/* ===== DARK ===== */
+html[data-theme="dark"]{--web-bg:#0b1320;--web-ink:#dce8f6;--web-muted:#9fb0c4;--web-line:#26384d;--web-navy:#081522;--web-teal:#5eead4;--web-amber:#fbbf24;color-scheme:dark}
+html[data-theme="dark"] body{background:radial-gradient(circle at 20% 0%,#16283e 0,transparent 38%),var(--web-bg);color:var(--web-ink)}
+html[data-theme="dark"] .review-top{background:rgba(9,18,30,.94);border-bottom-color:#26384d}
+html[data-theme="dark"] .review-top .back-link{background:#122238;border-color:#2c425b;color:#99f6e4}
+html[data-theme="dark"] .review-top .back-link:hover{background:#19324d}
+html[data-theme="dark"] .review-title{color:#e6f1ff}
+html[data-theme="dark"] .review-sub,html[data-theme="dark"] .theme-picker{color:#9fb0c4}
+html[data-theme="dark"] .theme-picker select{background-color:#122238;border-color:#2c425b;color:#dce8f6}
+html[data-theme="dark"] .btn-download{background:linear-gradient(135deg,#0f766e,#14b8a6);box-shadow:0 6px 16px rgba(20,184,166,.22)}
+html[data-theme="dark"] .review-doc{background:#101c2b;border-color:#26384d;box-shadow:0 16px 44px rgba(0,0,0,.3)}
+html[data-theme="dark"] .review-side{background:#101c2b;border-color:#26384d;box-shadow:0 10px 30px rgba(0,0,0,.24)}
+html[data-theme="dark"] .side-title{color:#e6f1ff}
+html[data-theme="dark"] .side-note{border-top-color:#26384d;color:#9fb0c4}
+html[data-theme="dark"] #tocNav a{color:#adc0d5}
+html[data-theme="dark"] #tocNav a:hover{background:#172b40;color:#99f6e4}
+html[data-theme="dark"] #tocNav a.active{background:#103b3a;color:#99f6e4;border-left-color:#5eead4}
+html[data-theme="dark"] .review-doc h1.ch{border-bottom-color:#3a5878}
+html[data-theme="dark"] .review-doc h1.ch .num{color:#496783}
+html[data-theme="dark"] .review-doc h1.ch .txt,html[data-theme="dark"] .review-doc h1.plain{color:#eef6ff}
+html[data-theme="dark"] .review-doc h1.ch .en{color:#8fa6bd}
+html[data-theme="dark"] .review-doc h2{color:#bfe9e2;border-left-color:#5eead4}
+html[data-theme="dark"] .review-doc h3{color:#8ee8dc}
+html[data-theme="dark"] .review-doc h4{color:#dce8f6}
+html[data-theme="dark"] .review-doc p,html[data-theme="dark"] .review-doc li,html[data-theme="dark"] .review-doc td,html[data-theme="dark"] .review-doc .lead{color:#c9d8e8}
+html[data-theme="dark"] .review-doc b,html[data-theme="dark"] .review-doc strong{color:#f2f7ff}
+html[data-theme="dark"] .review-doc a{color:#5eead4}
+html[data-theme="dark"] .review-doc .cover{background:linear-gradient(120deg,#061421 0%,#0e2c3d 55%,#0b5b55 130%);box-shadow:inset 0 0 0 1px #1d3f54}
+html[data-theme="dark"] .cover .cv-top,html[data-theme="dark"] .cover .cv-sub,html[data-theme="dark"] .cover .cv-meta,html[data-theme="dark"] .cover .cv-foot{color:#b8cce0}
+html[data-theme="dark"] .cover .cv-title{color:#fff}
+html[data-theme="dark"] .review-doc .k,html[data-theme="dark"] .review-doc .tip,html[data-theme="dark"] .review-doc .trap,html[data-theme="dark"] .review-doc .ex,html[data-theme="dark"] .review-doc .summary{background:#132235;border-color:#2b4058;color:#d5e4f3}
+html[data-theme="dark"] .review-doc .k{border-left-color:#5eead4}
+html[data-theme="dark"] .review-doc .k b,html[data-theme="dark"] .review-doc .tip b,html[data-theme="dark"] .review-doc .trap b,html[data-theme="dark"] .review-doc .ex b,html[data-theme="dark"] .review-doc .summary b{color:#a7f3d0}
+html[data-theme="dark"] .review-doc .f{background:#0d1a29;border-color:#2b4058;color:#e4f0fb}
+html[data-theme="dark"] .review-doc .f .n{color:#8fa6bd}
+html[data-theme="dark"] .review-doc .tip{background:#2a2114;border-color:#5a4623}
+html[data-theme="dark"] .review-doc .trap{background:#2b1818;border-left-color:#e07a68}
+html[data-theme="dark"] .review-doc .ex{background:#112536;border-color:#2d4963}
+html[data-theme="dark"] .review-doc .summary{background:#132235}
+html[data-theme="dark"] .review-doc .summary h4{color:#99f6e4}
+html[data-theme="dark"] .review-doc .table-scroll{scrollbar-color:#3a5570 #0d1a29}
+html[data-theme="dark"] .review-doc table{color:#d5e4f3}
+html[data-theme="dark"] .review-doc th{background:#193a55;color:#f2f7ff}
+html[data-theme="dark"] .review-doc td{border-bottom-color:#2a4057}
+html[data-theme="dark"] .review-doc tbody tr:nth-child(even) td{background:#142538}
+html[data-theme="dark"] .review-doc .flow span{background:#142b40;border-color:#31506b;color:#c6f6ee}
+html[data-theme="dark"] .review-doc .flow em{color:#8fa6bd}
+html[data-theme="dark"] .review-doc .tag{background:#193a55;color:#bfe9e2}
+html[data-theme="dark"] .review-doc .tag.hot{background:#4a2b1b;color:#ffd7a8}
+html[data-theme="dark"] .review-doc .fig{background:#dce8f2;border:1px solid #b9cadd;border-radius:8px;padding:10px;color:#1a2a3a}
+html[data-theme="dark"] .review-doc .figcap,html[data-theme="dark"] .review-doc .binlab{color:#b9c9da}
+html[data-theme="dark"] .review-doc .bin td.zero{background:#24384d;color:#b7c9dc;border-color:#456079}
+html[data-theme="dark"] .review-doc .bin td.one{background:#2dd4bf;color:#062a29;border-color:#5eead4}
+html[data-theme="dark"] .review-doc .bin th{color:#b7c9dc}
+html[data-theme="dark"] .review-doc [style*="color:#6b7686"],html[data-theme="dark"] .review-doc [style*="color:#8892a0"]{color:#a9bbcf!important}
+html[data-theme="dark"] .review-doc [style*="color:#1c3f6e"]{color:#8ee8dc!important}
+html[data-theme="dark"] .doc-end,html[data-theme="dark"] .doc-end a{color:#9fb0c4}
+html[data-theme="dark"] .reading-progress span{background:linear-gradient(90deg,#2dd4bf,#99f6e4)}
+/* ===== MAGAZINE ===== */
+html[data-theme="magazine"]{--web-bg:#efe6d8;--web-ink:#2d241c;--web-muted:#7d6d5b;--web-line:#d8c7ae;--web-navy:#3b2b22;--web-teal:#9a3f2b;--web-amber:#b06d2b;color-scheme:light}
+html[data-theme="magazine"] body{background:radial-gradient(circle at 10% 5%,rgba(255,250,240,.8),transparent 35%),repeating-linear-gradient(0deg,rgba(120,90,55,.025) 0,rgba(120,90,55,.025) 1px,transparent 1px,transparent 4px),var(--web-bg);color:var(--web-ink);font-family:Georgia,"Songti SC","Source Han Serif CN",serif}
+html[data-theme="magazine"] .review-top{background:rgba(250,244,232,.96);border-bottom:1px solid #cdb99c;box-shadow:0 3px 14px rgba(70,45,25,.08)}
+html[data-theme="magazine"] .review-top .back-link{background:#fffaf0;border-color:#cdb99c;color:#8f3a25;border-radius:2px}
+html[data-theme="magazine"] .review-title{font-family:Georgia,"Songti SC",serif;font-size:17px;letter-spacing:.02em;color:#2b1c14}
+html[data-theme="magazine"] .review-sub{color:#8a735d;letter-spacing:.14em}
+html[data-theme="magazine"] .theme-picker{color:#7d6d5b}
+html[data-theme="magazine"] .theme-picker select{background-color:#fffaf0;border-color:#cdb99c;color:#2d241c}
+html[data-theme="magazine"] .btn-download{background:#8f3a25;border-radius:2px;box-shadow:0 4px 10px rgba(90,40,25,.18);font-family:"Microsoft YaHei",sans-serif}
+html[data-theme="magazine"] .reading-progress span{background:linear-gradient(90deg,#8f3a25,#c28a4b)}
+html[data-theme="magazine"] .review-shell{padding-top:28px}
+html[data-theme="magazine"] .review-side{background:#f8f0e3;border-color:#d4c1a5;border-radius:2px;box-shadow:0 6px 18px rgba(70,45,25,.08)}
+html[data-theme="magazine"] .side-eyebrow{color:#9a3f2b;letter-spacing:.22em}
+html[data-theme="magazine"] .side-title{font-family:Georgia,"Songti SC",serif;font-size:16px;border-bottom:1px solid #cdb99c;padding-bottom:8px}
+html[data-theme="magazine"] #tocNav a{color:#665443;border-radius:0;border-left:2px solid transparent}
+html[data-theme="magazine"] #tocNav a:hover{background:#f1e2cf;color:#8f3a25}
+html[data-theme="magazine"] #tocNav a.active{background:#f6e5d4;color:#8f3a25;border-left-color:#9a3f2b}
+html[data-theme="magazine"] .review-doc{background:#fffaf0;border:1px solid #d4c1a5;border-radius:2px;box-shadow:0 18px 46px rgba(70,45,25,.14);padding:42px 46px 56px}
+html[data-theme="magazine"] .review-doc .cover{background:linear-gradient(135deg,#2b1a14 0%,#5a2a20 58%,#9a3f2b 130%);border-radius:0;box-shadow:none}
+html[data-theme="magazine"] .cover .cv-title{font-family:Georgia,"Songti SC","Source Han Serif CN",serif;letter-spacing:.01em}
+html[data-theme="magazine"] .cover .cv-kicker{color:#e7b78c}
+html[data-theme="magazine"] .cover .cv-rule{background:#c28a4b}
+html[data-theme="magazine"] .cover .cv-sub{color:#ead6c0}
+html[data-theme="magazine"] .cover .cv-meta{color:#d8c1aa;border-left-color:#c28a4b}
+html[data-theme="magazine"] .review-doc h1.ch{border-bottom:3px double #9a3f2b}
+html[data-theme="magazine"] .review-doc h1.ch .num{font-family:Georgia,serif;color:#c28a4b}
+html[data-theme="magazine"] .review-doc h1.ch .txt{font-family:Georgia,"Songti SC","Source Han Serif CN",serif;font-size:30px;color:#2d241c;letter-spacing:.01em}
+html[data-theme="magazine"] .review-doc h1.plain{font-family:Georgia,"Songti SC",serif;font-size:30px;border-bottom:3px double #9a3f2b;color:#2d241c}
+html[data-theme="magazine"] .review-doc h2{font-family:Georgia,"Songti SC",serif;font-size:22px;color:#3b2b22;border-left:0;border-top:1px solid #cdb99c;padding:12px 0 0;margin-top:32px}
+html[data-theme="magazine"] .review-doc h3{font-family:Georgia,"Songti SC",serif;color:#8f3a25;font-size:18px}
+html[data-theme="magazine"] .review-doc h4{color:#3b2b22}
+html[data-theme="magazine"] .review-doc .lead{font-family:Georgia,"Songti SC",serif;font-size:17px;line-height:1.9;color:#5c4b3c;border-left:2px solid #c28a4b;padding-left:14px}
+html[data-theme="magazine"] .review-doc .lead::first-letter{font-family:Georgia,serif;font-size:3.3em;float:left;line-height:.78;padding:6px 8px 0 0;color:#9a3f2b}
+html[data-theme="magazine"] .review-doc .k,html[data-theme="magazine"] .review-doc .tip,html[data-theme="magazine"] .review-doc .trap,html[data-theme="magazine"] .review-doc .ex,html[data-theme="magazine"] .review-doc .summary{border-radius:0;background:#f8f0e3;border-color:#d8c7ae;color:#3e3127}
+html[data-theme="magazine"] .review-doc .k{border-left:4px solid #9a3f2b}
+html[data-theme="magazine"] .review-doc .k b{color:#8f3a25}
+html[data-theme="magazine"] .review-doc .tip{background:#fdf3df;border-color:#e2c995}
+html[data-theme="magazine"] .review-doc .trap{background:#fbebe5;border-left-color:#9a3f2b}
+html[data-theme="magazine"] .review-doc .ex{background:#f6efe2;border-color:#d8c7ae}
+html[data-theme="magazine"] .review-doc .ex .lab{background:#8f3a25}
+html[data-theme="magazine"] .review-doc .summary{background:#f5ecdf}
+html[data-theme="magazine"] .review-doc .f{background:#f5ecdf;border-color:#d8c7ae;font-family:Georgia,serif}
+html[data-theme="magazine"] .review-doc th{background:#3b2b22;color:#fff7ea}
+html[data-theme="magazine"] .review-doc td{border-bottom-color:#dfd0bb;color:#3e3127}
+html[data-theme="magazine"] .review-doc tbody tr:nth-child(even) td{background:#faf3e7}
+html[data-theme="magazine"] .review-doc .flow span{background:#f5ecdf;border-color:#d8c7ae;color:#8f3a25}
+html[data-theme="magazine"] .review-doc .tag{background:#f1e2cf;color:#8f3a25}
+html[data-theme="magazine"] .review-doc .fig{background:#f7efe2;border:1px solid #d8c7ae;padding:10px;border-radius:2px}
+html[data-theme="magazine"] .review-doc .figcap{color:#7d6d5b}
+html[data-theme="magazine"] .review-doc .bin td.zero{background:#f5ecdf;color:#8a735d;border-color:#cbb89d}
+html[data-theme="magazine"] .review-doc .bin td.one{background:#8f3a25;color:#fff7ea;border-color:#9a3f2b}
+html[data-theme="magazine"] .review-doc .bin th,html[data-theme="magazine"] .review-doc .binlab{color:#7d6d5b}
+html[data-theme="magazine"] .review-doc [style*="color:#6b7686"],html[data-theme="magazine"] .review-doc [style*="color:#8892a0"]{color:#7d6d5b!important}
+html[data-theme="magazine"] .review-doc [style*="color:#1c3f6e"]{color:#8f3a25!important}
+html[data-theme="magazine"] .doc-end{color:#7d6d5b;border-top-color:#d8c7ae}
+html[data-theme="magazine"] .doc-end a{color:#8f3a25}
+@media(max-width:640px){
+ .review-title{display:none}
+ .theme-picker span{display:none}
+ .theme-picker select{padding-left:8px;padding-right:20px;font-size:11px;max-width:78px}
+ .review-actions{gap:6px}
+}
+</style>
+</head><body>
+<div class="review-top"><a class="back-link" href="index.html">← 刷题站</a><div><div class="review-title">数字图像处理 · 期末复习精讲</div><div class="review-sub">WEB READING EDITION · 44 页内容（含课本习题附录）</div></div><div class="review-actions"><label class="theme-picker" title="阅读主题"><span>主题</span><select id="themeSelect" aria-label="阅读主题"><option value="dark">深色</option><option value="light">浅色</option><option value="magazine">杂志风</option></select></label><button class="toc-toggle" id="tocToggle">目录</button><a class="btn-download" href="assets/DIP-review.pdf" download>下载 PDF</a></div></div>
 <div class="reading-progress"><span id="progressBar"></span></div>
 <div class="review-shell"><aside class="review-side" id="reviewSide"><div class="side-eyebrow">CONTENTS</div><div class="side-title">复习精讲 · 目录</div><nav id="tocNav"></nav><div class="side-note">本页是网页阅读版，已从 A4 打印版重排；手机端可用左上角「目录」快速跳转。需要打印或离线保存时下载 PDF。</div></aside><main class="review-doc"><div id="reviewContent">
 
@@ -1606,4 +1734,5 @@ m<sub>j</sub> = E<sub>j</sub>{x}，　C<sub>j</sub> = E<sub>j</sub>{(x−m<sub>j
   toc.addEventListener("click",function(e){if(e.target.tagName==="A"&&window.innerWidth<=980){side.classList.remove("open");mask.classList.remove("open");}});
 })();
 </script>
+<script>(function(){var el=document.getElementById("themeSelect");if(!el)return;var root=document.documentElement;var key="dip-review-theme";var saved=null;try{saved=localStorage.getItem(key);}catch(e){}root.setAttribute("data-theme",saved||"dark");el.value=root.getAttribute("data-theme");el.addEventListener("change",function(){var t=el.value;root.setAttribute("data-theme",t);try{localStorage.setItem(key,t);}catch(e){}});})();</script>
 </body></html>

@@ -1,0 +1,1542 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="数字图像处理期末复习精讲网页版：十章考点、公式、例题、答题模板，适配手机阅读。"><title>数字图像处理 · 期末复习精讲（网页版）</title><style>
+
+@page { size:A4; margin:14mm 13.5mm 13mm 13.5mm; }
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{margin:0;padding:0}
+body{font-family:"Source Han Sans SC","Microsoft YaHei",sans-serif;font-size:9.85pt;line-height:1.71;color:#17191d;background:#fff}
+p{margin:0 0 3.6pt 0;text-align:justify}
+b,strong{font-weight:700;color:#0d1b2e}
+i,em{font-style:italic;font-family:Cambria,"Times New Roman",serif}
+
+/* ---------- 封面 ---------- */
+.cover{height:262mm;position:relative;page-break-after:always;overflow:hidden}
+.cv-top{font-size:8.4pt;letter-spacing:.32em;color:#7a8290;padding-top:6mm}
+.cv-rule{height:2.2pt;background:#1c3f6e;width:100%;margin:5pt 0 0 0}
+.cv-main{margin-top:34mm}
+.cv-kicker{font-family:"Source Han Serif CN",serif;font-size:11pt;color:#9a4a1f;letter-spacing:.18em}
+.cv-title{font-family:"Source Han Serif CN","SimSun",serif;font-size:44pt;line-height:1.18;font-weight:700;color:#101c2e;margin:5pt 0 0 0;letter-spacing:.01em}
+.cv-sub{font-size:13pt;color:#3a4a5e;margin-top:9pt;letter-spacing:.06em}
+.cv-meta{margin-top:14mm;font-size:9.2pt;color:#4a5564;line-height:2.0;border-left:2.4pt solid #d9dee5;padding-left:9pt}
+.cv-foot{position:absolute;bottom:0;left:0;right:0;border-top:.8pt solid #ccd3db;padding-top:6pt;font-size:8.2pt;color:#7a8290;display:flex;justify-content:space-between}
+.cv-badge{display:inline-block;border:.8pt solid #1c3f6e;color:#1c3f6e;font-size:8pt;padding:1.4pt 7pt;border-radius:2pt;margin-right:5pt}
+.cv-deco{margin-top:12mm;display:grid;grid-template-columns:repeat(8,1fr);gap:2.2pt;width:96mm}
+.cv-deco div{height:11mm;background:#eef1f5}
+.cv-deco div:nth-child(3n){background:#c9d4e3}
+.cv-deco div:nth-child(7n){background:#1c3f6e}
+
+/* ---------- 标题层级 ---------- */
+h1.ch{page-break-before:always;margin:0 0 9pt 0;padding:0 0 6pt 0;border-bottom:1.6pt solid #1c3f6e;display:flex;align-items:flex-end;gap:10pt}
+h1.ch .num{font-family:Cambria,serif;font-size:34pt;line-height:.82;color:#c3cddb;font-weight:700;letter-spacing:-.02em}
+h1.ch .txt{font-family:"Source Han Serif CN",serif;font-size:19pt;font-weight:700;color:#101c2e;line-height:1.2;padding-bottom:2pt}
+h1.ch .en{font-size:8.6pt;color:#8892a0;letter-spacing:.14em;font-weight:400;font-family:Georgia,serif;margin-left:auto;padding-bottom:4pt;white-space:nowrap}
+h1.plain{page-break-before:always;margin:0 0 9pt 0;padding:0 0 6pt 0;border-bottom:1.6pt solid #1c3f6e;font-family:"Source Han Serif CN",serif;font-size:20pt;font-weight:700;color:#101c2e}
+h2{font-size:12.1pt;font-weight:700;color:#12263f;margin:10pt 0 4pt 0;padding-left:8pt;border-left:3.4pt solid #1c3f6e;line-height:1.4;page-break-after:avoid}
+h3{font-size:10.4pt;font-weight:700;color:#1c3f6e;margin:7pt 0 2.5pt 0;page-break-after:avoid}
+h4{font-size:10pt;font-weight:700;color:#333;margin:7pt 0 2pt 0}
+.lead{font-size:9.6pt;color:#4c5765;margin:-4pt 0 9pt 0}
+
+/* ---------- 组件 ---------- */
+.k{background:#f0f4f9;border-left:3.2pt solid #1c3f6e;padding:5pt 9pt 5pt 10pt;margin:5pt 0 6.5pt 0;font-size:9.5pt;line-height:1.72;page-break-inside:avoid}
+.k b{color:#123a6b}
+.k .lab{display:inline-block;background:#1c3f6e;color:#fff;font-size:7.8pt;padding:.6pt 5pt;border-radius:2pt;margin-right:5pt;letter-spacing:.06em;vertical-align:1.2pt}
+
+.f{font-family:Cambria,"Times New Roman",serif;font-size:10.2pt;text-align:center;background:#f7f8f9;border:.6pt solid #e0e3e7;border-radius:2pt;padding:4.6pt 6pt;margin:4pt 0 6pt 0;letter-spacing:.02em;page-break-inside:avoid}
+.f .n{display:inline-block;margin-left:10pt;font-size:8pt;color:#98a1ad;font-family:"Source Han Sans SC",sans-serif;margin-top:2pt}
+
+.tip{background:#fdf7ec;border:.6pt solid #eedcbe;border-radius:2pt;padding:5pt 9pt;margin:5pt 0 6pt 0;font-size:9.2pt;line-height:1.7;page-break-inside:avoid}
+.tip .lab{display:inline-block;background:#9a4a1f;color:#fff;font-size:7.8pt;padding:.6pt 5pt;border-radius:2pt;margin-right:5pt;letter-spacing:.06em}
+.trap{background:#fdf1ef;border-left:3.2pt solid #a83a2c;padding:5pt 9pt;margin:5pt 0 6pt 0;font-size:9.2pt;line-height:1.7;page-break-inside:avoid}
+.trap .lab{display:inline-block;background:#a83a2c;color:#fff;font-size:7.8pt;padding:.6pt 5pt;border-radius:2pt;margin-right:5pt;letter-spacing:.06em}
+.ex{background:#f7fafc;border:.6pt solid #dbe4ee;border-radius:2pt;padding:5pt 9pt;margin:5pt 0 6.5pt 0;font-size:9.3pt;line-height:1.75;page-break-inside:avoid}
+.ex .lab{display:inline-block;background:#456a97;color:#fff;font-size:7.8pt;padding:.6pt 5pt;border-radius:2pt;margin-right:5pt;letter-spacing:.06em}
+.ex .q{font-weight:700;color:#1b3557}
+
+table{width:100%;border-collapse:collapse;margin:4pt 0 6.5pt 0;font-size:8.6pt;line-height:1.48}
+tr{page-break-inside:avoid}
+thead{display:table-header-group}
+table.keep{page-break-inside:avoid}
+th{background:#1c3f6e;color:#fff;font-weight:700;padding:2.8pt 5pt;text-align:left;font-size:8.6pt;letter-spacing:.02em}
+td{border-bottom:.5pt solid #e2e5e9;padding:2.8pt 5pt;vertical-align:top}
+tbody tr:nth-child(even) td{background:#fafbfc}
+td.c,th.c{text-align:center}
+table.tight td,table.tight th{padding:2.2pt 4pt;font-size:8.4pt}
+caption{caption-side:top;text-align:left;font-size:8.4pt;color:#6b7686;padding-bottom:2pt}
+
+ul,ol{margin:2.5pt 0 5pt 0;padding-left:15pt}
+li{margin:.7pt 0}
+ul.tight li{margin:0}
+ul.nodot{list-style:none;padding-left:2pt}
+ul.nodot li:before{content:"▪";color:#1c3f6e;margin-right:5pt;font-size:8pt}
+
+.fig{text-align:center;margin:6pt 0 7pt 0;page-break-inside:avoid}
+.figcap{font-size:8.3pt;color:#6b7686;margin-top:3pt;text-align:center}
+
+.star{color:#b07d1a;font-size:8.6pt;letter-spacing:-.05em;white-space:nowrap}
+.tag{display:inline-block;font-size:7.6pt;padding:.5pt 4.5pt;border-radius:2pt;background:#e9eef5;color:#26456f;margin-right:3pt;vertical-align:1pt;letter-spacing:.03em}
+.tag.hot{background:#f6e2d4;color:#8a4118}
+
+.cols2{column-count:2;column-gap:13pt}
+.cols2 p,.cols2 li{break-inside:avoid}
+
+.flow{display:flex;flex-wrap:wrap;gap:4pt;margin:5pt 0 6pt 0;align-items:center}
+.flow span{background:#eef2f8;border:.5pt solid #cfd9e6;border-radius:2pt;padding:2.4pt 7pt;font-size:8.8pt;color:#1c3f6e}
+.flow em{color:#9aa4b2;font-style:normal;font-size:8pt}
+
+.summary{background:#f2f5f8;border:.6pt solid #dbe1e9;border-radius:3pt;padding:4pt 10pt;margin:4pt 0 0 0;font-size:8.9pt;line-height:1.62;page-break-inside:avoid}
+.summary h4{margin:0 0 4pt 0;font-size:9.4pt;color:#1c3f6e;letter-spacing:.05em}
+
+/* 目录 */
+.toc{page-break-after:always}
+.toc h2{border:none;padding:0;margin:0 0 10pt 0;font-size:17pt;font-family:"Source Han Serif CN",serif}
+.toc-line{display:flex;align-items:baseline;font-size:9.6pt;padding:2.6pt 0;border-bottom:.4pt dotted #cfd6de}
+.toc-line .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.toc-line .d{flex:1;border-bottom:.5pt dotted #c8d0da;margin:0 4pt;transform:translateY(-2pt)}
+.toc-line .p{font-family:Cambria,serif;color:#1c3f6e;font-size:9.4pt;min-width:16pt;text-align:right}
+.toc-line.l2{padding-left:14pt;font-size:9.1pt;color:#3c4757;border-bottom:none;padding-top:1.4pt;padding-bottom:1.4pt}
+.toc-grp{font-family:"Source Han Serif CN",serif;font-size:10.4pt;color:#9a4a1f;margin:9pt 0 3pt 0;letter-spacing:.1em}
+
+/* ===== 网页阅读版覆盖样式 ===== */
+:root{--web-bg:#f3f6fa;--web-ink:#102a43;--web-muted:#627d98;--web-line:#d9e2ec;--web-navy:#0b2545;--web-teal:#0f766e;--web-amber:#b45309}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--web-bg);color:var(--web-ink);font-family:"Source Han Sans SC","Noto Sans CJK SC","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.85;text-align:left;padding-top:64px}
+p{margin:0 0 12px;text-align:left}
+b,strong{color:#0b2545}
+.review-top{position:fixed;top:0;left:0;right:0;height:64px;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--web-line);display:flex;align-items:center;gap:14px;padding:0 24px}
+.review-top .back-link{border:1px solid var(--web-line);background:#fff;border-radius:9px;padding:8px 12px;font-size:13px;font-weight:700;color:var(--web-teal);text-decoration:none;white-space:nowrap}
+.review-top .back-link:hover{background:#eef7f4}
+.review-title{font-weight:800;font-size:16px;line-height:1.2}
+.review-sub{font-size:11px;color:var(--web-muted);letter-spacing:.08em;margin-top:2px}
+.review-actions{margin-left:auto;display:flex;gap:8px;align-items:center}
+.btn-download{background:linear-gradient(135deg,var(--web-teal),#0d9488);color:#fff!important;border-radius:9px;padding:9px 14px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 6px 16px rgba(15,118,110,.18)}
+.btn-download:hover{filter:brightness(1.05)}
+.toc-toggle{display:none;border:1px solid var(--web-line);background:#fff;border-radius:9px;padding:8px 11px;font-size:13px;font-weight:700;color:var(--web-ink);cursor:pointer}
+.reading-progress{position:fixed;top:64px;left:0;right:0;height:3px;z-index:101;background:transparent}
+.reading-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--web-teal),#2dd4bf);transition:width .1s}
+.review-shell{max-width:1320px;margin:0 auto;padding:26px 24px 70px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px;align-items:start}
+.review-side{position:sticky;top:88px;max-height:calc(100vh - 110px);overflow:auto;background:#fff;border:1px solid var(--web-line);border-radius:16px;box-shadow:0 8px 24px rgba(15,42,67,.06);padding:16px 14px}
+.side-eyebrow{font-size:10px;letter-spacing:.16em;color:var(--web-muted);font-weight:800;text-transform:uppercase;margin:0 6px 8px}
+.side-title{font-size:14px;font-weight:800;color:var(--web-ink);margin:0 6px 10px}
+#tocNav a{display:block;text-decoration:none;color:#52657a;font-size:12px;line-height:1.45;padding:6px 8px;border-radius:7px;margin:1px 0;border-left:2px solid transparent}
+#tocNav a:hover{background:#f0f7f5;color:var(--web-teal)}
+#tocNav a.active{background:#e8f7f2;color:var(--web-teal);border-left-color:var(--web-teal);font-weight:700}
+#tocNav a.lv1{font-size:12.5px;font-weight:700;color:#1c3f6e;margin-top:6px}
+#tocNav a.lv2{padding-left:18px}
+.side-note{font-size:10.5px;color:var(--web-muted);line-height:1.75;border-top:1px solid var(--web-line-2);margin-top:12px;padding:12px 6px 0}
+.review-doc{background:#fff;border:1px solid var(--web-line);border-radius:18px;box-shadow:0 10px 30px rgba(15,42,67,.07);padding:34px 38px 50px;min-width:0}
+#reviewContent{width:100%;min-width:0;overflow-x:clip}
+.review-doc .cover{height:auto;min-height:0;position:relative;overflow:hidden;background:linear-gradient(120deg,#0b2545 0%,#13315c 55%,#0f766e 130%);border-radius:18px;padding:32px 34px 30px;margin:0 0 30px;color:#fff;page-break-after:auto}
+.cover .cv-top{color:#bcd0e8;font-size:11px;letter-spacing:.18em;padding-top:0}
+.cover .cv-rule{background:#5eead4;height:2px;margin:12px 0 0}
+.cover .cv-main{margin-top:0}
+.cover .cv-kicker{color:#99f6e4;font-size:11px;letter-spacing:.18em}
+.cover .cv-title{color:#fff;font-family:Georgia,"Songti SC","Source Han Serif CN",serif;font-size:clamp(30px,4.3vw,52px);line-height:1.18;margin:8px 0 0}
+.cover .cv-sub{color:#d7e6f4;font-size:14px;margin-top:8px}
+.cover .cv-meta{margin-top:18px;color:#c9d9ec;border-left-color:#2dd4bf;font-size:12.5px;line-height:1.9;padding-left:12px}
+.cover .cv-deco{display:none}
+.cover .cv-foot{position:static;border-top-color:rgba(255,255,255,.18);color:#bcd0e8;font-size:11px;padding-top:10px;margin-top:18px}
+.cover .cv-badge{border-color:#99f6e4;color:#99f6e4}
+.review-doc .toc{display:none}
+.review-doc h1.ch{page-break-before:auto;margin:46px 0 16px;padding:0 0 10px;display:flex;align-items:flex-end;gap:10px;border-bottom:2px solid #1c3f6e;scroll-margin-top:90px}
+.review-doc h1.ch .num{font-size:38px;color:#c3cddb;line-height:.8}
+.review-doc h1.ch .txt{font-size:26px;color:#101c2e;line-height:1.25}
+.review-doc h1.ch .en{font-size:10px;color:#8892a0;white-space:normal;text-align:right}
+.review-doc h1.plain{page-break-before:auto;margin:46px 0 16px;padding:0 0 10px;font-size:27px;border-bottom:2px solid #1c3f6e;scroll-margin-top:90px}
+.review-doc h2{font-size:20px;margin:30px 0 10px;padding-left:10px;border-left:4px solid #1c3f6e;line-height:1.45;scroll-margin-top:90px}
+.review-doc h3{font-size:17px;margin:20px 0 7px;color:#1c3f6e;scroll-margin-top:90px}
+.review-doc h4{font-size:15px}
+.review-doc .lead{font-size:15px;color:#4c5765;margin:-4px 0 14px}
+.review-doc .k,.review-doc .tip,.review-doc .trap,.review-doc .ex,.review-doc .summary{font-size:14.5px;line-height:1.8;padding:10px 14px;margin:10px 0 12px;border-radius:7px}
+.review-doc .k{padding-left:15px}
+.review-doc .f{font-size:16px;line-height:1.8;padding:9px 12px;margin:9px 0 12px;overflow-x:auto;white-space:normal}
+.review-doc table{display:table;width:100%;font-size:13.5px;line-height:1.6;border-collapse:collapse;margin:0}
+.review-doc .table-scroll{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;margin:10px 0 15px}
+.review-doc .table-scroll table{min-width:max-content}
+.review-doc th,.review-doc td{padding:6px 8px;white-space:normal;min-width:50px}
+.review-doc th{background:#1c3f6e;color:#fff}
+.review-doc ul,.review-doc ol{padding-left:22px;margin:8px 0 13px}
+.review-doc li{margin:3px 0}
+.review-doc .cols2{column-count:1;column-gap:24px}
+.review-doc .binwrap{flex-wrap:wrap;justify-content:center}
+.review-doc .flow{gap:7px;margin:10px 0 13px}
+.review-doc .flow span{font-size:13px;padding:4px 9px}
+.review-doc .fig{margin:14px 0;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.review-doc .figcap{font-size:12px}
+.review-doc .cover p{text-align:left}
+.review-doc img{max-width:100%;height:auto}
+.doc-end{margin-top:38px;padding-top:18px;border-top:1px solid var(--web-line);color:var(--web-muted);font-size:12px;line-height:1.8}
+.mobile-mask{display:none}
+@media(min-width:1180px){.review-doc .cols2{column-count:2}}
+@media(max-width:980px){
+ body{padding-top:60px}
+ .review-top{height:60px;padding:0 12px;gap:8px}
+ .review-title{font-size:13px}.review-sub{display:none}.review-top .back-link{padding:7px 9px;font-size:12px}
+ .btn-download{padding:8px 10px;font-size:12px}
+ .toc-toggle{display:block}
+ .review-shell{display:block;padding:16px 12px 50px}
+ .review-side{position:fixed;top:60px;left:0;bottom:0;width:min(84vw,320px);max-height:none;border-radius:0 16px 16px 0;transform:translateX(-105%);transition:transform .22s;z-index:120;box-shadow:0 18px 50px rgba(0,0,0,.18)}
+ .review-side.open{transform:translateX(0)}
+ .mobile-mask{position:fixed;inset:60px 0 0;background:rgba(5,18,35,.35);z-index:110;display:none}
+ .mobile-mask.open{display:block}
+ .review-doc{padding:20px 15px 36px;border-radius:14px}
+ .review-doc h1.ch .txt{font-size:22px}.review-doc h1.ch .num{font-size:30px}.review-doc h1.ch .en{display:none}
+ .review-doc h1.plain{font-size:23px}
+ .review-doc h2{font-size:18px}
+ .review-doc .f{font-size:14px}
+ .review-doc table{font-size:12.5px}
+ .review-doc .binwrap{flex-wrap:wrap;justify-content:center;gap:12px!important}
+ .cover{padding:24px 20px!important}
+}
+@media print{
+ body{padding-top:0;background:#fff;font-size:10pt}
+ .review-top,.review-side,.reading-progress,.toc-toggle,.mobile-mask,.doc-end{display:none!important}
+ .review-shell{display:block;max-width:none;padding:0}
+ .review-doc{border:0;box-shadow:none;padding:0}
+ .review-doc h1.ch{page-break-before:always}
+ .review-doc .cover{page-break-after:always;border-radius:0}
+}
+
+</style></head><body>
+<div class="review-top"><a class="back-link" href="index.html">← 刷题站</a><div><div class="review-title">数字图像处理 · 期末复习精讲</div><div class="review-sub">WEB READING EDITION · 41 页内容</div></div><div class="review-actions"><button class="toc-toggle" id="tocToggle">目录</button><a class="btn-download" href="assets/DIP-review.pdf" download>下载 PDF</a></div></div>
+<div class="reading-progress"><span id="progressBar"></span></div>
+<div class="review-shell"><aside class="review-side" id="reviewSide"><div class="side-eyebrow">CONTENTS</div><div class="side-title">复习精讲 · 目录</div><nav id="tocNav"></nav><div class="side-note">本页是网页阅读版，已从 A4 打印版重排；手机端可用左上角「目录」快速跳转。需要打印或离线保存时下载 PDF。</div></aside><main class="review-doc"><div id="reviewContent">
+
+<div class="cover">
+  <div class="cv-top">SCAU · 人工智能与低空技术学院 · 光电图像处理技术</div>
+  <div class="cv-rule"></div>
+  <div class="cv-main">
+    <div class="cv-kicker">DIGITAL IMAGE PROCESSING</div>
+    <div class="cv-title">数字图像处理<br>期末复习精讲</div>
+    <div class="cv-sub">十章考点 · 系统梳理 · 目标 80+</div>
+    <div class="cv-deco"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div class="cv-meta">
+      依据材料：14 份原始 PDF（复习提纲 + 12 份章节课件 + 习题解答）<br>
+      覆盖范围：第 1、2、3、4、5、6、9、10、11、12 章<br>
+      适用题型：选择 20% · 判断 10% · 填空 20% · 简答 20% · 计算 30%
+    </div>
+  </div>
+  <div class="cv-foot"><span>配套：《刷题手册》+ 刷题网站 · 含 333 题及详解</span><span>2026</span></div>
+</div>
+<div class="toc"><h2>目　录</h2><div class="toc-grp">CONTENTS</div><div class="toc-line"><span class="t">这本资料怎么用</span><span class="d"></span><span class="p">3</span></div><div class="toc-line"><span class="t">00　一张图看懂整门课</span><span class="d"></span><span class="p">4</span></div><div class="toc-line"><span class="t">01　绪论：图像处理到底是什么</span><span class="d"></span><span class="p">5</span></div><div class="toc-line"><span class="t">02　数字图像基础</span><span class="d"></span><span class="p">6</span></div><div class="toc-line l2"><span class="t">　2.2 采样与量化・2.4 插值</span><span class="d"></span><span class="p">6</span></div><div class="toc-line l2"><span class="t">　2.7 几何变换・2.8 邻接性</span><span class="d"></span><span class="p">7</span></div><div class="toc-line"><span class="t">03　灰度变换与空间滤波</span><span class="d"></span><span class="p">9</span></div><div class="toc-line l2"><span class="t">　3.4 直方图均衡（重点计算）</span><span class="d"></span><span class="p">10</span></div><div class="toc-line l2"><span class="t">　3.6 相关与卷积</span><span class="d"></span><span class="p">11</span></div><div class="toc-line l2"><span class="t">　3.8 锐化与梯度算子</span><span class="d"></span><span class="p">12</span></div><div class="toc-line"><span class="t">04　频率域滤波</span><span class="d"></span><span class="p">14</span></div><div class="toc-line"><span class="t">05　图像复原</span><span class="d"></span><span class="p">17</span></div><div class="toc-line"><span class="t">06　彩色图像处理</span><span class="d"></span><span class="p">19</span></div><div class="toc-line"><span class="t">09　形态学图像处理</span><span class="d"></span><span class="p">22</span></div><div class="toc-line l2"><span class="t">　9.2/9.3 腐蚀与膨胀（手算）</span><span class="d"></span><span class="p">22</span></div><div class="toc-line l2"><span class="t">　9.6 常用形态学算法</span><span class="d"></span><span class="p">23</span></div><div class="toc-line"><span class="t">10　图像分割</span><span class="d"></span><span class="p">25</span></div><div class="toc-line l2"><span class="t">　10.3 Canny 边缘检测</span><span class="d"></span><span class="p">25</span></div><div class="toc-line l2"><span class="t">　10.4 Hough 变换</span><span class="d"></span><span class="p">26</span></div><div class="toc-line l2"><span class="t">　10.6 k-Means・10.7 SLIC・10.8 DBSCAN</span><span class="d"></span><span class="p">28</span></div><div class="toc-line"><span class="t">11　特征提取</span><span class="d"></span><span class="p">30</span></div><div class="toc-line l2"><span class="t">　11.3 Hu 不变矩</span><span class="d"></span><span class="p">30</span></div><div class="toc-line l2"><span class="t">　11.6 SIFT</span><span class="d"></span><span class="p">32</span></div><div class="toc-line"><span class="t">12　图像模式分类</span><span class="d"></span><span class="p">34</span></div><div class="toc-line"><span class="t">13　大题模板：从场景到方案</span><span class="d"></span><span class="p">36</span></div><div class="toc-line"><span class="t">14　考前速记与易错清单</span><span class="d"></span><span class="p">39</span></div><div style="margin-top:16pt;font-size:8.6pt;color:#6b7686;line-height:1.9;border-top:.5pt solid #dde2e8;padding-top:7pt"><b style="color:#1c3f6e">图例</b>　<span class="star">★★★</span> 重点　<span class="star">★★</span> 熟悉　<span class="star">★</span> 了解<br><b style="color:#1c3f6e">提示框</b>　<span class="tag">考点</span>命题规律　<span class="tag hot">重点</span>提纲点名　易错 = 判断题陷阱　例 = 完整演算<br><b style="color:#1c3f6e">配套</b>　同目录下《DIP-刷题手册》及《刷题网站》，含 333 道题与详细解析，可与本册对照使用。</div></div>
+<h1 class="plain">这本资料怎么用<span style="font-size:9pt;color:#8892a0;font-weight:400;letter-spacing:.1em;margin-left:10pt">HOW TO USE</span></h1>
+
+<p>这门课可分两条复习线：<b>概念题靠“记住并说清楚”，计算与方案题靠“算得对、写得全”</b>。本资料按复习提纲组织，每个知识点回答三个问题：<b>是什么、为什么、可能怎么考</b>。章节优先级为复习估计，并非教师公布的分值。</p>
+
+<h2>三步复习法</h2>
+<div class="flow" style="margin:0 0 2pt 0">
+  <span>① 通读一遍，建立全局地图（约 2 小时）</span><em>→</em>
+  <span>② 逐章攻重点，动手做例题（约 6 小时）</span>
+</div>
+<div class="flow" style="margin:0">
+  <em>→</em><span>③ 背速记表 + 刷题网站（约 4 小时）</span>
+</div>
+
+<table class="tight">
+<thead><tr><th style="width:34pt">标记</th><th style="width:70pt">含义</th><th>你该怎么对待</th></tr></thead><tbody>
+<tr><td class="c"><span class="star">★★★</span></td><td><b>核心重点</b></td><td>提纲点名或计算/大题常用。应能<b>默写关键公式 + 完整算一遍</b>；“重点”表示复习优先级，不是命题承诺。</td></tr>
+<tr><td class="c"><span class="star">★★</span></td><td><b>常考</b></td><td>选择题、判断题、填空题的高频点。要能<b>用自己的话说清区别</b>。</td></tr>
+<tr><td class="c"><span class="star">★</span></td><td><b>了解</b></td><td>知道名字和一句话作用即可，不要花时间背细节。</td></tr>
+</tbody></table>
+
+<h2>三个约定，先记住能省很多事</h2>
+<ul class="nodot">
+<li><b>灰度级 L = 2<sup>k</sup></b>，k 是比特数。8 比特 = 256 级，灰度范围 0～255。这门课里“灰度级”和“比特数”经常混着说，看到 L 就想 2<sup>k</sup>。</li>
+<li><b>坐标原点在左上角</b>，<i>x</i> 向右（列），<i>y</i> 向下（行）。所以“行”对应 <i>y</i>，“列”对应 <i>x</i>，别看反。</li>
+<li><b>本课程的图像运算默认是“对应元素运算”</b>（点乘），不是矩阵乘法。只有几何变换才用矩阵乘法。</li>
+</ul>
+
+<div class="tip"><span class="lab">命题规律</span>从课件与配套《习题解答》可归纳出<b>5 类重点计算</b>——直方图均衡、卷积/相关、腐蚀与膨胀、Hough（ρ-θ 换算）、贝叶斯/最小距离判定；<b>方案设计是重点题型</b>——“给一个实际场景，让你设计图像处理流程，并说明每一步的原理与假设”。本资料第 13 章专门给了答题模板；实际考点与分值以教师通知为准。</div>
+
+<h2>复习优先级地图：时间往哪里投</h2>
+<table>
+<thead><tr><th style="width:52pt">章节</th><th style="width:96pt">内容</th><th class="c" style="width:46pt">星级</th><th>主要出题形式与建议投入</th></tr></thead><tbody>
+<tr><td class="c"><b>第1章</b></td><td>绪论</td><td class="c"><span class="star">★</span></td><td>填空/选择：图像处理三层次、系统组成。基础题，建议优先拿下。</td></tr>
+<tr><td class="c"><b>第2章</b></td><td>数字图像基础</td><td class="c"><span class="star">★★★</span></td><td>计算：存储容量、图像中心、邻接判断、仿射矩阵；填空：采样/量化、分辨率。重点投入。</td></tr>
+<tr><td class="c"><b>第3章</b></td><td>灰度变换与空间滤波</td><td class="c"><span class="star">★★★</span></td><td><b>计算题</b>：直方图均衡（高频重点）、卷积 vs 相关；简答：中值/高斯/盒式对比。重点投入。</td></tr>
+<tr><td class="c"><b>第4章</b></td><td>频域滤波</td><td class="c"><span class="star">★★</span></td><td>填空：DFT 四参数、滤波六步；简答：三种低通对比 + 振铃。常规掌握。</td></tr>
+<tr><td class="c"><b>第5章</b></td><td>图像复原</td><td class="c"><span class="star">★★</span></td><td>选择/填空：6 种噪声模型；简答：哪个滤波器治哪种噪声。基础掌握。</td></tr>
+<tr><td class="c"><b>第6章</b></td><td>彩色图像处理</td><td class="c"><span class="star">★★</span></td><td>填空：三特性、色度坐标、模型用途；简答：伪彩色、彩色噪声。基础掌握。</td></tr>
+<tr><td class="c"><b>第9章</b></td><td>形态学</td><td class="c"><span class="star">★★★</span></td><td><b>计算题</b>：给结构元做腐蚀/膨胀/开闭；简答：连通分量提取、凸壳。重点投入。</td></tr>
+<tr><td class="c"><b>第10章</b></td><td>图像分割</td><td class="c"><span class="star">★★★</span></td><td><b>计算/大题</b>：Hough 换算、Otsu；简答：Canny 两步改进、SLIC、DBSCAN。重点投入。</td></tr>
+<tr><td class="c"><b>第11章</b></td><td>特征提取</td><td class="c"><span class="star">★★★</span></td><td>简答：Hu 不变矩、Harris、SIFT；大题中的关键一步。重点投入。</td></tr>
+<tr><td class="c"><b>第12章</b></td><td>模式分类</td><td class="c"><span class="star">★★</span></td><td>计算：模板互相关；简答/推导：贝叶斯决策器。常规掌握。</td></tr>
+</tbody></table>
+
+<h1 class="ch"><span class="num">00</span><span class="txt">一张图看懂整门课</span><span class="en">THE BIG PICTURE</span></h1>
+<p class="lead">先别急着背公式。这门课的十章其实是一条流水线：<b>拍下来 → 弄干净 → 切出来 → 提炼特征 → 下结论</b>。先把这条线记住，后面每一章你都知道自己在哪一格。</p>
+
+<div class="fig">
+<svg width="660" height="150" viewBox="0 0 660 150" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#8892a0"/></marker></defs>
+  <g font-family="Source Han Sans SC" font-size="10.5" text-anchor="middle">
+    <rect x="4" y="34" width="84" height="52" rx="3" fill="#eef2f8" stroke="#c8d4e3"/>
+    <text x="46" y="55" fill="#1c3f6e" font-weight="700">图像获取</text><text x="46" y="72" font-size="9" fill="#5d6b7d">Ch.2 采样量化</text>
+    <rect x="106" y="34" width="96" height="52" rx="3" fill="#eef2f8" stroke="#c8d4e3"/>
+    <text x="154" y="55" fill="#1c3f6e" font-weight="700">图像增强</text><text x="154" y="72" font-size="9" fill="#5d6b7d">Ch.3 空域 / Ch.4 频域</text>
+    <rect x="220" y="34" width="88" height="52" rx="3" fill="#eef2f8" stroke="#c8d4e3"/>
+    <text x="264" y="55" fill="#1c3f6e" font-weight="700">图像复原</text><text x="264" y="72" font-size="9" fill="#5d6b7d">Ch.5 去噪 / Ch.6 彩色</text>
+    <rect x="326" y="34" width="88" height="52" rx="3" fill="#e8eef7" stroke="#a9bdd6"/>
+    <text x="370" y="55" fill="#123a6b" font-weight="700">形态学处理</text><text x="370" y="72" font-size="9" fill="#5d6b7d">Ch.9 腐蚀膨胀</text>
+    <rect x="432" y="34" width="80" height="52" rx="3" fill="#f6e2d4" stroke="#dcae8a"/>
+    <text x="472" y="55" fill="#8a4118" font-weight="700">图像分割</text><text x="472" y="72" font-size="9" fill="#8a5a3a">Ch.10 核心</text>
+    <rect x="530" y="34" width="74" height="52" rx="3" fill="#e8eef7" stroke="#a9bdd6"/>
+    <text x="567" y="55" fill="#123a6b" font-weight="700">特征提取</text><text x="567" y="72" font-size="9" fill="#5d6b7d">Ch.11</text>
+    <rect x="618" y="34" width="38" height="52" rx="3" fill="#f6e2d4" stroke="#dcae8a"/>
+    <text x="637" y="55" fill="#8a4118" font-weight="700">分类</text><text x="637" y="72" font-size="8.5" fill="#8a5a3a">Ch.12</text>
+    <line x1="88" y1="60" x2="104" y2="60" stroke="#8892a0" stroke-width="1.2" marker-end="url(#ar)"/>
+    <line x1="202" y1="60" x2="218" y2="60" stroke="#8892a0" stroke-width="1.2" marker-end="url(#ar)"/>
+    <line x1="308" y1="60" x2="324" y2="60" stroke="#8892a0" stroke-width="1.2" marker-end="url(#ar)"/>
+    <line x1="414" y1="60" x2="430" y2="60" stroke="#8892a0" stroke-width="1.2" marker-end="url(#ar)"/>
+    <line x1="512" y1="60" x2="528" y2="60" stroke="#8892a0" stroke-width="1.2" marker-end="url(#ar)"/>
+    <line x1="604" y1="60" x2="616" y2="60" stroke="#8892a0" stroke-width="1.2" marker-end="url(#ar)"/>
+    <text x="330" y="112" font-size="9" fill="#6b7686">输出≈图像（低层）</text>
+    <text x="330" y="128" font-size="9" fill="#8a4118">输出≈属性/类别（高层）</text>
+    <line x1="200" y1="100" x2="470" y2="100" stroke="#c8d4e3" stroke-dasharray="3 2"/>
+  </g>
+</svg>
+<div class="figcap">图 0-1　图像处理的完整链路：这也是多数方案大题的骨架</div>
+</div>
+
+<h2>三条主线，把十章串起来</h2>
+<table>
+<thead><tr><th style="width:88pt">主线</th><th style="width:130pt">在做什么</th><th>对应章节与关键词</th></tr></thead><tbody>
+<tr><td><b>空间域处理</b></td><td>直接改像素值（或它周围一圈像素）</td><td>Ch.3 灰度变换、直方图、卷积/相关、平滑与锐化；Ch.5 去噪</td></tr>
+<tr><td><b>频率域处理</b></td><td>把图像拆成不同频率的波，改完再拼回去</td><td>Ch.4 DFT → 低通/高通/带阻/陷波；Ch.5 周期噪声</td></tr>
+<tr><td><b>形态学处理</b></td><td>用一个小“模板”去量形状：能塞进去吗（腐蚀）、碰到没有（膨胀）</td><td>Ch.9 腐蚀膨胀、开闭、连通分量、凸壳、细化</td></tr>
+</tbody></table>
+
+<h2>分割的三条路（第 10 章为什么最重要）</h2>
+<div class="cols2">
+<p><b>① 找边界（不连续性）</b><br>灰度突变的地方就是边。梯度算子 → Canny → Hough 把边连成直线/圆。</p>
+<p><b>② 找区域（相似性）</b><br>灰度差不多的地方算一块。阈值处理（Otsu、自适应）是最简单的版本。</p>
+<p><b>③ 聚类/超像素</b><br>不预设形状，让数据自己抱团：k-means、SLIC 超像素、DBSCAN。</p>
+<p><b>分割之后干什么？</b><br>每个区域算特征（Hu 矩、长短轴），再送进分类器（最小距离、贝叶斯）——这就是第 11、12 章。</p>
+</div>
+
+<div class="k"><span class="lab">一句话</span><b>整门课 = 一条流水线 + 三种手艺（空域、频域、形态学）+ 两个出口（分割出区域、分类出标签）。</b>考试的大题，本质就是让你把这条流水线按题目场景重新排一遍。</div>
+
+<h1 class="ch"><span class="num">01</span><span class="txt">绪论：图像处理到底是什么</span><span class="en">INTRODUCTION</span></h1>
+<p class="lead">这一章内容少，优先掌握“三层关系”和系统组成，花 10 分钟即可建立框架。</p>
+
+<h2>1.1 图像与数字图像<span class="star">★★</span></h2>
+<div class="k"><span class="lab">定义</span><b>图像</b>：用各种观测系统（传感器），以不同的形式和手段观测客观世界（宏观、微观、介观）而获得的、<b>可以直接作用于人眼并产生视知觉</b>的实体。</div>
+<p>数学上，图像表示成一个二维函数 <i>f</i>(<i>x</i>, <i>y</i>)：<i>x</i>、<i>y</i> 是空间坐标，<i>f</i> 在该点的数值是“性质”（灰度图像里是灰度，彩色图像里是颜色通道值）。<b>数字图像</b>就是把这个连续函数离散化——坐标离散（采样）、数值离散（量化）。一幅数字图像由许多<b>像素</b>（pixel）组成。</p>
+
+<h2>1.2 图像处理、图像分析、图像理解<span class="star">★★★</span></h2>
+<p><b>狭义的数字图像处理</b>：输入和输出<b>都是图像</b>的处理（图像 → 图像）。比如去噪、锐化、增强。<br>
+<b>广义的数字图像处理</b>：包含图像处理、图像分析、图像理解三个层次。教材采用的正是这个框架。</p>
+
+<table>
+<thead><tr><th style="width:74pt">层次</th><th style="width:66pt">输入→输出</th><th style="width:52pt">操作对象</th><th style="width:54pt">数据量</th><th style="width:54pt">抽象程度</th><th>例子</th></tr></thead><tbody>
+<tr><td><b>图像处理</b><br><span style="font-size:8pt;color:#6b7686">低层</span></td><td>图像 → 图像</td><td>像素</td><td>大</td><td>低</td><td>去噪、增强、锐化、几何校正</td></tr>
+<tr><td><b>图像分析</b><br><span style="font-size:8pt;color:#6b7686">中层</span></td><td>图像 → 数据</td><td>目标（区域）</td><td>中</td><td>中</td><td>分割、特征提取、测量、计数</td></tr>
+<tr><td><b>图像理解</b><br><span style="font-size:8pt;color:#6b7686">高层</span></td><td>图像 → 解释</td><td>符号</td><td>小</td><td>高</td><td>“这是一只黑猫”、场景语义、决策</td></tr>
+</tbody></table>
+
+<div class="tip"><span class="lab">记忆口诀</span><b>越往上越“抽象”，越往下越“像素”。</b>数据量从大到小，抽象程度/语义从低到高，操作对象依次是 像素 → 目标 → 符号。</div>
+
+<h2>1.3 数字图像处理系统的组成<span class="star">★★</span></h2>
+<p>一个通用图像处理系统包含 8 个部件，常见填空：</p>
+<div class="flow">
+<span>图像传感器</span><em>→</em><span>专用图像处理硬件</span><em>→</em><span>计算机</span><em>→</em><span>图像处理软件</span><em>+</em><span>大容量存储</span><em>+</em><span>显示器 / 硬拷贝</span><em>+</em><span>网络 / 云</span><em>+</em><span>问题域</span>
+</div>
+<p>其中<b>“问题域”贯穿全局</b>：指领域知识（医学/遥感/工业），它决定用什么算法、参数怎么设。</p>
+
+<h2>1.4 发展与应用（了解）<span class="star">★</span></h2>
+<ul class="tight">
+<li><b>起源</b>：最早用于报纸业（Bartlane 电缆图片传输系统）；20 世纪 60 年代计算机出现后，Ranger 7 拍摄月球图像；60 年代末～70 年代进入医学（CT）、遥感、天文。</li>
+<li><b>成像波段</b>：伽马（核医学）、X 射线（CT/安检）、紫外、可见光、红外（测温）、微波（SAR）、射频（MRI）。</li>
+</ul>
+
+<div class="summary"><h4>本章必须能写出来的三句话</h4>
+① 数字图像处理（狭义）= 输入和输出都是图像的处理；广义还包括图像分析与图像理解。<br>
+② 三层关系：像素 → 目标 → 符号；数据量由大到小，抽象程度由低到高。<br>
+③ 系统组成：图像传感器、专用硬件、计算机、软件、大容量存储、显示器/硬拷贝、网络/云、问题域。</div>
+
+<h1 class="ch"><span class="num">02</span><span class="txt">数字图像基础</span><span class="en">DIGITAL IMAGE FUNDAMENTALS</span></h1>
+<p class="lead">这一章是<b>全课程的基础计算来源</b>：存储容量、图像中心、邻接判断、仿射矩阵都值得各练一遍。概念部分则是填空题的富矿。</p>
+
+<h2>2.1 图像感知与获取<span class="star">★</span></h2>
+<p>图像来源：<b>“照射”源</b>（电磁波、超声波）+ <b>“场景”元素</b>对光能的<b>反射或吸收</b> → 光转换器 → 连续电压波形 → 数字化。</p>
+<p>传感器有三种形态：<b>单个</b>（点扫描，如光电管）、<b>条带</b>（线阵，如扫描仪、推扫式卫星）、<b>阵列</b>（面阵，如 CCD/CMOS 相机）。</p>
+<div class="f">f(x, y) = i(x, y) · r(x, y)　　<span style="font-size:9pt">其中 0 &lt; i(x,y) &lt; ∞，0 ≤ r(x,y) ≤ 1</span><span class="n">(2.4)</span></div>
+<p><i>i</i> 是<b>入射照射分量</b>（取决于光源），<i>r</i> 是<b>反射系数分量</b>（取决于物体性质）。反射系数的典型值要记：黑天鹅绒 0.01、不锈钢 0.65、白墙面 0.80、白雪 0.93。<b>反射率模型使 r 有界；数字图像再通过量化形成有限灰度范围。</b></p>
+
+<h2>2.2 采样与量化：数字化的两把刀<span class="star">★★★</span></h2>
+<table>
+<thead><tr><th style="width:66pt">过程</th><th style="width:100pt">离散化的是什么</th><th>通俗理解</th><th style="width:110pt">决定什么</th></tr></thead><tbody>
+<tr><td><b>采样</b><br>Sampling</td><td><b>空间坐标</b></td><td>在图像上打格子，只保留格子点上的值。格子越密，采样点越多。</td><td>决定<b>空间分辨率</b>（M×N 的大小）</td></tr>
+<tr><td><b>量化</b><br>Quantization</td><td><b>灰度值</b></td><td>把连续的亮度值“四舍五入”到有限的档位。档位越多越细腻。</td><td>决定<b>灰度分辨率</b>（比特数 k，级数 L=2<sup>k</sup>）</td></tr>
+</tbody></table>
+<p>一幅 M 行 N 列、灰度级为 L=2<sup>k</sup> 的数字图像，可以写成矩阵，也可以写成传统形式 <b>A</b>。存储所需比特数为：</p>
+<div class="f">b = M × N × k　（比特）<span class="n">(2.12)</span></div>
+<div class="ex"><span class="lab">例</span><span class="q">一幅 1024×1024 的 8 比特灰度图像，占多少存储空间？若是 24 比特彩色图像呢？</span><br>
+灰度：b = 1024×1024×8 bit = 8 388 608 bit = 1 048 576 B = <b>1 MB</b>。<br>
+彩色：每个像素 24 bit（RGB 各 8 bit），b = 1024×1024×24 bit = <b>3 MB</b>。<br>
+<span style="color:#6b7686">速算技巧：1024×1024×8 bit 恰好 = 1 MB，记住这个基准，其他尺寸按比例缩放即可。</span></div>
+
+<h3>图像的中心</h3>
+<p>原点取 (0,0)、范围到 (M−1, N−1) 的 M×N 图像，其中心是把 M、N 分别除以 2 后<b>四舍五入</b>取整：</p>
+<div class="ex"><span class="lab">例</span>1280×1024 的图像，中心在 (640, 512)；1281×1023 的图像，中心在 (641, 512)。<br>
+<span style="color:#6b7686">注意 1281/2 = 640.5 → 641，1023/2 = 511.5 → 512。这是作业 2-9 的考点。</span></div>
+
+<h2>2.3 空间分辨率与灰度分辨率<span class="star">★★★</span></h2>
+<table>
+<thead><tr><th style="width:80pt">概念</th><th style="width:150pt">定义</th><th>降低后会怎样（必背现象）</th></tr></thead><tbody>
+<tr><td><b>空间分辨率</b></td><td>图像空间中<b>可分辨的最小细节</b>，用单位长度上的像素数或线对数表示，单位 dpi（每英寸点数）</td><td>出现<b>棋盘（马赛克）效应</b>，细节丢失、边缘呈方块</td></tr>
+<tr><td><b>灰度分辨率</b></td><td>灰度级中<b>可分辨的最小变化</b>，用比特数表示，通常为 2 的整数次幂（最常用 8 bit / 256 级）</td><td>出现<b>伪轮廓</b>（山脊状结构），平滑渐变变成一层层色阶</td></tr>
+</tbody></table>
+
+<div class="trap"><span class="lab">易错</span><b>“空间分辨率必须针对空间单位来规定才有意义。”</b>两块都是 1920×1080 的屏，户外大屏尺寸大得多，所以它的 dpi（每英寸像素数）反而更低——像素个数相同 ≠ 分辨率相同。这是选择题的经典陷阱。<br>
+另一条：<b>灰度级必须是 2 的整数次幂</b>（8、10、12、16 bit），说“300 级灰度”是错的。</div>
+
+<p><b>等偏爱曲线</b>：主观质量相同的点在 N–k 平面上的连线。两条结论：① 质量一般随 <b>N/k</b> 增大而提高；② <b>细节丰富的图像可用较少灰度级</b>表示（人眼对细节区的量化误差不敏感）。</p>
+
+<h2>2.4 图像插值<span class="star">★★</span></h2>
+<p><b>作用</b>：用已知数据估计未知位置的数值。放大、缩小、旋转之后，新坐标往往落在原图的“格子之间”，必须靠插值补出灰度值。</p>
+<table class="tight">
+<thead><tr><th style="width:86pt">方法</th><th style="width:130pt">怎么算</th><th>效果与适用</th></tr></thead><tbody>
+<tr><td><b>最近邻</b></td><td>直接取离它最近的那个原像素值</td><td>最快；放大后有<b>锯齿/块状</b></td></tr>
+<tr><td><b>双线性</b></td><td>用周围 4 个像素做两次线性加权</td><td>平滑但<b>略模糊</b>；最常用</td></tr>
+<tr><td><b>双三次</b></td><td>用周围 16 个像素做三次插值</td><td>边缘最平滑、细节最好，计算量最大</td></tr>
+</tbody></table>
+
+<h2>2.5 算术运算：加减乘除各自的用途<span class="star">★★★</span></h2>
+<p><b>使用条件</b>：参与运算的图像<b>大小必须相同</b>；减法/除法还要求两幅图<b>已配准</b>（同一场景、同一视角）。</p>
+<table>
+<thead><tr><th style="width:40pt">运算</th><th style="width:150pt">典型用途</th><th>为什么有效</th></tr></thead><tbody>
+<tr><td class="c"><b>加</b></td><td><b>多幅平均降噪</b>、图像融合</td><td>噪声随机且不相关，平均后噪声被“抵消”，信号被保留</td></tr>
+<tr><td class="c"><b>减</b></td><td><b>差异增强</b>：血管造影、变化检测、运动检测</td><td>相同部分相减为 0，只留下“变化/差异”</td></tr>
+<tr><td class="c"><b>乘</b></td><td><b>ROI 提取</b>（掩膜 mask，ROI 内为 1、其余为 0）</td><td>乘 1 保留、乘 0 抹掉</td></tr>
+<tr><td class="c"><b>除</b></td><td>光照不均校正、归一化</td><td>把乘性的光照影响“除掉”</td></tr>
+</tbody></table>
+<p><b>图像平均降噪的定量结论（高频）</b>：设观测 <i>g</i> = <i>f</i> + <i>η</i>（η 零均值、各次同方差且不相关），对同一场景重复拍 K 次取平均：</p>
+<div class="f">ḡ(x,y) = f(x,y) + (1/K)·Σ η<sub>i</sub>(x,y)　⟹　E[ḡ] = f，　σ<sub>ḡ</sub> = σ<sub>η</sub> / √K<span class="n">(2.26–2.29)</span></div>
+<p>也就是说：<b>平均 K 幅，噪声标准差降为 1/√K</b>。要降一半噪声需要 4 幅，降为 1/10 需要 100 幅。此法要求<b>成像设备视场固定、场景静止</b>（如天文摄影），否则会糊。</p>
+
+<h2>2.6 集合运算与逻辑运算<span class="star">★★</span></h2>
+<p>把二值图看成“前景像素的集合”，就有并（∪）、交（∩）、补、差（−）四种运算，其中 <b>A − B = A ∩ B<sup>c</sup></b>；对应逻辑运算<b>或/与/非</b>。用途：掩膜、形态学、模板比对（与“金标准”的补集做 AND，差异处为 1）。</p>
+
+<h2>2.7 几何变换（仿射变换）<span class="star">★★★</span></h2>
+<div class="f">[x′; y′; 1] = A · [x; y; 1] = [[a<sub>11</sub>, a<sub>12</sub>, a<sub>13</sub>], [a<sub>21</sub>, a<sub>22</sub>, a<sub>23</sub>], [0, 0, 1]] · [x; y; 1]<span class="n">(2.45)</span></div>
+<p>给矩阵 A 赋不同的值，就能实现五种基本变换（都是 3×3 齐次坐标形式）：</p>
+<table class="tight">
+<thead><tr><th style="width:70pt">变换</th><th style="width:200pt">矩阵</th><th>说明</th></tr></thead><tbody>
+<tr><td><b>平移</b></td><td>[[1,0,t<sub>x</sub>],[0,1,t<sub>y</sub>],[0,0,1]]</td><td>右下角一列放位移量</td></tr>
+<tr><td><b>缩放</b></td><td>[[c<sub>x</sub>,0,0],[0,c<sub>y</sub>,0],[0,0,1]]</td><td>对角线放缩放因子</td></tr>
+<tr><td><b>旋转</b></td><td>[[cosθ,−sinθ,0],[sinθ,cosθ,0],[0,0,1]]</td><td>绕原点按矩阵正方向转 θ</td></tr>
+<tr><td><b>镜像</b></td><td>如 [[−1,0,0],[0,1,0],[0,0,1]]</td><td>沿轴翻转</td></tr>
+<tr><td><b>剪切（错切）</b></td><td>[[1,s<sub>ν</sub>,0],[0,1,0],[0,0,1]]</td><td>让图形“歪”掉</td></tr>
+</tbody></table>
+<div class="trap"><span class="lab">易错</span><b>矩阵乘法不满足交换律，顺序至关重要！</b>“先缩放后平移”与“先平移后缩放”结果完全不同（前者平移量不会被缩放，后者会被缩放）。复合变换写在最左边的<b>最后执行</b>。<br>
+另外：直接按公式算出来的坐标是小数，必须再做一次<b>插值</b>（双线性/双三次）才能得到最终图像——这就是作业 2-36 的完整答案结构。</div>
+
+<h2>2.8 像素间的基本关系<span class="star">★★★</span></h2>
+<div class="fig">
+<svg width="520" height="176" viewBox="0 0 520 176" xmlns="http://www.w3.org/2000/svg" font-family="Source Han Sans SC">
+  <g font-size="9.5" text-anchor="middle">
+    <!-- grid -->
+    <g>
+      <rect x="26" y="24" width="44" height="44" fill="#dce7f4" stroke="#fff"/><text x="48" y="51" fill="#1c3f6e">(x-1,y-1)</text>
+      <rect x="70" y="24" width="44" height="44" fill="#c3d7ee" stroke="#fff"/><text x="92" y="51" fill="#123a6b" font-weight="700">(x,y-1)</text>
+      <rect x="114" y="24" width="44" height="44" fill="#dce7f4" stroke="#fff"/><text x="136" y="51" fill="#1c3f6e">(x+1,y-1)</text>
+      <rect x="26" y="68" width="44" height="44" fill="#c3d7ee" stroke="#fff"/><text x="48" y="95" fill="#123a6b" font-weight="700">(x-1,y)</text>
+      <rect x="70" y="68" width="44" height="44" fill="#1c3f6e" stroke="#fff"/><text x="92" y="95" fill="#fff" font-weight="700">p (x,y)</text>
+      <rect x="114" y="68" width="44" height="44" fill="#c3d7ee" stroke="#fff"/><text x="136" y="95" fill="#123a6b" font-weight="700">(x+1,y)</text>
+      <rect x="26" y="112" width="44" height="44" fill="#dce7f4" stroke="#fff"/><text x="48" y="139" fill="#1c3f6e">(x-1,y+1)</text>
+      <rect x="70" y="112" width="44" height="44" fill="#c3d7ee" stroke="#fff"/><text x="92" y="139" fill="#123a6b" font-weight="700">(x,y+1)</text>
+      <rect x="114" y="112" width="44" height="44" fill="#dce7f4" stroke="#fff"/><text x="136" y="139" fill="#1c3f6e">(x+1,y+1)</text>
+    </g>
+    <text x="92" y="16" font-size="9" fill="#5d6b7d">3×3 邻域</text>
+    <!-- legend -->
+    <g text-anchor="start" font-size="9">
+      <rect x="200" y="30" width="13" height="13" fill="#c3d7ee"/><text x="219" y="41" fill="#333">4 邻域 N₄(p)：上下左右，共 4 个</text>
+      <rect x="200" y="54" width="13" height="13" fill="#dce7f4"/><text x="219" y="65" fill="#333">对角邻域 N_D(p)：四个角，共 4 个</text>
+      <rect x="200" y="78" width="13" height="13" fill="#1c3f6e"/><text x="219" y="89" fill="#333">8 邻域 N₈(p) = N₄(p) ∪ N_D(p)</text>
+      <text x="200" y="115" fill="#8a4118" font-weight="700">m 邻接的作用：消除 8 邻接的二义性</text>
+      <text x="200" y="131" fill="#4c5765">判定口诀：是 4 邻接 ⇒ 一定是 m 邻接；</text>
+      <text x="200" y="147" fill="#4c5765">是对角邻接 ⇒ 再看两者共同的 4 邻域里</text>
+      <text x="200" y="163" fill="#4c5765">有没有 V 值像素，有则不是 m 邻接。</text>
+    </g>
+  </g>
+</svg>
+<div class="figcap">图 2-1　4/8/m 邻域关系（作业 2-14 就是考这个）</div>
+</div>
+
+<table>
+<thead><tr><th style="width:78pt">概念</th><th>准确定义</th></tr></thead><tbody>
+<tr><td><b>N<sub>4</sub>(p)</b></td><td>坐标 (x+1,y), (x−1,y), (x,y+1), (x,y−1) 这 4 个像素</td></tr>
+<tr><td><b>N<sub>D</sub>(p)</b></td><td>4 个对角像素 (x±1, y±1)</td></tr>
+<tr><td><b>N<sub>8</sub>(p)</b></td><td>N<sub>4</sub>(p) ∪ N<sub>D</sub>(p)，共 8 个</td></tr>
+<tr><td><b>邻接</b></td><td>设 V 是灰度值集合。p、q 的值都属于 V 时：q ∈ N<sub>4</sub>(p) ⇒ <b>4 邻接</b>；q ∈ N<sub>8</sub>(p) ⇒ <b>8 邻接</b>；<b>m 邻接</b>：q ∈ N<sub>4</sub>(p)，或（q ∈ N<sub>D</sub>(p) 且 N<sub>4</sub>(p) ∩ N<sub>4</sub>(q) 中没有 V 值的像素）</td></tr>
+<tr><td><b>连通</b></td><td>从 p 到 q 存在一条通路，路径上相邻像素都满足邻接关系；通路上像素个数减 1 即<b>通路长度</b>。<b>邻接是连通的特例</b></td></tr>
+<tr><td><b>连通分量</b></td><td>集合 A 中与某像素连通的所有像素构成的集合；若 A 只有一个连通分量，则称<b>连通集（区域）</b></td></tr>
+<tr><td><b>边界</b></td><td>区域中<b>至少有一个背景邻点</b>的像素集合。注意：边界是区域自己的像素，不是背景</td></tr>
+</tbody></table>
+
+<h3>距离度量（三个都要会算）</h3>
+<table class="tight">
+<thead><tr><th style="width:80pt">名称</th><th style="width:180pt">公式（p=(x,y), q=(u,v)）</th><th>等距点的形状</th></tr></thead><tbody>
+<tr><td><b>欧氏距离</b> D<sub>e</sub></td><td>√[(x−u)² + (y−v)²]</td><td>圆</td></tr>
+<tr><td><b>城区距离</b> D<sub>4</sub></td><td>|x−u| + |y−v|</td><td>菱形（旋转 45° 的正方形）</td></tr>
+<tr><td><b>棋盘距离</b> D<sub>8</sub></td><td>max(|x−u|, |y−v|)</td><td>正方形</td></tr>
+</tbody></table>
+<p>三者都满足距离度量的三个条件：非负性（D=0 当且仅当 p=q）、对称性、三角不等式。</p>
+
+<div class="summary"><h4>本章计算题清单（务必各练一遍）</h4>
+① 存储容量 b = M·N·k；② 图像中心 M/2、N/2 四舍五入；③ 三距离计算与邻接类型判断；④ 仿射矩阵连乘并说明“顺序不能换”；⑤ 平均降噪 σ 降为 σ/√K。</div>
+
+<h1 class="ch"><span class="num">03</span><span class="txt">灰度变换与空间滤波</span><span class="en">INTENSITY TRANSFORMS &amp; SPATIAL FILTERING</span></h1>
+<p class="lead">本章是核心章节：<b>直方图均衡是重点计算</b>，卷积/相关与平滑、锐化也都是重点。先吃透例题，再练对应题库。</p>
+
+<h2>3.1 空间域的两类处理<span class="star">★★</span></h2>
+<div class="f">g(x, y) = T[f(x, y)]<span class="n">(3.1)</span></div>
+<p>T 是作用在点 (x,y) <b>邻域</b>上的算子。邻域大小为 1×1 时，<i>s</i> = T(<i>r</i>)，叫<b>灰度变换</b>（只跟这一个像素的值有关）；邻域大于 1×1 时，叫<b>空间滤波</b>（跟周围一圈像素有关）。这是全章的“总开关”。</p>
+
+<h2>3.2 四种基本灰度变换<span class="star">★★★</span></h2>
+<table>
+<thead><tr><th style="width:74pt">变换</th><th style="width:110pt">公式</th><th style="width:150pt">曲线形状 / 效果</th><th>典型应用</th></tr></thead><tbody>
+<tr><td><b>图像反转</b></td><td><i>s</i> = L − 1 − <i>r</i></td><td>过 (0,L−1)、(L−1,0) 的直线，斜率为 −1</td><td>增强暗背景中的<b>白色/灰色细节</b>（如乳腺 X 光片）；也用于求补</td></tr>
+<tr><td><b>对数变换</b></td><td><i>s</i> = c·log(1 + <i>r</i>)</td><td>先陡后平：<b>扩展低灰度（暗部）、压缩高灰度（亮部）</b></td><td>动态范围极大时（傅里叶频谱显示）；低灰度细节增强</td></tr>
+<tr><td><b>幂律（伽马）</b></td><td><i>s</i> = c·<i>r</i><sup>γ</sup></td><td>γ&lt;1 曲线在上方 → <b>整体提亮</b>；γ&gt;1 → <b>整体压暗</b>；γ=1 恒等</td><td>显示器/相机 gamma 校正；MRI、航拍图整体明暗调整</td></tr>
+<tr><td><b>分段线性</b></td><td>分段定义</td><td>可任意设计：对比度拉伸、灰度级切分、比特面切分</td><td>对比度拉伸（低对比度图 → 拉开）、灰度切分（突出某灰度段）</td></tr>
+</tbody></table>
+
+<div class="k"><span class="lab">关键区别</span><b>对数变换</b>只“抬暗压亮”，改变的是<b>局部的相对对比度</b>；<b>伽马变换</b>是整体提亮或压暗，改变的是<b>整体亮度与灰度分布</b>，且可以通过 γ 连续调节强弱。考试若问“两者区别”，就答这两句。</div>
+
+<h3>分段线性之比特面切分（Bit-Plane Slicing）</h3>
+<p>8 比特图像每个像素有 8 个二进制位，把<b>同一位</b>的所有像素抽出来，就得到 8 个“比特面”。例如灰度 106 = 01101010₂，则第 7、6、4、2 位面上该点为 1（显示时赋 255），其余位面为 0。<b>高位面（第 8、7 位）承载大部分视觉信息</b>，只用高 2 位重构就能大致看出原图；低位面基本是噪声。</p>
+
+<h2>3.3 直方图：图像灰度的“人口普查”<span class="star">★★★</span></h2>
+<p><b>定义</b>：灰度级的函数，表示图像中<b>每一级灰度与该灰度出现的频率</b>之间的统计关系。设灰度级 r<sub>k</sub>，k = 0,1,…,L−1：</p>
+<div class="f">非归一化：h(r<sub>k</sub>) = n<sub>k</sub>　　（n<sub>k</sub> = 灰度为 r<sub>k</sub> 的像素个数）<span class="n">(3.6)</span></div>
+<div class="f">归一化：p(r<sub>k</sub>) = n<sub>k</sub> / (M·N)，且 Σ p(r<sub>k</sub>) = 1<span class="n">(3.7)</span></div>
+<p>归一化直方图可以理解成<b>灰度取值的概率分布</b>——这一点是后面所有推导的基础。</p>
+<table class="tight">
+<thead><tr><th style="width:120pt">直方图形态</th><th>图像状况</th><th style="width:150pt">说明</th></tr></thead><tbody>
+<tr><td>集中在低灰度</td><td>整体偏暗</td><td>像素挤在左侧</td></tr>
+<tr><td>集中在高灰度</td><td>整体偏亮</td><td>像素挤在右侧</td></tr>
+<tr><td>集中在中间窄区间</td><td><b>低对比度</b></td><td>灰度跨度小，看起来“灰蒙蒙”</td></tr>
+<tr><td>均匀铺满整个范围</td><td><b>高对比度</b></td><td>理想状态，细节最丰富</td></tr>
+</tbody></table>
+<div class="trap"><span class="lab">易错</span><b>一幅图像有唯一的直方图，但一个直方图可以对应多幅不同的图像</b>（因为直方图丢掉了位置信息）。这是判断题的常客。<br>另外：直方图处理<b>只改变灰度值，不改变像素位置</b>。</div>
+
+<h2>3.4 直方图均衡化（重点计算题）<span class="star">★★★</span></h2>
+<h3>原理：一句话 + 一个直觉</h3>
+<p>直方图均衡就是找一个变换 <i>s</i> = T(<i>r</i>)，把原来“挤在一起”的灰度<b>拉开摊平</b>，使输出图像的直方图近似均匀分布，从而<b>提高对比度</b>。</p>
+<div class="k"><span class="lab">直觉</span>煎饼果子下面的面糊堆在中间——用刮板把它摊平，同样的面糊铺满整个锅。面糊总量（像素总数）不变，只是“摊开了”。<b>权重高的灰度级被分割、拉伸、扩展；权重低的被合并、压缩。</b></div>
+<p>数学上要求 T 在 0 ≤ r ≤ L−1 上<b>严格单调递增</b>（保证不出现灰度反转，且逆变换唯一）。由概率守恒：</p>
+<div class="f">p<sub>s</sub>(s) = p<sub>r</sub>(r)·|dr/ds|，要求 p<sub>s</sub>(s) = 1/(L−1)<span class="n">(3.10 / 3.13)</span></div>
+<p>积分并取 <i>s</i> = T(<i>r</i>)，得到最重要的那个式子：</p>
+<div class="f"><b>s = T(r) = (L − 1) · ∫<sub>0</sub><sup>r</sup> p<sub>r</sub>(w) dw</b>　（连续形式）<span class="n">(3.11)</span></div>
+<div class="f"><b>s<sub>k</sub> = (L − 1) · Σ<sub>j=0</sub><sup>k</sup> p<sub>r</sub>(r<sub>j</sub>)</b>　（离散形式，就是累积求和）<span class="n">(3.15)</span></div>
+<p>说白了：<b>把归一化直方图从 0 开始逐级累加（CDF），再乘以 L−1，然后按题目约定取整</b>。就这么简单。</p>
+
+<h3>完整算例（教材例 3.5，务必自己算一遍）</h3>
+<div class="ex"><span class="lab">例</span><span class="q">64×64 图像（共 4096 像素），灰度级 0～7（L = 8），各级像素数如下表。求均衡化后的灰度映射与直方图。</span></div>
+<table class="tight">
+<thead><tr><th class="c">r<sub>k</sub></th><th class="c">0</th><th class="c">1</th><th class="c">2</th><th class="c">3</th><th class="c">4</th><th class="c">5</th><th class="c">6</th><th class="c">7</th></tr></thead><tbody>
+<tr><td class="c"><b>n<sub>k</sub></b></td><td class="c">790</td><td class="c">1023</td><td class="c">850</td><td class="c">656</td><td class="c">329</td><td class="c">245</td><td class="c">122</td><td class="c">81</td></tr>
+<tr><td class="c"><b>p(r<sub>k</sub>)=n<sub>k</sub>/4096</b></td><td class="c">0.19</td><td class="c">0.25</td><td class="c">0.21</td><td class="c">0.16</td><td class="c">0.08</td><td class="c">0.06</td><td class="c">0.03</td><td class="c">0.02</td></tr>
+<tr><td class="c"><b>累积 Σp</b></td><td class="c">0.19</td><td class="c">0.44</td><td class="c">0.65</td><td class="c">0.81</td><td class="c">0.89</td><td class="c">0.95</td><td class="c">0.98</td><td class="c">1.00</td></tr>
+<tr><td class="c"><b>s<sub>k</sub>=7×Σp</b></td><td class="c">1.33</td><td class="c">3.08</td><td class="c">4.55</td><td class="c">5.67</td><td class="c">6.23</td><td class="c">6.65</td><td class="c">6.86</td><td class="c">7.00</td></tr>
+<tr><td class="c"><b>四舍五入</b></td><td class="c"><b>1</b></td><td class="c"><b>3</b></td><td class="c"><b>5</b></td><td class="c"><b>6</b></td><td class="c"><b>6</b></td><td class="c"><b>7</b></td><td class="c"><b>7</b></td><td class="c"><b>7</b></td></tr>
+</tbody></table>
+<p><b>映射结果</b>：0→1、1→3、2→5、3→6、4→6、5→7、6→7、7→7。<b>新的直方图</b>（把被映射到同一级的像素数相加）：</p>
+<div class="f">s=1: 790　　s=3: 1023　　s=5: 850　　s=6: 656+329=985　　s=7: 245+122+81=448</div>
+<p>可以看到：原来主要集中在 0～3 的灰度被重映射到 1、3、5、6，并延伸到 7，<b>主要灰度间距增大、分布更分散</b>，对比度通常提高。注意灰度 3 与 4 映射到同一级，5、6、7 也映射到同一级——离散均衡可能合并灰度级，而不是必然增加灰度级。</p>
+
+<div class="tip"><span class="lab">答题模板</span>① 算归一化直方图 p(r<sub>k</sub>)；② 逐级累加得 CDF；③ 乘 (L−1) 并四舍五入得 s<sub>k</sub>；④ 写出 r→s 映射表；⑤ 合并同值统计新直方图；⑥ 一句话结论（“灰度被拉开、对比度提高”）。<b>六步写完整，按点拿分。</b></div>
+
+<h2>3.5 直方图匹配（规定化）<span class="star">★★</span></h2>
+<p>均衡化是“自动摊平”，但<u>结果不可控</u>；匹配是“<b>按指定的形状摊</b>”——先让原图均衡化，再让它去匹配目标直方图的均衡化结果，最后反变换回来。</p>
+<div class="f">z = G<sup>−1</sup>(s) = G<sup>−1</sup>[T(r)]<span class="n">(3.19)</span></div>
+<div class="flow" style="margin:0 0 2pt 0"><span>① 对输入图均衡化 → s<sub>k</sub></span><em>→</em><span>② 对规定直方图算 G(z<sub>q</sub>) 并存表</span><em>→</em><span>③ 对每个 s<sub>k</sub> 找最接近的 G(z<sub>q</sub>)</span></div>
+<div class="flow" style="margin:0"><em>→</em><span>④ 建立 r→z 直接映射</span></div>
+<table class="tight">
+<thead><tr><th style="width:90pt">对比项</th><th>直方图均衡</th><th>直方图匹配</th></tr></thead><tbody>
+<tr><td>增强方式</td><td>自动增强，但<b>效果不易控制</b></td><td><b>有选择地增强</b>，需给定目标直方图</td></tr>
+<tr><td>结果</td><td>总得到“全图均衡”的结果</td><td>可增强特定灰度范围的结果</td></tr>
+</tbody></table>
+<p><b>局部直方图处理</b>：只在每个像素的小邻域（如 3×3）内做均衡，能把全局均衡“看不见”的局部细节挖出来，代价是计算量大、可能放大噪声。</p>
+
+<h2>3.6 相关与卷积：空域滤波的两块基石<span class="star">★★★</span></h2>
+<p>线性空间滤波 = 核（kernel / 模板）系数与核覆盖区域像素的<b>乘积之和</b>：</p>
+<div class="f">相关：w ☆ f (x,y) = Σ<sub>s=−a</sub><sup>a</sup> Σ<sub>t=−b</sub><sup>b</sup> w(s,t) · f(x+s, y+t)<span class="n">(3.34)</span></div>
+<div class="f">卷积：w ★ f (x,y) = Σ<sub>s=−a</sub><sup>a</sup> Σ<sub>t=−b</sub><sup>b</sup> w(s,t) · f(x−s, y−t)<span class="n">(3.35)</span></div>
+<div class="k"><span class="lab">唯一区别</span><b>卷积要把核先旋转 180°</b>（上下翻、左右翻），相关不用。所以：<b>卷积 = 把核翻转后再做相关</b>。<br>若核关于中心<b>对称</b>（如盒式核、高斯核、拉普拉斯核），翻转后不变，<b>两者结果相同</b>——这是判断题最爱考的一句。</div>
+
+<div class="ex"><span class="lab">例</span><span class="q">一维信号 f = [2, 4, 6, 8, 10]，核 w = [1, 0, −1]。求中心点（对应 f 的第 3 个值 6）处的相关值与卷积值。</span><br>
+<b>相关</b>：g = 1×f(2) + 0×f(3) + (−1)×f(4) = 1×4 + 0 + (−1)×8 = <b>−4</b>。<br>
+<b>卷积</b>：先把 w 翻转为 [−1, 0, 1]，再算 g = (−1)×4 + 0×6 + 1×8 = <b>+4</b>。<br>
+结论：<b>核不对称时，相关和卷积结果不同（这里正好差一个负号）</b>；卷积的“翻转”就是差别的全部来源。</div>
+
+<div class="ex"><span class="lab">例</span><span class="q">用 Sobel 竖直方向核 w = [[−1,−2,−1],[0,0,0],[1,2,1]] 对下图中心点做相关运算。</span><br>
+图像（5×5，上两行灰度 20，下三行灰度 60，即中间有一条水平边缘）：取中心点所在 3×3 窗口 = [[20,20,20],[60,60,60],[60,60,60]]。<br>
+g = (−1)(20) + (−2)(20) + (−1)(20) + 0 + (1)(60) + (2)(60) + (1)(60) = −80 + 240 = <b>160</b>。<br>
+<span style="color:#6b7686">说明：响应值大 ⇒ 此处有水平边缘。梯度幅值 M ≈ |g<sub>x</sub>| + |g<sub>y</sub>|，本题只有 y 方向响应，故 M ≈ 160。</span></div>
+
+<h3>边界延拓（Padding）<span class="star">★★</span></h3>
+<p><b>为什么需要</b>：核放在图像最边上时，有一半会“悬空”，没有像素可乘。解决办法是在图像外面补一圈值。四种方式：</p>
+<table class="tight">
+<thead><tr><th style="width:96pt">类型</th><th style="width:130pt">补什么</th><th>特点 / 适用</th></tr></thead><tbody>
+<tr><td><b>定值（补零）</b></td><td>常数，通常 0</td><td>最简单；会在边界产生暗边/伪边缘</td></tr>
+<tr><td><b>对称（镜像）</b></td><td>以边界为轴镜像复制</td><td>边界过渡自然，去噪常用</td></tr>
+<tr><td><b>复制（边界克隆）</b></td><td>复制最边上一行/列的值</td><td>保持局部均值，不引入突变</td></tr>
+<tr><td><b>循环（周期）</b></td><td>从对面绕回来</td><td>与 DFT 的隐含周期性一致；但频域滤波前为防混叠通常用<b>补零</b></td></tr>
+</tbody></table>
+<p>补零的另一个重要作用：<b>频域滤波前必须补零，否则 DFT 的隐含周期性会造成“混叠”</b>（详见 4.6）。</p>
+
+<h2>3.7 平滑（低通）滤波器<span class="star">★★★</span></h2>
+<table>
+<thead><tr><th style="width:86pt">滤波器</th><th style="width:120pt">核的形式</th><th style="width:170pt">效果特点</th><th>适用场景</th></tr></thead><tbody>
+<tr><td><b>盒式（均值）</b></td><td>全 1/(mn)，如 3×3 全 1/9</td><td>简单快速；<b>沿垂直/水平方向产生线性模糊</b>，边缘过渡生硬，有方块感</td><td>粗略平滑；<b>阈值化、分割前的预处理</b></td></tr>
+<tr><td><b>高斯（GLPF）</b></td><td>w(s,t) = K·e<sup>−(s²+t²)/2σ²</sup></td><td><b>唯一可分离的圆对称核</b>（可拆成两个一维核，速度快）；边缘过渡更平滑、无方向偏好</td><td>精细细节或强几何分量图像的平滑；去高斯噪声</td></tr>
+<tr><td><b>中值</b></td><td>取邻域<b>排序后的中间值</b></td><td><b>非线性</b>；<b>保边</b>（阶跃/脉冲不会被抹平）；对椒盐噪声效果极好</td><td><b>椒盐噪声</b>；去除孤立亮点/暗点</td></tr>
+</tbody></table>
+<div class="ex"><span class="lab">例</span><span class="q">9 个像素值 88、95、27、36、230、110、120、158、55，中值滤波输出是多少？</span><br>
+排序：27、36、55、88、<b>95</b>、110、120、158、230 → 中值 = <b>95</b>。<br>
+注意 230 这个极端值（噪声）完全没有影响结果，而均值滤波会被它拉到 102.1 —— 这就是中值滤波抗椒盐噪声的原因。</div>
+<div class="trap"><span class="lab">易错</span>① <b>盒式核 vs 高斯核</b>：盒式是等权平均，易产生较生硬的模糊；高斯是圆对称、可分离的加权核，过渡通常更自然。<br>② <b>中值滤波首选椒盐噪声</b>；对高斯噪声通常优先考虑均值/高斯等线性滤波。<br>③ 平滑可能模糊边缘，核越大、平滑越强，细节损失风险通常越大。</div>
+
+<h2>3.8 锐化（高通）滤波器<span class="star">★★★</span></h2>
+<h3>先分清一阶导与二阶导</h3>
+<table class="tight">
+<thead><tr><th style="width:70pt">导数</th><th style="width:180pt">离散定义</th><th>对边缘的响应（必背）</th></tr></thead><tbody>
+<tr><td><b>一阶</b></td><td>∂f/∂x = f(x+1) − f(x)</td><td>在边缘处产生<b>一个宽峰</b>（较粗）</td></tr>
+<tr><td><b>二阶</b></td><td>∂²f/∂x² = f(x+1) + f(x−1) − 2f(x)</td><td>产生<b>双峰</b>，且在边缘中心<b>过零</b>；对细节（细线、孤立点）响应更强</td></tr>
+</tbody></table>
+<p>结论：<b>二阶导更适合“增强细节”（锐化），一阶导（梯度）更适合“检测边缘”</b>；但二阶导对噪声更敏感，且会产生双边缘效应。</p>
+
+<h3>拉普拉斯算子（二阶导，各向同性）</h3>
+<div class="f">∇²f = ∂²f/∂x² + ∂²f/∂y² = f(x+1,y)+f(x−1,y)+f(x,y+1)+f(x,y−1) − 4f(x,y)<span class="n">(3.53)</span></div>
+<table class="tight" style="width:74%">
+<thead><tr><th class="c">4 邻域拉普拉斯核</th><th class="c">含对角项的 8 邻域核</th><th class="c">锐化用（中心为正）</th></tr></thead><tbody>
+<tr><td class="c" style="font-family:Cambria;font-size:9.4pt">0　1　0<br>1　−4　1<br>0　1　0</td>
+<td class="c" style="font-family:Cambria;font-size:9.4pt">1　1　1<br>1　−8　1<br>1　1　1</td>
+<td class="c" style="font-family:Cambria;font-size:9.4pt">0　−1　0<br>−1　5　−1<br>0　−1　0</td></tr>
+</tbody></table>
+<div class="f">g(x,y) = f(x,y) − ∇²f(x,y)　（算子中心系数 &lt; 0 时）<br>g(x,y) = f(x,y) + ∇²f(x,y)　（算子中心系数 &gt; 0 时）<span class="n">(3.54)</span></div>
+<p>也就是说：<b>锐化 = 原图 ∓ 拉普拉斯（边缘图）</b>。拉普拉斯本身只给出边缘（灰度整体偏暗、有正有负），要把边缘“加回去”才叫锐化。</p>
+
+<h3>梯度算子（一阶导）</h3>
+<div class="f">∇f = [g<sub>x</sub>; g<sub>y</sub>]，　M(x,y) = |∇f| = √(g<sub>x</sub>² + g<sub>y</sub>²) ≈ |g<sub>x</sub>| + |g<sub>y</sub>|<span class="n">(3.57–3.59)</span></div>
+<table class="tight">
+<thead><tr><th style="width:70pt">算子</th><th class="c" style="width:110pt">x 方向核</th><th class="c" style="width:110pt">y 方向核</th><th>特点</th></tr></thead><tbody>
+<tr><td><b>Roberts</b></td><td class="c" style="font-family:Cambria">1　0<br>0　−1</td><td class="c" style="font-family:Cambria">0　1<br>−1　0</td><td>2×2 交叉差分，定位精确但对噪声敏感，<b>无中心像素</b></td></tr>
+<tr><td><b>Prewitt</b></td><td class="c" style="font-family:Cambria">−1　0　1<br>−1　0　1<br>−1　0　1</td><td class="c" style="font-family:Cambria">−1　−1　−1<br>0　0　0<br>1　1　1</td><td>3×3，<b>带平滑效果</b>（系数全 1）</td></tr>
+<tr><td><b>Sobel</b></td><td class="c" style="font-family:Cambria">−1　0　1<br>−2　0　2<br>−1　0　1</td><td class="c" style="font-family:Cambria">−1　−2　−1<br>0　0　0<br>1　2　1</td><td>3×3，<b>中心加权 2</b>，平滑更好、抗噪更强，最常用</td></tr>
+</tbody></table>
+<div class="k"><span class="lab">怎么记核的方向</span>看核的“<b>减法方向</b>”：Sobel 的 x 核是“右列减左列”，所以它检测的是<b>竖直边缘</b>（灰度在水平方向变化）；y 核是“下行减上行”，检测<b>水平边缘</b>。<b>核的方向 ⊥ 边缘方向。</b></div>
+
+
+<h2>3.9 一张表看完全章：平滑 vs 锐化<span class="star">★★</span></h2>
+<table class="tight">
+<thead><tr><th style="width:74pt">对比项</th><th style="width:170pt">平滑（低通）</th><th>锐化（高通）</th></tr></thead><tbody>
+<tr><td><b>目的</b></td><td>去噪、模糊、连接断裂</td><td>突出边缘与细节、增强轮廓</td></tr>
+<tr><td><b>数学本质</b></td><td>邻域<b>加权平均</b>（求和/均值）</td><td>邻域<b>差分</b>（一阶/二阶导数）</td></tr>
+<tr><td><b>代表核</b></td><td>盒式（全 1/9）、高斯（e<sup>−r²/2σ²</sup>）、中值（非线性和排序）</td><td>拉普拉斯 [[0,1,0],[1,−4,1],[0,1,0]]、Sobel、Roberts、Prewitt</td></tr>
+<tr><td><b>核系数和</b></td><td><b>= 1</b>（线性平滑核保持整体亮度；中值滤波没有核系数）</td><td><b>= 0</b>（线性微分核在恒定区域响应为 0，只剩边缘）</td></tr>
+<tr><td><b>副作用</b></td><td>边缘变模糊；核越大越糊</td><td>放大噪声；二阶导还会产生双边缘、过冲</td></tr>
+<tr><td><b>典型应用</b></td><td>椒盐噪声用中值、高斯噪声用高斯、分割前预平滑</td><td>医学影像增强、指纹/文字增强、工业缺陷检测</td></tr>
+</tbody></table>
+<div class="tip"><span class="lab">记这一条就够</span><b>“平滑核的系数加起来是 1，锐化核加起来是 0。”</b>这一条有助于快速判断某个模板是线性低通还是高通——相加为 1 说明它保留平均亮度（低通），相加为 0 说明它把常数区域抹成 0、只留变化（高通）。</div>
+
+<div class="summary"><h4>本章必会</h4>
+① 直方图均衡：CDF × (L−1) → 四舍五入（会完整算一张表）；② 相关 vs 卷积：差一个 180° 翻转；③ 四种延拓；④ 盒式/高斯/中值三者的效果与适用（尤其“中值治椒盐”）；⑤ 拉普拉斯核与“原图减拉普拉斯”的锐化公式；⑥ Sobel/Roberts 核与“核方向⊥边缘方向”。</div>
+
+<h1 class="ch"><span class="num">04</span><span class="txt">频率域滤波</span><span class="en">FILTERING IN THE FREQUENCY DOMAIN</span></h1>
+<p class="lead">这一章概念多、公式吓人，但复习时先抓住三件事：<b>DFT 四个参数是什么、滤波六步是什么、三种低通/高通滤波器有什么区别</b>。把这三件事掌握，可覆盖本章大部分基础考点。</p>
+
+<h2>4.1 为什么要换到频率域<span class="star">★★</span></h2>
+<p>傅里叶分析把图像表示为不同空间频率、方向、幅度和相位的二维复指数（正弦/余弦）成分之和——这就是二维傅里叶变换的物理含义。<b>频谱</b>就是“频率的分布曲线”。</p>
+<div class="k"><span class="lab">直觉</span>图像里<b>缓慢变化的灰度</b>（大片天空、墙面）对应<b>低频</b>；<b>急剧变化的灰度</b>（边缘、细节、噪声）对应<b>高频</b>。所以：<b>低通滤波 = 模糊/平滑；高通滤波 = 锐化/边缘提取。</b></div>
+<p>二维离散傅里叶变换（DFT）与逆变换（IDFT）：</p>
+<div class="f">F(u,v) = Σ<sub>x=0</sub><sup>M−1</sup> Σ<sub>y=0</sub><sup>N−1</sup> f(x,y)·e<sup>−j2π(ux/M + vy/N)</sup><span class="n">(4.67)</span></div>
+<div class="f">f(x,y) = (1/MN) Σ<sub>u</sub> Σ<sub>v</sub> F(u,v)·e<sup>j2π(ux/M + vy/N)</sup><span class="n">(4.68)</span></div>
+
+<h2>4.2 四个参数：频率、幅度、相位、方向<span class="star">★★★</span></h2>
+<p>F(u,v) 是复数，可写成 <b>F(u,v) = R(u,v) + jI(u,v) = |F(u,v)|·e<sup>jφ(u,v)</sup></b>，于是有四个量：</p>
+<table>
+<thead><tr><th style="width:64pt">参数</th><th style="width:150pt">怎么算</th><th>物理意义（考填空）</th></tr></thead><tbody>
+<tr><td><b>频率</b></td><td>√(u² + v²)，即中心化频率坐标点 (u,v) 到频谱中心的<b>距离</b></td><td>灰度变化的快慢。距中心越远，频率越高</td></tr>
+<tr><td><b>幅度</b></td><td>|F(u,v)| = √(R² + I²)</td><td>该频率成分的<b>强弱</b>；频谱图显示的通常就是它（取对数后）</td></tr>
+<tr><td><b>相位</b></td><td>φ(u,v) = atan2(I(u,v), R(u,v))（注意象限）</td><td>该频率成分的<b>位置/偏移</b>；携带结构信息</td></tr>
+<tr><td><b>方向</b></td><td>二维点 (u,v) 构成的向量方向</td><td>该频率成分对应的<b>条纹走向</b></td></tr>
+</tbody></table>
+
+<h3>三条必背性质</h3>
+<ul class="nodot">
+<li><b>平移性</b>：图像在空间平移，<b>频谱幅度不变</b>，只改变相位（乘一个 e<sup>−j2π(x₀u/M+y₀v/N)</sup> 因子）。所以在空域移动物体，频谱图看起来一模一样。</li>
+<li><b>旋转性</b>：图像在空间<b>旋转 θ，频谱也旋转 θ</b>。所以旋转图像时，其频谱也会随整体坐标系同向旋转；对于理想直线，过中心的谱线方向则与原直线垂直。</li>
+<li><b>周期性</b>：DFT 的空域与频域都是<b>无限周期延拓</b>的，周期为 M、N。这是“用 DFT 实现线性卷积时需要考虑补零”的根本原因。</li>
+</ul>
+
+<h3>频谱中心化</h3>
+<p>直接算出的 DFT，<b>低频在四个角上</b>，看起来不直观。把低频搬到中心的方法是给图像乘 (−1)<sup>x+y</sup>：</p>
+<div class="f">f(x,y)·(−1)<sup>x+y</sup> ⟺ F(u − M/2, v − N/2)<span class="n">(4.76)</span></div>
+<p>OpenCV / MATLAB 里的 <b>fftshift</b> 做的就是这件事。中心化后你会看到：</p>
+<table class="tight">
+<thead><tr><th style="width:96pt">图像</th><th>中心化频谱的样子</th><th>为什么</th></tr></thead><tbody>
+<tr><td>全黑图</td><td>全黑（幅度谱处处为 0，因而不显示亮点）</td><td>恒定灰度 = 只有直流分量</td></tr>
+<tr><td>纯灰（常数）图</td><td>中央一个白点</td><td>只有直流（频率 0）</td></tr>
+<tr><td>单个圆</td><td>同心圆环</td><td>圆对称 → 频谱圆对称</td></tr>
+<tr><td>两个圆</td><td>干涉波纹</td><td>两个圆相当于“单圆 + 周期重复”</td></tr>
+<tr><td>竖直条纹</td><td>过中心的<b>水平</b>亮线</td><td><b>频谱方向 ⊥ 条纹方向</b></td></tr>
+<tr><td>15° 斜线</td><td>105°（与原线垂直）的斜线</td><td>同上，差 90°</td></tr>
+</tbody></table>
+<div class="trap"><span class="lab">易错</span>直线与其频谱<b>互相垂直</b>：竖直条纹 → <b>水平</b>亮线，水平条纹 → <b>竖直</b>亮线。而“旋转图像 → 频谱<b>同向</b>旋转”也不矛盾：旋转是整体转，<b>方向关系始终是垂直</b>。看图注时注意区分说的是原图还是频谱。</div>
+
+<h2>4.3 频率域滤波的六个步骤（必背）<span class="star">★★★</span></h2>
+<div class="flow" style="margin:0 0 2pt 0">
+<span>① 乘 (−1)<sup>x+y</sup> 中心化</span><em>→</em><span>② 计算 DFT 得 F(u,v)</span><em>→</em><span>③ 乘以滤波器 H(u,v)</span><em>→</em><span>④ 计算 IDFT</span>
+</div>
+<div class="flow" style="margin:0">
+<em>→</em><span>⑤ 取实部</span><em>→</em><span>⑥ 再乘 (−1)<sup>x+y</sup> 取消乘数</span>
+</div>
+<div class="f">g(x,y) = Real{ 𝓘<sup>−1</sup>[ H(u,v)·F(u,v) ] }<span class="n">(4.104)</span></div>
+<p>为什么第 ⑤ 步要“取实部”？因为 IDFT 的结果理论上应是实数，但由于浮点误差会带一个极小的虚部，必须丢弃。<b>为什么第 ⑥ 步要再乘一次？</b> 因为第 ① 步乘了 (−1)<sup>x+y</sup>，不乘回来会留下棋盘式正负交替，而不是还原原图。</p>
+
+<h2>4.4 低通滤波器：模糊与平滑<span class="star">★★★</span></h2>
+<p>D(u,v) 是频率平面上点 (u,v) 到中心 (P/2, Q/2) 的距离，<b>D₀ 是截止频率</b>。</p>
+<table>
+<thead><tr><th style="width:104pt">滤波器</th><th style="width:180pt">传递函数</th><th>特点（考试重点）</th></tr></thead><tbody>
+<tr><td><b>理想低通 ILPF</b></td><td>H = 1，D(u,v) ≤ D₀；H = 0，D &gt; D₀</td><td>“一刀切”，<b>会产生明显振铃效应</b>（因为其空域核是 sinc 函数形状，外侧小波瓣造成振铃）</td></tr>
+<tr><td><b>高斯低通 GLPF</b></td><td>H = e<sup>−D²(u,v) / 2D₀²</sup></td><td>曲线平滑过渡，<b>教材意义下无振铃</b>；过渡柔和，但过强的低通仍会丢失细节</td></tr>
+<tr><td><b>巴特沃斯 BLPF</b></td><td>H = 1 / [1 + (D/D₀)<sup>2n</sup>]</td><td>介于两者之间；阶数 n 越大越接近理想（振铃越明显），n 越小越接近高斯</td></tr>
+</tbody></table>
+<div class="k"><span class="lab">振铃从哪来</span>频域里一个“<b>陡峭的矩形</b>”对应空域里一个“<b>无限振动的 sinc</b>”。用 sinc 去卷积图像，边缘两侧就会出现一圈圈明暗波纹，这就是振铃。<b>结论：频域截止越“硬”，空域振铃越明显。</b></div>
+<p><b>低通的应用</b>：磨皮去皱纹、消除卫星图像的扫描线、修复断裂的低分辨率文本（让断裂处“连上”）、平滑噪声。</p>
+
+<h2>4.5 高通滤波器：锐化与边缘<span class="star">★★★</span></h2>
+<div class="f">H<sub>HP</sub>(u,v) = 1 − H<sub>LP</sub>(u,v)<span class="n">(4.119)</span></div>
+<table class="tight">
+<thead><tr><th style="width:104pt">滤波器</th><th style="width:170pt">传递函数</th><th>特点</th></tr></thead><tbody>
+<tr><td><b>理想高通 IHPF</b></td><td>H = 0（D ≤ D₀）；H = 1（D &gt; D₀）</td><td>边缘最锐利，但<b>振铃最严重</b>（空域核有过冲）</td></tr>
+<tr><td><b>高斯高通 GHPF</b></td><td>H = 1 − e<sup>−D²/2D₀²</sup></td><td>无振铃，边缘平滑但稍“糊”</td></tr>
+<tr><td><b>巴特沃斯高通 BHPF</b></td><td>H = 1 / [1 + (D₀/D)<sup>2n</sup>]</td><td>折中，n 控制锐利程度</td></tr>
+</tbody></table>
+<div class="tip"><span class="lab">常考对比</span>三种滤波器滤波后的图像，<b>理想的最“锐”但振铃最明显，高斯的最“软”但最干净，巴特沃斯居中</b>。若题目问“为什么实际中更常用高斯/巴特沃斯”，答：<b>为了抑制振铃</b>。高通的应用：指纹增强、电路板缺陷、锐化。</div>
+
+<h2>4.6 选择性滤波：带阻、带通、陷波<span class="star">★★</span></h2>
+<table>
+<thead><tr><th style="width:86pt">类型</th><th style="width:170pt">作用</th><th>典型场景</th></tr></thead><tbody>
+<tr><td><b>带阻</b>（Bandreject）</td><td>只压制以 C₀ 为中心、宽 W 的一圈频率</td><td>压制某个频率范围的噪声</td></tr>
+<tr><td><b>带通</b>（Bandpass）</td><td>1 − 带阻；只保留某个频率环</td><td>提取特定尺度的纹理</td></tr>
+<tr><td><b>陷波</b>（Notch）</td><td>在频谱上“挖掉”若干<b>点</b>（成对出现，因为频谱共轭对称）</td><td><b>消除周期噪声</b>：莫尔条纹、扫描线、电气/机电干扰、土星环图像的周期干扰</td></tr>
+</tbody></table>
+<div class="k"><span class="lab">为什么陷波能去周期噪声</span>周期噪声在频谱上表现为<b>一对（或多对）孤立的亮点</b>（共轭冲激）。把这几个点挖掉，再反变换，噪声就消失了。<b>这是“频域有针对性处理”的最典型例子</b>——复习提纲也把陷波列为需要掌握的频域方法。</div>
+
+<h2>4.7 频域滤波的边界问题<span class="star">★★</span></h2>
+<p>因为 DFT 隐含周期性，“先低通滤波再反变换”等价于“在空域用<b>周期延拓</b>后的图像做卷积”。若图像左右/上下边界灰度差异大，周期延拓会在接缝处造出<b>虚假的边缘</b>，滤波后表现为边界处的亮暗带（混叠）。</p>
+<p><b>解决办法</b>：滤波前把图像<b>补零</b>（通常补到 2M×2N），在真实图像与它的周期副本之间插入一个“缓冲带”。作业 4-41 就是在问：只要补零的<b>总量相同</b>，无论补在下侧还是右侧，效果一样——因为周期延拓后形成的“棋盘格”完全一样。</p>
+
+<div class="summary"><h4>本章必会</h4>
+① 四个参数：频率=距离、幅度=强弱、相位=位置、方向=条纹走向；② 滤波六步（含两次乘 (−1)<sup>x+y</sup> 与取实部）；③ 低通三兄弟对比（振铃：理想&gt;巴特沃斯&gt;高斯）；④ 高通 = 1 − 低通；⑤ 陷波治周期噪声；⑥ 补零防混叠。</div>
+
+<h1 class="ch"><span class="num">05</span><span class="txt">图像复原</span><span class="en">IMAGE RESTORATION AND RECONSTRUCTION</span></h1>
+<p class="lead">这一章的核心是：<b>不同的噪声，应优先考虑不同的滤波器</b>。重点掌握噪声模型与典型滤波器的对应关系。</p>
+
+<h2>5.1 退化/复原模型<span class="star">★★</span></h2>
+<div class="f">g(x,y) = h(x,y) ★ f(x,y) + η(x,y)　⟺　G(u,v) = H(u,v)F(u,v) + N(u,v)<span class="n">(5.1–5.2)</span></div>
+<p>其中 h 是退化函数（如模糊核），η 是加性噪声。<b>复原</b>就是已知或估计出 h 和 η 之后，反过来求 f。<b>图像增强</b>是主观的、为了好看；<b>图像复原</b>是客观的、为了还原真实——这是两者最本质的区别（简答题常考）。</p>
+
+<h2>5.2 六种噪声模型<span class="star">★★★</span></h2>
+<table>
+<thead><tr><th style="width:74pt">噪声</th><th style="width:150pt">概率密度函数 p(z)</th><th style="width:96pt">产生原因</th><th>形状 / 记忆点</th></tr></thead><tbody>
+<tr><td><b>高斯</b></td><td>1/[√(2π)·σ]·e<sup>−(z−μ)²/2σ²</sup></td><td>电子电路、传感器热噪声、低照度</td><td>钟形对称；<b>最常用、数学最好处理</b></td></tr>
+<tr><td><b>瑞利</b></td><td>(2/b)(z−a)·e<sup>−(z−a)²/b</sup>，z ≥ a</td><td>距离/深度成像、雷达</td><td>单边、右偏，从 a 起跳</td></tr>
+<tr><td><b>爱尔兰（伽马）</b></td><td>[a<sup>b</sup>z<sup>b−1</sup>/(b−1)!]·e<sup>−az</sup>，z ≥ 0</td><td>激光成像</td><td>比瑞利更“对称”一些，b 控制形状</td></tr>
+<tr><td><b>指数</b></td><td>a·e<sup>−az</sup>，z ≥ 0</td><td>激光成像</td><td>在 z=0 处最高，单调下降</td></tr>
+<tr><td><b>均匀</b></td><td>1/(b−a)，a ≤ z ≤ b</td><td>量化噪声（理论上）</td><td>矩形，两端突然截断</td></tr>
+<tr><td><b>椒盐（脉冲）</b></td><td>P<sub>s</sub>（z = 255）；P<sub>p</sub>（z = 0）；1−P<sub>s</sub>−P<sub>p</sub>（z = V）</td><td>快速瞬态（开关错误、传感器坏点）</td><td><b>只有两个极端值</b>：亮白点=盐，黑点=胡椒</td></tr>
+</tbody></table>
+<div class="k"><span class="lab">怎么记</span><b>盐是白的（255），胡椒是黑的（0）。</b>“椒盐”= 图像上撒了黑白芝麻。它的直方图在两端各有一个尖峰，中间是原图的分布。</div>
+<p><b>噪声参数估计</b>：取图像中一块“平坦”区域（灰度本应恒定），统计其均值与方差即可估计噪声参数——这就是“用小条带估计噪声”的方法。</p>
+
+<h2>5.3 只存在噪声时的空域复原：均值滤波器<span class="star">★★★</span></h2>
+<p>前提：<b>只考虑加性噪声</b>，g = f + η，不考虑模糊。此时复原就是“平滑”。S<sub>xy</sub> 是以 (x,y) 为中心的 m×n 邻域。</p>
+<table>
+<thead><tr><th style="width:104pt">滤波器</th><th style="width:150pt">公式</th><th>适用噪声（必背）</th></tr></thead><tbody>
+<tr><td><b>算术平均</b></td><td>(1/mn)·Σ g(r,c)</td><td>高斯、均匀噪声；<b>会模糊</b></td></tr>
+<tr><td><b>几何均值</b></td><td>[Π g(r,c)]<sup>1/mn</sup></td><td>高斯、均匀；<b>平滑程度与算术平均相当，但丢失细节更少</b></td></tr>
+<tr><td><b>谐波平均</b></td><td>mn / Σ[1/g(r,c)]</td><td><b>盐噪声</b>和高斯噪声好；<b>不能用于胡椒噪声</b>（除以 0 会爆炸）</td></tr>
+<tr><td><b>反谐波平均</b></td><td>Σ g<sup>Q+1</sup> / Σ g<sup>Q</sup></td><td><b>Q &gt; 0 治胡椒（黑点）；Q &lt; 0 治盐（白点）</b>；Q = 0 退化为算术平均；<b>不能同时处理两者</b></td></tr>
+</tbody></table>
+<div class="trap"><span class="lab">易错</span>反谐波滤波器的 <b>Q 符号必须与噪声类型匹配</b>：用错符号不但去不掉噪声，还会<b>把噪声放大成大片黑斑/白斑</b>。记住：<b>Q>0 常用于抑制胡椒（暗点），Q<0 常用于抑制盐（亮点）；但混合噪声、窗口内有目标细节时不能机械套用。</b></div>
+
+<h2>5.4 统计排序滤波器<span class="star">★★★</span></h2>
+<table>
+<thead><tr><th style="width:104pt">滤波器</th><th style="width:130pt">公式</th><th>适用场景</th></tr></thead><tbody>
+<tr><td><b>中值</b></td><td>median{ g(r,c) }</td><td><b>椒盐噪声的常用首选</b>；保边；可反复使用逐步去噪</td></tr>
+<tr><td><b>最大值</b></td><td>max{ g(r,c) }</td><td>去<b>胡椒（暗点）</b>噪声——因为取最大会把黑点“顶掉”</td></tr>
+<tr><td><b>最小值</b></td><td>min{ g(r,c) }</td><td>去<b>盐（亮点）</b>噪声</td></tr>
+<tr><td><b>中点</b></td><td>[max + min] / 2</td><td>适合随机分布噪声（如均匀、部分高斯噪声）；不宜用来记忆为椒盐首选</td></tr>
+<tr><td><b>修正阿尔法均值</b></td><td>(1/(mn−d))·Σ<sub>剩余</sub> g<sub>R</sub>(r,c)</td><td><b>总共删去 d 个排序后的极端值</b>（高端 d/2 个、低端 d/2 个，d 取偶数）再平均；适合混合噪声</td></tr>
+</tbody></table>
+<p><b>自适应滤波器</b>：邻域大小或权重随局部统计量（均值、方差）变化。自适应中值滤波能在噪声密度很大（如 0.25）时仍然工作，而固定 7×7 中值滤波已经糊成一片。</p>
+
+<h2>5.5 频域方法：压制周期噪声<span class="star">★★</span></h2>
+<p>周期噪声在频谱上通常表现为孤立亮点或窄带峰，因此可用<b>陷波、带阻</b>直接压制；也可用<b>带通</b>先提取噪声再从原图减去。这是频域选择性滤波的应用。</p>
+
+<div class="summary"><h4>一张“选滤波器”表（答题参考）</h4>
+高斯噪声 → 算术平均 / 几何均值 / 高斯低通；均匀噪声 → 算术平均 / 中点；<b>椒盐 → 中值</b>（或最大值去胡椒、最小值去盐）；<b>只有盐 → 谐波平均或反谐波 Q&lt;0</b>；<b>只有胡椒 → 反谐波 Q&gt;0</b>；混合噪声 → 修正阿尔法均值；周期噪声 → 陷波/带阻。</div>
+
+<style>
+.bin{border-collapse:collapse;margin:0 auto;font-family:Cambria,serif;font-size:8.4pt}
+.bin td{width:15pt;height:15pt;text-align:center;padding:0;border:.5pt solid #b9c2cd;line-height:15pt}
+.bin td.one{background:#1c3f6e;color:#fff;font-weight:700}
+.bin td.zero{background:#fff;color:#b0b8c4}
+.bin td.hl{outline:1.6pt solid #b07d1a;outline-offset:-1.6pt}
+.bin th{border:none;background:none;color:#5d6b7d;font-size:8pt;font-weight:400;padding:0 3pt}
+.binwrap{display:flex;gap:14pt;justify-content:center;align-items:flex-start;margin:6pt 0 8pt 0}
+.binlab{font-size:8.6pt;color:#3c4757;text-align:center;margin-bottom:2.6pt}
+</style>
+
+<h1 class="ch"><span class="num">06</span><span class="txt">彩色图像处理</span><span class="en">COLOR IMAGE PROCESSING</span></h1>
+<p class="lead">这章概念密集，但主线很清楚：<b>三个特性、三个模型、一张色度图、一个伪彩色</b>。把“谁用于显示、谁用于打印、谁最符合人眼”这条线记住，这章的主线就抓住了。</p>
+
+<h2>6.1 彩色的三个物理特性<span class="star">★★★</span></h2>
+<table>
+<thead><tr><th style="width:70pt">特性</th><th style="width:110pt">英文</th><th>定义</th><th>通俗理解</th></tr></thead><tbody>
+<tr><td><b>亮度</b></td><td>Intensity / Brightness</td><td>体现<b>无色的强度</b>概念，即光的强弱</td><td>把彩色照片转成黑白，剩下的那个“明暗”</td></tr>
+<tr><td><b>色调</b></td><td>Hue</td><td>与<b>主波长</b>相关的属性，观察者感知的主要颜色</td><td>“这是什么颜色”——红、绿、蓝</td></tr>
+<tr><td><b>饱和度</b></td><td>Saturation</td><td>一种颜色中<b>混入白光的量</b>，与所加白光成<b>反比</b></td><td>“颜色有多纯”——掺的白光越多越淡</td></tr>
+</tbody></table>
+<p>可见光波长约 <b>400～700 nm</b>。人眼视网膜上的<b>锥状细胞</b>是彩色传感器，约 600～700 万个，分三类：<b>65% 对红光敏感、33% 对绿光敏感、仅 2% 对蓝光敏感</b>（人眼对蓝色细节相对不敏感；JPEG 对色度通道下采样还利用了人眼对色度变化不及亮度敏感这一特性）。</p>
+
+<h2>6.2 色度与 CIE 色度图<span class="star">★★★</span></h2>
+<div class="f">x = X/(X+Y+Z)，　y = Y/(X+Y+Z)，　z = Z/(X+Y+Z) = 1 − x − y<span class="n">(6.1–6.3)</span></div>
+<p>X、Y、Z 是三色值（形成某颜色所需的红、绿、蓝数量），x、y、z 是<b>三色值系数（色度坐标）</b>。因为 x+y+z=1，所以只要 x、y 两个数就能在色度图上定位一种颜色。</p>
+<h3>色度图的四个常见用法（建议掌握）</h3>
+<ul class="nodot">
+<li><b>定颜色</b>：给出 (x, y)，在图上找到对应点，就知道是什么颜色。</li>
+<li><b>判断饱和度</b>：<b>边界上的点是全饱和（纯）色</b>，越往中心（白光点）越不饱和。</li>
+<li><b>颜色混合与色域</b>：两点连线上是其加色混合结果；三点围成的三角形表示相应设备色域。求补色时应沿等能白点作直线并与光谱轨迹相交，注意并非每个点都有光谱轨迹上的补色。</li>
+<li><b>比较色域（Color Gamut）</b>：三个原色点在图上围成的三角形面积越大，该色彩空间能表示的颜色越多（应结合具体原色与白点比较，不能笼统认为所有色域严格嵌套）。</li>
+</ul>
+
+<h2>6.3 三种彩色模型：谁用于什么<span class="star">★★★</span></h2>
+<table>
+<thead><tr><th style="width:74pt">模型</th><th style="width:80pt">分量</th><th style="width:92pt">原理</th><th style="width:96pt">典型设备/场合</th><th>关键点</th></tr></thead><tbody>
+<tr><td><b>RGB</b></td><td>红、绿、蓝</td><td><b>加色</b>（光叠加）</td><td>显示器、摄像机、扫描仪</td><td>面向<b>硬件</b>；笛卡尔坐标，三原色在立方体三个角；三通道各 8 bit → 24 bit 像素深度</td></tr>
+<tr><td><b>CMY</b></td><td>青、品红、黄</td><td><b>减色</b>（颜料吸收）</td><td>彩色打印机、复印机</td><td>是光的二次色、颜料的原色</td></tr>
+<tr><td><b>CMYK</b></td><td>青、品红、黄、黑</td><td>加第 4 色黑</td><td>印刷</td><td>因为 CMY 等量混合得到的黑<b>不纯（发棕）</b>，才加 K</td></tr>
+<tr><td><b>HSI</b></td><td>色调、饱和度、亮度</td><td>符合人眼描述方式</td><td>图像处理算法（分割、增强）</td><td><b>I 与彩色信息无关</b>，H、S 与人感受颜色的方式紧密相连</td></tr>
+</tbody></table>
+<div class="f">CMY：　[C; M; Y] = [1; 1; 1] − [R; G; B]　　（RGB 也可由 CMY 直接反算）<span class="n">(6.5)</span></div>
+<div class="f">CMYK：K = min(C, M, Y)，　C = (C − K)/(1 − K)　（M、Y 同理）<span class="n">(6.6, 6.10–6.12)</span></div>
+<div class="k"><span class="lab">HSI 的核心价值</span>在 HSI 里做增强，<b>只改 I 分量就能调亮度，而保持 H、S 不变</b>；只改 H 就能调整色调而不直接改 I。RGB 的通道操作通常会同时改变亮度和颜色。<b>所以“彩色图像直方图均衡”应当只在 I 分量上做</b>（若分别对 R、G、B 做均衡，会产生奇怪的偏色）。</div>
+<p><b>RGB → HSI 的关键式</b>（只需记住 I 的那个）：I = (R+G+B)/3；S = 1 − 3·min(R,G,B)/(R+G+B)；H 由 θ = arccos{…} 得到，若 B &gt; G 则 H = 360° − θ。反过来 HSI→RGB 要按 H 落在 [0°,120°)、[120°,240°)、[240°,360°) 三段分别计算。</p>
+
+<h2>6.4 伪彩色处理<span class="star">★★★</span></h2>
+<div class="k"><span class="lab">定义</span><b>伪彩色（假彩色）图像处理</b>：基于一种<b>指定规则，对灰度值赋以颜色</b>的处理——不同灰度区域赋予不同颜色。<b>输入是灰度图，输出是彩色图</b>，颜色是“人为指定”的，不是真实的，故名“伪”。</div>
+<p><b>为什么有效</b>：人眼对颜色的区分能力通常强于对灰度的区分能力（课件概括为几十级灰度与几千种颜色）。伪彩色有助于呈现原本不易分辨的灰度差异，但<b>不会增加原始测量信息</b>。</p>
+<table class="tight">
+<thead><tr><th style="width:110pt">方法</th><th>原理</th><th>例子</th></tr></thead><tbody>
+<tr><td><b>灰度分层（彩色编码）</b></td><td>用平行于坐标面的平面“切”灰度曲面，每个灰度区间赋一种颜色：若 f(x,y) ∈ I<sub>k</sub>，则令 f = c<sub>k</sub></td><td>8 色分层显示甲状腺模型；焊点 X 光图</td></tr>
+<tr><td><b>灰度到彩色变换</b></td><td>对每个像素灰度做<b>三个独立的变换</b>，分别送 R、G、B 通道，合成彩色图</td><td>行李 X 光安检：<b>橙色=轻元素（原子序数&lt;10，食品纸张布料）、绿色=中元素（10～18，爆炸物）、蓝色=重金属（&gt;18，铜铁锌）</b></td></tr>
+</tbody></table>
+<p>灰度到彩色变换是灰度分层的<b>推广</b>（分层是它的特例，变换函数取阶梯状）。多光谱图像的彩色编码也属于这一类：把不同波段的灰度图分别送进 R、G、B。</p>
+
+<h2>6.5 彩色图像处理的两条路线<span class="star">★★</span></h2>
+<p>① <b>分通道处理</b>：把彩色图看成三幅分量图，各自处理再合成；② <b>向量处理</b>：把每个像素看成三维向量，直接对向量运算。</p>
+<div class="k"><span class="lab">两者等价的条件（简答常考）</span>只有当 ① 该操作<b>对向量和标量都适用</b>，且 ② 对每个分量的操作<b>与其他分量无关（独立）</b> 时，两条路线结果才相同。<br>所以：<b>平滑、锐化可以在 RGB 中分通道做</b>（线性、各分量独立）；但<b>彩色边缘检测不能简单合并三个标量梯度</b>——可能漏掉“色调改变而各通道标量梯度相互抵消”的彩色边缘。</div>
+<table class="tight">
+<thead><tr><th style="width:96pt">操作</th><th>正确做法</th><th>说明</th></tr></thead><tbody>
+<tr><td><b>平滑</b></td><td>RGB 各通道分别均值滤波 <b>＝</b> RGB 向量平均；也可只对 HSI 的 I 分量平滑</td><td><b>RGB 两种写法等价；与 HSI 只处理 I 并不严格等价</b>，课件展示了二者差值</td></tr>
+<tr><td><b>锐化</b></td><td>RGB 各通道分别求拉普拉斯再合成；也可只对 HSI 的 I 分量做</td><td><b>RGB 分通道与向量拉普拉斯等价；与 HSI 只处理 I 不严格等价</b></td></tr>
+<tr><td><b>直方图均衡</b></td><td><b>只在 I 分量上做</b></td><td>分别对 RGB 做会破坏彩色平衡</td></tr>
+<tr><td><b>边缘检测</b></td><td>用<b>彩色向量梯度</b>（Di Zenzo）：算 g<sub>xx</sub>、g<sub>yy</sub>、g<sub>xy</sub> 三个点积，再求最大变化率方向 θ = ½arctan[2g<sub>xy</sub>/(g<sub>xx</sub>−g<sub>yy</sub>)]</td><td>标量梯度公式不能直接套到向量上</td></tr>
+</tbody></table>
+
+<h2>6.6 彩色图像中的噪声（特点必背）<span class="star">★★★</span></h2>
+<ul class="nodot">
+<li><b>各通道噪声特性相同，但影响程度不同。</b>因为每个通道的<b>相对照射强度</b>不同：CCD 的红色滤镜会减少红光照射强度，低照度下红通道噪声更明显；而<b>蓝色通道噪声通常最明显</b>（人眼对蓝最不敏感，且蓝光能量低）。</li>
+<li><b>某一通道的噪声可能通过 RGB→HSI 变换耦合到其他分量。</b>课件示例中，绿色通道椒盐噪声影响了 H、S、I；实际哪个分量受影响取决于像素颜色与噪声位置，不应理解为任何单通道噪声必然同时污染全部三个分量。</li>
+<li><b>彩色图像中的颗粒噪声不如灰度图像显眼。</b>同样的噪声幅度，人眼在彩色图里更不容易察觉（彩色信息“掩盖”了亮度噪声）。</li>
+</ul>
+
+<h2>6.7 彩色分割与彩色压缩（了解）<span class="star">★</span></h2>
+<p><b>HSI 分割</b>：通常利用 S 找出彩色区域，再结合 H 区分色调，I 用于辅助亮度分割；适合“颜色单一、亮度变化”的目标（如木卫一）。<br>
+<b>RGB 分割</b>：给定感兴趣颜色的样本集，算平均色 <b>a</b>，再判断像素 <b>z</b> 与 <b>a</b> 的距离是否小于阈值。三种度量：<b>欧氏距离</b>（球体）、<b>马氏距离</b>（椭球体，考虑协方差）、<b>边界盒</b>（避免开方，最快）。<br>
+<b>JPEG 压缩</b>：① 转到 YCrCb，利用人眼对色度不敏感对 Cr、Cb <b>下采样</b>；② 二维 <b>DCT</b> 变换，舍弃高频；③ 用量化表量化；④ Huffman 编码去冗余。所以 JPG 是<b>有损</b>压缩，PNG 是<b>无损</b>，BMP 基本不压缩。</p>
+
+<div class="summary"><h4>本章必会</h4>① 三特性定义（尤其饱和度与白光成反比）；② 色度坐标 x+y+z=1、边界=全饱和；③ RGB 用于显示/CMY(K) 用于打印/HSI 最符合人眼，且 HSI 只改 I 可保持 H、S 不变；④ 伪彩色定义 + 灰度分层 + 灰度到彩色变换；⑤ 彩色噪声三条特点（尤其“单通道噪声可能耦合到其他 HSI 分量”）。</div>
+
+<h1 class="ch"><span class="num">09</span><span class="txt">形态学图像处理</span><span class="en">MORPHOLOGICAL IMAGE PROCESSING</span></h1>
+<p class="lead"><b>本章适合出计算题</b>：给定二值图和结构元，做腐蚀、膨胀、开、闭。方法很机械，掌握“盖章法”并注意边界与反射，就能稳定手算。同时“连通分量提取”被提纲点名是<b>重点考察对象</b>。</p>
+
+<h2>9.1 结构元：形态学的“印章”<span class="star">★★★</span></h2>
+<div class="k"><span class="lab">定义</span><b>结构元（Structuring Element, SE）</b>是一个小集合（小矩阵），用来探测图像中感兴趣的形状。它有两个要素：<b>成员</b>（涂色的方块，值为 1）和<b>原点</b>（用黑点标出；若 SE 对称且未标原点，则默认原点在对称中心）。不关心的位置记为 ×（don't care）。</div>
+<p>两个基本运算：<b>反射</b> B̂ = {w | w = −b, b ∈ B}，即把 SE 绕原点旋转 180°；<b>平移</b> (B)<sub>z</sub> = {c | c = b + z, b ∈ B}，即把原点移到 z。</p>
+<div class="tip"><span class="lab">用法约定</span>把待处理集合 A 也用背景元素“补成一个矩形”，并且当 SE 的原点落在 A 的边界上时，背景边界要大到足以容纳整个 SE。<b>考试给图时通常已经按这个规则画好了。</b></div>
+
+<h2>9.2 腐蚀：能不能整个塞进去<span class="star">★★★</span></h2>
+<div class="f">A ⊖ B = { z | (B)<sub>z</sub> ⊆ A }　=　{ z | (B)<sub>z</sub> ∩ A<sup>c</sup> = ∅ }<span class="n">(9.3–9.4)</span></div>
+<p><b>怎么理解</b>：把结构元的原点依次放到图像中每个位置 z，若此时 SE 的<b>所有成员都落在前景内</b>（完全被 A 包住，一个都不碰到背景），则 z 保留，否则 z 被删掉。</p>
+<div class="k"><span class="lab">效果</span><b>收缩、细化</b>。它会<b>抹掉比结构元小的细节</b>、<b>断开细的连接</b>、<b>缩小物体</b>。用途：去除小物体、分离粘连物体（计数前的关键步骤）、保留最大的区域、求边界。</div>
+<ul class="tight">
+<li>用<b>原点居中的 3×3 方形 SE</b>腐蚀一次 ≈ <b>把物体四周各削掉 1 个像素</b>（仅限该对称结构元）。</li>
+<li>用<b>特定形状 SE</b>腐蚀，可保留能容纳该结构元的部分，结果取决于目标形状、SE 与原点。</li>
+</ul>
+
+<h2>9.3 膨胀：碰到没有<span class="star">★★★</span></h2>
+<div class="f">A ⊕ B = { z | (B̂)<sub>z</sub> ∩ A ≠ ∅ }<span class="n">(9.5)</span></div>
+<p><b>怎么理解</b>：把 SE 先反射（对称时反射不变），再平移；只要它<b>与 A 有任何一个像素重叠</b>，该位置 z 就保留。</p>
+<div class="k"><span class="lab">效果</span><b>增长、粗化</b>。它会<b>扩展边界</b>、<b>填补小孔洞</b>、<b>弥合细小裂缝</b>、<b>连接断裂的字符</b>。用途：修复断裂文字、连接碎片、填充孔洞、边界检测（膨胀图 − 原图 = 边界）。</div>
+<div class="f">对偶性：　(A ⊖ B)<sup>c</sup> = A<sup>c</sup> ⊕ B̂　　(A ⊕ B)<sup>c</sup> = A<sup>c</sup> ⊖ B̂<span class="n">(9.8–9.9)</span></div>
+
+<h3>手算示范：一个 5×5 的例子（务必掌握这个方法）</h3>
+<div class="binwrap">
+  <div><div class="binlab">A：5×5 目标（3×3 方块）</div>
+  <table class="bin"><tr><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td></tr>
+  <tr><td class="zero">0</td><td class="one">1</td><td class="one">1</td><td class="one">1</td><td class="zero">0</td></tr>
+  <tr><td class="zero">0</td><td class="one">1</td><td class="one">1</td><td class="one">1</td><td class="zero">0</td></tr>
+  <tr><td class="zero">0</td><td class="one">1</td><td class="one">1</td><td class="one">1</td><td class="zero">0</td></tr>
+  <tr><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td></tr></table></div>
+  <div><div class="binlab">B：十字形 SE（原点在中心）</div>
+  <table class="bin"><tr><td class="zero">0</td><td class="one">1</td><td class="zero">0</td></tr>
+  <tr><td class="one">1</td><td class="one">1</td><td class="one">1</td></tr>
+  <tr><td class="zero">0</td><td class="one">1</td><td class="zero">0</td></tr></table></div>
+  <div><div class="binlab">A ⊖ B：只剩中心 1 点</div>
+  <table class="bin"><tr><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td></tr>
+  <tr><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td></tr>
+  <tr><td class="zero">0</td><td class="zero">0</td><td class="one hl">1</td><td class="zero">0</td><td class="zero">0</td></tr>
+  <tr><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td></tr>
+  <tr><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td><td class="zero">0</td></tr></table></div>
+  <div><div class="binlab">A ⊕ B：菱形（十字各方向外扩 1 格）</div>
+  <table class="bin"><tr><td class="zero">0</td><td class="zero">0</td><td class="one">1</td><td class="zero">0</td><td class="zero">0</td></tr>
+  <tr><td class="zero">0</td><td class="one">1</td><td class="one">1</td><td class="one">1</td><td class="zero">0</td></tr>
+  <tr><td class="one">1</td><td class="one">1</td><td class="one">1</td><td class="one">1</td><td class="one">1</td></tr>
+  <tr><td class="zero">0</td><td class="one">1</td><td class="one">1</td><td class="one">1</td><td class="zero">0</td></tr>
+  <tr><td class="zero">0</td><td class="zero">0</td><td class="one">1</td><td class="zero">0</td><td class="zero">0</td></tr></table></div>
+</div>
+<p style="text-align:center;font-size:8.4pt;color:#6b7686;margin-top:-4pt">图 9-1　腐蚀与膨胀的手算结果（作业 9-18 就是这类题）</p>
+
+<div class="tip"><span class="lab">盖章法（考场 3 步）</span>① 把 SE 画在透明纸上并标出原点，<b>先明确题目边界约定</b>（图像外默认为 0 还是忽略）；② <b>腐蚀</b>：把 SE 原点遍历所有候选像素，SE 有效成员<b>全部覆盖前景</b>时，原点位置置 1；③ <b>膨胀</b>：先把 SE 关于原点<b>反射 180°</b>，再平移；只要它与原图前景<b>有交集</b>，原点位置就置 1（对称 SE 可省略反射）。<br><b>另一种实用算法</b>：把 SE 原点对准每个前景点，在<b>反射后的 SE</b>覆盖位置全部盖 1，再取并集。注意：<b>腐蚀/膨胀的“面积不增/不减”结论对非原点成员 SE 不总成立</b>，不要机械套口诀。</div>
+
+<h2>9.4 开运算与闭运算<span class="star">★★★</span></h2>
+<div class="f">开运算：A ∘ B = (A ⊖ B) ⊕ B　　（先腐蚀，再膨胀）<span class="n">(9.10)</span><br>闭运算：A · B = (A ⊕ B) ⊖ B　　（先膨胀，再腐蚀）<span class="n">(9.11)</span></div>
+<table>
+<thead><tr><th style="width:64pt">运算</th><th style="width:170pt">效果（必背）</th><th>典型应用</th></tr></thead><tbody>
+<tr><td><b>开</b></td><td><b>平滑轮廓、断开窄狭颈、消除细小突出物</b>；外角变圆、内角不受影响；<b>删除小物体</b></td><td>去掉噪声小点（前置滤波）、分离物体、统计颗粒</td></tr>
+<tr><td><b>闭</b></td><td><b>弥合窄间断和细长沟壑、消除小孔洞、填补轮廓断裂</b>；内角变圆、外角不受影响</td><td>填充孔洞、连接断裂线条、指纹修复</td></tr>
+</tbody></table>
+<div class="k"><span class="lab">几何解释</span>把 SE 想象成一个<b>球</b>：<b>开运算</b>是球在 A 的<b>边界内侧</b>滚动，球能到达的边界最远点构成新边界（所以凸出的尖角被“滚掉”）；<b>闭运算</b>是球在 A 的<b>边界外侧</b>滚动，形成的内包络就是结果（所以凹陷被“填平”）。</div>
+<p><b>三条性质</b>（常考判断）：① <b>A∘B 是 A 的子集</b>（开运算只会变小）；A 是 <b>A·B 的子集</b>（闭运算只会变大）；② 单调性：C ⊆ D ⟹ C∘B ⊆ D∘B；③ <b>幂等性</b>：<b>(A∘B)∘B = A∘B</b>，即重复做开运算没有额外效果（闭运算同理）。</p>
+
+<h2>9.5 击中—击不中变换（HMT）<span class="star">★★</span></h2>
+<div class="f">A ⊛ B = (A ⊖ B<sub>1</sub>) ∩ (A<sup>c</sup> ⊖ B<sub>2</sub>)，　B = (B<sub>1</sub>, B<sub>2</sub>)<span class="n">(9.16)</span></div>
+<p>B<sub>1</sub> 是“<b>应命中</b>”部分（对应前景），B<sub>2</sub> 是“<b>应击不中</b>”部分（对应背景）；<b>两者同时满足</b>才输出。<b>本质是完全的模板匹配</b>：在图中找特定形状并输出其原点，是细化、粗化、凸壳、骨架的共同基础。</p>
+
+<h2>9.6 常用形态学算法<span class="star">★★★</span></h2>
+<table>
+<thead><tr><th style="width:96pt">算法</th><th style="width:180pt">公式</th><th>作用与要点</th></tr></thead><tbody>
+<tr><td><b>边界提取</b></td><td>β(A) = A − (A ⊖ B)</td><td>原图减去腐蚀结果 = 被削掉的那圈，即边界</td></tr>
+<tr><td><b>孔洞填充</b></td><td>X<sub>k</sub> = (X<sub>k−1</sub> ⊕ B) ∩ A<sup>c</sup>，直到 X<sub>k</sub> = X<sub>k−1</sub></td><td>从孔洞内种子点做<b>条件膨胀</b>（每步与 A<sup>c</sup> 相交），收敛后<b>X<sub>k</sub> ∪ A</b> 才是填孔并保留原前景的结果。孔洞 = 被前景包围的背景区域</td></tr>
+<tr><td><b>连通分量提取</b><br><span class="tag hot">重点</span></td><td>X<sub>k</sub> = (X<sub>k−1</sub> ⊕ B) ∩ A，直到收敛</td><td>从每个连通分量的一个种子点出发做条件膨胀（这次与 A 相交，只在前景内生长），<b>课件示例采用 8 连通</b>（实际也可按任务选 4 连通）。结果就是包含该种子的整个连通分量</td></tr>
+<tr><td><b>凸壳</b><br><span class="tag hot">重点</span></td><td>X<sub>k</sub><sup>i</sup> = (X<sub>k−1</sub><sup>i</sup> ⊛ B<sup>i</sup>) ∪ X<sub>k−1</sub><sup>i</sup>，C(A) = ∪<sub>i=1..4</sub> D<sup>i</sup></td><td><b>凸形</b>：集合内任意两点的连线都在集合内。<b>凸壳</b>：包含 S 的<b>最小凸集</b>；差集 H−S 叫<b>凸缺</b>。用 4 个 SE 反复做 HMT 并求并，直到不再变化</td></tr>
+<tr><td><b>细化</b></td><td>A ⊗ B = A − (A ⊛ B)</td><td>把粗线条逐步削细；所得骨架需满足细化定义，不能笼统保证所有输入都为单像素宽；用一组旋转过的 SE 序列反复做，直到不变</td></tr>
+<tr><td><b>粗化</b></td><td>A ⊙ B = A ∪ (A ⊛ B)</td><td>细化的对偶；实际中<b>先对背景细化再求补</b>更常用</td></tr>
+<tr><td><b>骨架</b></td><td>S(A) = ∪<sub>k</sub> S<sub>k</sub>(A)，S<sub>k</sub>(A) = (A ⊖ kB) − (A ⊖ kB)∘B</td><td>用<b>最大圆盘</b>的圆心集合定义；可由 S<sub>k</sub> 膨胀重建 A</td></tr>
+<tr><td><b>裁剪</b></td><td>细化 → 找端点 → 条件膨胀 → 与骨架求并</td><td>清除细化和骨架产生的<b>寄生“毛刺”</b>（手写字符识别常用）</td></tr>
+</tbody></table>
+
+<div class="tip"><span class="lab">连通分量为什么是重点</span>它是<b>几乎所有后续处理的入口</b>：先二值化 → 提取连通分量 → 对每个分量算面积/位置/形状 → 筛选/计数/识别。作业 9-51（统计颗粒）、9-52（垫圈缺陷检测）、11-38（瓶子检测）、12-33（椭圆识别）全都要用它。<b>答题时写“8 邻域连通分量标记（connectedComponentsWithStats）”，并说明用面积/边界接触来筛选。</b></div>
+
+<h2>9.7 形态学重建<span class="star">★★</span></h2>
+<p>重建用两幅图：<b>标记 F</b>（生长起点）与<b>模板 G</b>（约束边界），SE 定义连通性。测地膨胀常取 F⊆G；测地腐蚀常取 G⊆F。</p>
+<div class="f">测地膨胀：D<sub>G</sub><sup>1</sup>(F) = (F ⊕ B) ∩ G　　（每步都与 G 相交，防止越过模板）<span class="n">(9.38)</span><br>测地腐蚀：E<sub>G</sub><sup>1</sup>(F) = (F ⊖ B) ∪ G<span class="n">(9.40)</span></div>
+<p>迭代到<b>不再变化</b>即得<b>膨胀重建 R<sub>G</sub><sup>D</sup>(F)</b>。三个经典应用：</p>
+<ul class="tight">
+<li><b>重建开运算</b> O<sub>R</sub><sup>n</sup>(F) = R<sub>F</sub><sup>D</sup>(F ⊖ nB)：腐蚀删掉小物体后，用重建<b>精确恢复</b>保留下来的物体形状（普通开运算只能“大致”恢复）。</li>
+<li><b>自动孔洞填充</b>：标记 F 只在图像边框上取 1−I，其余为 0；对 I<sup>c</sup> 做重建，再取补，即得填满所有孔洞的图像。<b>不需要人工给种子点</b>。</li>
+<li><b>边界清除</b>：标记 F 只保留边框上的前景像素，做重建 → 得到所有“接触边界”的物体；用 I 减去它，就只剩<b>完整物体</b>。</li>
+</ul>
+
+<h2>9.8 灰度级形态学<span class="star">★★</span></h2>
+<div class="f">灰度腐蚀：(f ⊖ b)(x,y) = min<sub>(s,t)∈b</sub> f(x+s, y+t)　　（<b>取邻域最小值</b>）<span class="n">(9.49)</span><br>灰度膨胀：(f ⊕ b)(x,y) = max<sub>(s,t)∈b̂</sub> f(x−s, y−t)　　（<b>取邻域最大值</b>）<span class="n">(9.50)</span></div>
+<div class="k"><span class="lab">一句话</span><b>对平坦结构元，灰度腐蚀 = 最小值滤波，灰度膨胀 = 最大值滤波。</b>所以腐蚀让图像整体变暗、亮细节缩小；膨胀让图像整体变亮、暗细节被填平。开/闭运算的形式与二值完全一样：(f∘b) = (f⊖b)⊕b，(f·b) = (f⊕b)⊖b。</div>
+<table class="tight">
+<thead><tr><th style="width:106pt">算法</th><th style="width:130pt">公式</th><th>作用</th></tr></thead><tbody>
+<tr><td><b>形态学平滑</b></td><td>先开后闭</td><td>开运算去亮噪声点，闭运算去暗噪声点</td></tr>
+<tr><td><b>形态学梯度</b></td><td>g = (f ⊕ b) − (f ⊖ b)</td><td>膨胀与腐蚀之差，<b>增强边缘、抑制同质区域</b>，有“类微分”效果</td></tr>
+<tr><td><b>顶帽变换</b></td><td>T<sub>hat</sub>(f) = f − (f ∘ b)</td><td>提取<b>暗背景上的亮物体</b>；<b>校正不均匀光照</b>（先用大 SE 开运算估计背景，再相减）</td></tr>
+<tr><td><b>底帽变换</b></td><td>B<sub>hat</sub>(f) = (f · b) − f</td><td>提取<b>亮背景上的暗物体</b></td></tr>
+<tr><td><b>粒度测定</b></td><td>不断增大 SE 做开运算，求相邻结果之差</td><td>差曲线的峰值对应图像中<b>主要物体的尺寸</b></td></tr>
+<tr><td><b>纹理分割</b></td><td>闭运算去小斑点 → 开运算填缝 → 求梯度</td><td>按纹理尺度分离区域</td></tr>
+</tbody></table>
+
+<div class="summary"><h4>本章必会</h4>① 腐蚀/膨胀的集合定义 + 盖章法手算；② 腐蚀=收缩/去小细节，膨胀=扩张/填孔洞；③ 开=先腐后膨（去小物体、断狭颈），闭=先膨后腐（填孔洞、连断裂）；④ 开运算幂等且是子集；⑤ 连通分量提取的迭代式与“8 连通”；⑥ 凸壳定义（最小凸集）与凸缺；⑦ 灰度腐蚀=最小值、膨胀=最大值；顶帽校正光照。</div>
+
+<h1 class="ch"><span class="num">10</span><span class="txt">图像分割</span><span class="en">IMAGE SEGMENTATION</span></h1>
+<p class="lead">本章<b>内容最多、综合题常用</b>。提纲点名了五块：Hough、Canny、超像素/SLIC、k-Means、阈值处理（含 Otsu）、DBSCAN，而且明确提示<b>“可能在大题中结合使用”</b>。</p>
+
+<h2>10.1 分割是什么，好的分割要满足什么<span class="star">★★</span></h2>
+<div class="k"><span class="lab">定义</span><b>图像分割</b>：把图像细分为构成它的子区域或物体。细分的程度取决于要解决的问题；<b>当感兴趣的物体或区域已经检测出来，就停止分割</b>。</div>
+<p>把图像区域 R 分成 n 个非空子区域 R<sub>1</sub>…R<sub>n</sub>，必须同时满足 5 个条件（填空/简答常考）：</p>
+<div class="f">① ∪R<sub>i</sub> = R（全覆盖）；② R<sub>i</sub> ∩ R<sub>j</sub> = ∅（互不重叠）；③ 每个 R<sub>i</sub> <b>连通</b><br>④ 每个 R<sub>i</sub> 满足均匀性测度 Q(R<sub>i</sub>)=TRUE（区域内相似）；⑤ 任意相邻子区域的并 Q(R<sub>i</sub>∪R<sub>j</sub>)=FALSE（区域间不同）</div>
+<p><b>两大类方法</b>：基于灰度<b>不连续性</b>（找边缘：点、线、边缘检测）与基于灰度<b>相似性</b>（找区域：阈值、区域生长、聚类/超像素、分水岭、图割）。</p>
+
+<h2>10.2 点、线检测<span class="star">★★</span></h2>
+<p><b>孤立点检测</b>用<b>拉普拉斯</b>（二阶导）：模板响应<b>绝对值</b>超过阈值就判为点。</p>
+<p><b>线检测</b>：二阶导对细线响应更强，但会产生<b>双线效应</b>（3×3 核放在宽 5 像素的恒灰度线上响应为 0，结果在线两侧各出现一条）。检测特定方向用四个方向的模板，<b>系数之和都为 0</b>，保证恒定灰度区响应为 0。</p>
+
+<h2>10.3 边缘检测与 Canny（重点）<span class="star">★★★</span></h2>
+<h3>边缘模型与三个步骤</h3>
+<p>边缘按灰度剖面分三类：<b>台阶</b>（理想突变）、<b>斜坡</b>（实际，有宽度）、<b>屋顶</b>（细线状，先升后降）。</p>
+<div class="k"><span class="lab">为什么先平滑</span>导数对噪声极敏感，<b>微弱噪声就能淹没一阶/二阶导数图</b>。故边缘检测三步为：<b>① 平滑降噪 → ② 检测边缘点（找候选）→ ③ 边缘定位（筛出真实边缘）</b>。</div>
+<p>基本梯度算子：Roberts（2×2）、Prewitt（3×3，系数全 1）、Sobel（3×3，中心加权 2，抗噪更好）。</p>
+
+<h3>Canny 边缘检测器：三个目标 + 四个步骤</h3>
+<table class="tight">
+<thead><tr><th style="width:96pt">三个设计目标</th><th>含义</th></tr></thead><tbody>
+<tr><td><b>① 低错误率</b></td><td>既不漏掉真边缘，也不把非边缘判成边缘</td></tr>
+<tr><td><b>② 定位准确</b></td><td>检出的边缘要落在真正的边界上</td></tr>
+<tr><td><b>③ 单一响应</b></td><td>一条边缘尽量只产生一条响应，避免粗重边缘与重复响应</td></tr>
+</tbody></table>
+<div class="flow"><span>① 高斯滤波平滑</span><em>→</em><span>② 计算梯度幅值与方向</span><em>→</em><span>③ 非极大值抑制 NMS</span><em>→</em><span>④ 双阈值处理与边缘连接</span></div>
+<div class="f">G(x,y) = e<sup>−(x²+y²)/2σ²</sup>；　f<sub>s</sub> = G ★ f<br>M<sub>s</sub>(x,y) = |∇f<sub>s</sub>| = √(g<sub>x</sub>² + g<sub>y</sub>²)，　α(x,y) = arctan(g<sub>y</sub>/g<sub>x</sub>)<span class="n">(10.35–10.38)</span></div>
+
+<h3>改进点一：非极大值抑制（NMS）——把边缘“瘦身”</h3>
+<p>高斯平滑会把边缘<b>变宽</b>，梯度幅值图上一条边会形成一条“山脊”。NMS 的目的就是<b>只保留山脊的最高点</b>，把边缘细化到 1 个像素。</p>
+<ol class="tight">
+<li>把梯度方向<b>量化为四类</b>：水平（0°）、垂直（90°）、+45°、−45°。</li>
+<li>对每个像素，沿其<b>梯度方向</b>（即边缘法线方向）取<b>前后两个相邻像素</b>的梯度幅值。</li>
+<li>若当前像素的幅值<b>同时大于这两个邻居</b>，则保留（它就是局部极大值）；否则<b>置 0（抑制）</b>。</li>
+</ol>
+<div class="k"><span class="lab">一句话</span><b>沿着梯度方向看两边，我不是最大的就不要我。</b>遍历完，每条边缘只剩一条“山脊线”，宽度约为 1 像素。</div>
+
+<h3>改进点二：双阈值处理——把边缘“连起来”</h3>
+<p>设高阈值 T<sub>H</sub>、低阈值 T<sub>L</sub>，一般 <b>T<sub>H</sub> : T<sub>L</sub> = 2:1 ～ 3:1</b>。对 NMS 后的图像 g<sub>N</sub>：</p>
+<table class="tight">
+<thead><tr><th style="width:150pt">条件</th><th>处理</th></tr></thead><tbody>
+<tr><td>g<sub>N</sub>(x,y) &gt; T<sub>H</sub></td><td>直接判为<b>强边缘</b>（一定保留）</td></tr>
+<tr><td>g<sub>N</sub>(x,y) &lt; T<sub>L</sub></td><td>直接<b>排除</b>（一定不是边缘）</td></tr>
+<tr><td>T<sub>L</sub> ≤ g<sub>N</sub> ≤ T<sub>H</sub></td><td><b>弱边缘</b>：只有<b>与已确定的强边缘像素邻接</b>时才判为边缘，否则丢弃</td></tr>
+</tbody></table>
+<div class="k"><span class="lab">双阈值解决了什么</span>单阈值永远两难：阈值高 → 边缘断裂、不连续；阈值低 → 出现大量伪边缘。<b>双阈值用“高阈值保证可靠、低阈值保证连续”</b>：高阈值找出确定是边缘的骨架，低阈值把与骨架相连的“尾巴”补上。<b>这就是 Canny 相比普通梯度阈值法的本质改进。</b></div>
+<p><b>代价</b>：相较简单梯度阈值法，步骤更多、参数更多，计算与实现成本更高（课件尤其指出早期计算机上的速度问题）。所以当<b>更看重速度</b>时用简单阈值梯度法，<b>更看重边缘质量</b>时用 Canny。最后通常还要做一次边缘细化，得到真正的 1 像素宽边缘。</p>
+
+<h2>10.4 Hough 变换（重点计算/简答）<span class="star">★★★</span></h2>
+<h3>要解决什么问题</h3>
+<p>边缘检测得到的只是<b>零散、常断裂的点</b>。要把它们<b>连成直线/圆</b>，笨办法是枚举所有点对：n 个点约 n² 条直线，再逐点比较共 ~n³ 次运算——<b>太慢</b>。Hough 变换换了思路。</p>
+<h3>核心思想：点—线对偶</h3>
+<div class="k"><span class="lab">思想</span><b>图像空间里的一个点 → 参数空间里的一条曲线（斜截式下为直线，法线式下为正弦曲线）；共线的点 → 曲线交于同一点。</b>于是“找共线点”变成了“找累加器里的峰值”——一个投票问题。</div>
+<p>先用斜率截距式 y = ax + b：点 (x<sub>i</sub>, y<sub>i</sub>) 对应参数平面上的一条直线 b = −x<sub>i</sub>a + y<sub>i</sub>。<b>但直线接近垂直时 a → ∞，参数平面上的直线变成平行线，没有交点</b>。于是改用<b>法线式（极坐标）</b>：</p>
+<div class="f"><b>ρ = x·cosθ + y·sinθ</b>　（θ ∈ [0°, 180°)，ρ 为原点到直线的垂距）<span class="n">(10.44)</span></div>
+<p>这样<b>一个点 (x,y) 在 ρ-θ 平面上对应一条正弦曲线</b>；同一条直线上的多个点，其曲线会<b>交于同一点 (ρ, θ)</b>。</p>
+<div class="ex"><span class="lab">例</span><span class="q">把直线 y = −2x + 1 写成法线式，求 θ 与 ρ。（作业 10-25）</span><br>
+由 y = ax+b 得 ax − y + b = 0。取 <b>θ ∈ [0°,180°)、ρ ≥ 0</b>，则单位法向量为<br>
+<b>n = (−a, 1)/√(a²+1) = (cosθ, sinθ)，ρ = b/√(a²+1)</b>。<br>
+代入 a = −2、b = 1：√5 ≈ 2.236，cosθ = 2/√5 ≈ 0.894，sinθ = 1/√5 ≈ 0.447，ρ = 1/√5 ≈ 0.447。<br>
+所以 <b>θ ≈ 26.565°，ρ ≈ 0.447</b>，即 <b>x cos26.565° + y sin26.565° = 0.447</b>。<br>
+<span style="color:#6b7686">验算：线上取 (0,1)，代入 0×0.894 + 1×0.447 = 0.447 ✓。若采用其他 θ/ρ 范围，可用 (ρ,θ) 与 (−ρ,θ+180°) 等价转换。</span></div>
+<div class="ex"><span class="lab">例</span><span class="q">点 (0,0) 在 ρ-θ 平面上的轨迹是什么？（作业 10-26）</span><br>
+代入 ρ = 0·cosθ + 0·sinθ = <b>0</b>，对任意 θ 都成立 → 轨迹是 <b>ρ = 0 的一条水平直线</b>。<b>只有原点</b>会产生这个结果：任何非原点 (x,y) 的 ρ 会随 θ 变化，不可能恒为 0。</div>
+<h3>算法步骤（背这四步）</h3>
+<div class="flow"><span>① 得到二值边缘图（推荐 Canny）</span><em>→</em><span>② 把 ρ-θ 平面划成累加单元并清零</span><em>→</em><span>③ 对每个前景点，遍历所有 θ 求 ρ，对应单元 +1</span><em>→</em><span>④ 找累加值最大的单元，其 (ρ,θ) 即直线参数</span></div>
+<p>累加值 P 的含义：<b>图像中有 P 个点位于直线 ρ<sub>i</sub> = x cosθ<sub>j</sub> + y sinθ<sub>j</sub> 上</b>。计算量与前景点数 n 呈<b>线性</b>关系（这是相对 n³ 的巨大改进）。同理可用于检测<b>圆、椭圆</b>（参数变成 3 个、4 个，累加器维数增加）。</p>
+
+<h2>10.5 阈值处理<span class="star">★★★</span></h2>
+<div class="f">g(x,y) = 1（若 f(x,y) &gt; T）；0（若 f(x,y) ≤ T）<span class="n">(10.46)</span></div>
+<p><b>T 为常数 → 全局阈值</b>（常用<b>直方图法</b>：取直方图双峰之间的谷点）；<b>T 随位置变化 → 可变/自适应阈值</b>。</p>
+
+<h3>Otsu（大津法）：让两类的“类间方差”最大</h3>
+<p><b>思想</b>：把直方图分成 c₁、c₂ 两类，遍历所有可能的阈值 k，选那个使<b>类间方差 σ<sub>B</sub>² 最大</b>的 k。类间方差越大，说明两类分得越开——这等价于“<b>让类内方差最小</b>”。</p>
+<div class="f">P<sub>1</sub>(k) = Σ<sub>i=0..k</sub> p<sub>i</sub>，　P<sub>2</sub>(k) = 1 − P<sub>1</sub>(k)<span class="n">(10.49–10.50)</span><br>
+m<sub>1</sub>(k) = (1/P<sub>1</sub>)Σ<sub>i=0..k</sub> i·p<sub>i</sub>，　m<sub>2</sub>(k) = (1/P<sub>2</sub>)Σ<sub>i=k+1..L−1</sub> i·p<sub>i</sub><span class="n">(10.51–10.52)</span><br>
+m<sub>G</sub> = Σ<sub>i=0..L−1</sub> i·p<sub>i</sub>（全局均值）<span class="n">(10.54)</span><br>
+<b>σ<sub>B</sub>² = P<sub>1</sub>P<sub>2</sub>(m<sub>1</sub> − m<sub>2</sub>)² = (m<sub>G</sub>P<sub>1</sub> − m(k))² / [P<sub>1</sub>(1 − P<sub>1</sub>)]，　m(k)=Σ<sub>i=0..k</sub> i·p<sub>i</sub></b><span class="n">(10.60)</span></div>
+<div class="ex"><span class="lab">例</span><span class="q">8 级灰度（L=8），归一化直方图 p = [0.20, 0.30, 0.10, 0, 0.05, 0.10, 0.15, 0.10]。求 Otsu 阈值。</span><br>
+先算 m<sub>G</sub> = 0×.2+1×.3+2×.1+3×0+4×.05+5×.1+6×.15+7×.1 = <b>2.80</b>。逐个 k 试：<br>
+k=0：P₁=.20, m₁=0；P₂=.80, m₂=3.50 → σ<sub>B</sub>²=.20×.80×(0−3.50)² = <b>1.96</b><br>
+k=1：P₁=.50, m₁=0.60；P₂=.50, m₂=5.00 → σ<sub>B</sub>²=.25×(0.60−5)² = <b>4.84</b><br>
+k=2：P₁=.60, m₁=0.833；P₂=.40, m₂=5.75 → σ<sub>B</sub>²=.24×(0.833−5.75)² ≈ <b>5.80</b>　← <b>最大</b><br>
+k=3：与 k=2 相同（因灰度为 3 的像素数为 0）≈ 5.80<br>
+k=4：P₁=.65, m₁=1.077；P₂=.35, m₂=6.00 → ≈ <b>5.51</b>；k=5 ≈ 4.32；k=6 ≈ 1.96<br>
+本例 k=2 与 k=3 的 σ<sub>B</sub>² 完全相同。<b>若取 k*=2，则 c₁={0,1,2}、c₂={3,…,7}</b>；按 g=1（f&gt;T）规则取 T=2，即灰度 ≤2 为背景、≥3 为目标。若取 k*=3，则对应 T=3、≥4 为目标；两种最优分割因灰度 3 的概率为 0 而相同，但阈值写法不同。</div>
+<div class="trap"><span class="lab">Otsu 的适用条件</span>① <b>近似双峰</b>时通常效果较好；② <b>小目标或单峰直方图</b>时可能分割不准；③ <b>全局 Otsu 更适合光照较均匀</b>的图像，光照不均可先校正或改用局部阈值；④ 自动、快速，无需人工指定最终阈值。</div>
+
+<h3>可变（自适应）阈值</h3>
+<ul class="tight">
+<li><b>基于局部性质</b>：用每个像素邻域的<b>均值 m<sub>xy</sub></b> 与<b>标准差 σ<sub>xy</sub></b> 共同构造局部阈值；具体公式与系数依算法及题目给定。</li>
+<li><b>基于移动平均</b>：把图像按 Z 字形扫描成一维，用前 n 个点的<b>滑动平均</b> m<sub>k</sub> 乘系数 b 作为该点阈值；两个参数是 <b>n（参与平均的点数）和 b（阈值系数）</b>。</li>
+</ul>
+
+<h2>10.6 k-Means 聚类<span class="star">★★★</span></h2>
+<p><b>聚类</b>：按（欧氏）距离把样本划分为若干簇，使<b>簇内相似、簇间不相似</b>，属于<b>无监督学习</b>。k-Means 是“基于划分”的聚类，也是最常用的一种。</p>
+<div class="f">目标：最小化平方误差　E = Σ<sub>i=1..k</sub> Σ<sub>z∈C<sub>i</sub></sub> |z − m<sub>i</sub>|²，　质心 m<sub>i</sub> = (1/|C<sub>i</sub>|)Σ<sub>z∈C<sub>i</sub></sub> z<span class="n">(10.85)</span></div>
+<p>直接求全局最优通常很困难，因此采用<b>启发式迭代</b>：</p>
+<ol class="tight">
+<li><b>初始化</b>：从样本中选 k 个点作为初始质心 m<sub>1</sub>…m<sub>k</sub>。</li>
+<li><b>分配</b>：对每个样本 z<sub>q</sub>，计算它到各质心的距离，把它归给<b>最近的质心</b>所在的簇。</li>
+<li><b>更新</b>：对每个簇重新计算质心（簇内所有点的均值）。</li>
+<li><b>终止</b>：若所有质心不再变化（或达到最大迭代次数），结束；否则回到第 2 步。</li>
+</ol>
+<h3>k 怎么定？（常考简答）</h3>
+<table class="tight">
+<thead><tr><th style="width:110pt">方法</th><th>做法</th></tr></thead><tbody>
+<tr><td><b>试凑法</b></td><td>取不同 k 分别跑，看效果（最朴素）</td></tr>
+<tr><td><b>结合业务</b></td><td>已知要分几类就设几类（如“水体/市区/植被”就是 3 类）</td></tr>
+<tr><td><b>SSE（误差平方和）</b></td><td>SSE 随 k 增大而减小；画 SSE–k 曲线，找<b>拐点（肘部）</b>，越小越好但要注意过拟合</td></tr>
+<tr><td><b>轮廓系数 s</b></td><td>s = (b − a)/max(a,b) ∈ [−1, 1]。a = 样本与同簇其他点的平均距离，b = 与最近邻簇所有点的平均距离。<b>s 越接近 1 越好，越接近 −1 越差</b></td></tr>
+</tbody></table>
+<table class="tight">
+<thead><tr><th style="width:50%">优点</th><th>缺点</th></tr></thead><tbody>
+<tr><td>① 原理简单、实现容易；② 效果较优、收敛快；③ 可解释性强（簇/质心）；④ 只需调一个参数 k</td><td>① k 不易把握；② 非凸或 elongated 簇的划分效果差（并非一定不收敛）；③ 各类数据不平衡（长尾/方差不同）时效果差；④ 只能得局部最优；⑤ <b>对噪声和异常点敏感</b></td></tr>
+</tbody></table>
+<p><b>k-Means++</b>：改进初始质心的选法——第一个质心随机选，之后每选一个新质心时，<b>离已选质心越远的点被选中的概率越大</b>。这样初始质心分散，收敛更快、结果更稳定。</p>
+
+<h2>10.7 超像素与 SLIC<span class="star">★★★</span></h2>
+<div class="k"><span class="lab">超像素</span>由具有<b>相似纹理、颜色、亮度</b>等特征的相邻像素构成的、有一定视觉意义的<b>不规则像素块</b>。它把“像素级”降到“块级”，用几百到几千个超像素代替几十万个像素，<b>大幅降低后续处理复杂度</b>，通常作为分割算法的<b>预处理步骤</b>。</div>
+<p><b>SLIC（Simple Linear Iterative Clustering，简单线性迭代聚类）</b>：2010 年提出，把彩色图像转成 <b>CIELAB 颜色空间 + XY 坐标</b>的 5 维特征向量 [l, a, b, x, y]<sup>T</sup>，再对这个 5 维向量做<b>局部 k-Means 聚类</b>。</p>
+<h3>两个关键设计（这是它不同于普通 k-Means 的地方）</h3>
+<table>
+<thead><tr><th style="width:110pt">设计</th><th>内容</th><th>解决了什么</th></tr></thead><tbody>
+<tr><td><b>① 限制搜索范围</b></td><td>每个聚类中心只在其 <b>2S×2S</b> 的邻域内搜索像素（S 为网格间隔）</td><td>把 k-Means 的复杂度从“全图搜索”降为常数，<b>对 N 个像素，典型实现约为 O(N)（迭代次数固定时）</b></td></tr>
+<tr><td><b>② 5 维距离度量</b></td><td>颜色距离 d<sub>c</sub>、空间距离 d<sub>s</sub>，再加权归一化</td><td>同时考虑“颜色像不像”和“距离近不近”，生成的超像素更规整</td></tr>
+</tbody></table>
+<div class="f">S = √(N/k)　（N 为总像素数，k 为超像素个数）<span class="n">(10.86)</span><br>
+d<sub>c</sub> = √[(l<sub>j</sub>−l<sub>i</sub>)² + (a<sub>j</sub>−a<sub>i</sub>)² + (b<sub>j</sub>−b<sub>i</sub>)²]，　d<sub>s</sub> = √[(x<sub>j</sub>−x<sub>i</sub>)² + (y<sub>j</sub>−y<sub>i</sub>)²]<br>
+<b>D = √[(d<sub>c</sub>/m)² + (d<sub>s</sub>/S)²]</b><span class="n">(10.87–10.89)</span></div>
+<div class="k"><span class="lab">参数 m 怎么影响结果（重点）</span><b>m 是紧凑度参数（控制颜色与空间距离的相对权重）</b>（通常 1～40）。<b>m 越大</b> → 空间距离的影响越显著 → 超像素形状<b>越规整</b>（越像方块）；<b>m 越小</b> → 颜色相似度越重要 → 超像素<b>越贴合图像边缘</b>（颜色变化处）。</div>
+<h3>算法流程（五步）</h3>
+<div class="flow" style="margin:0 0 2pt 0"><span>① 在规则网格上按间隔 S 撒种子</span><em>→</em><span>② 把种子移到 3×3 邻域内梯度最低处</span><em>→</em><span>③ 每个中心在 2S×2S 内做 k-Means 分配</span></div>
+<div class="flow" style="margin:0"><em>→</em><span>④ 更新中心为簇内均值</span><em>→</em><span>⑤ 迭代至收敛（一般 10～20 次）</span></div>
+<p>第 ② 步的作用：<b>避免把超像素“种”在边缘上，也减少用噪声像素做种子</b>。SLIC 默认主要设置<b>超像素数 k</b>，还可调节紧凑度参数 m。优点：① 超像素紧凑整齐；② 彩色/灰度图都能分；③ 参数极少；④ 速度快、轮廓保持好。</p>
+
+<h2>10.8 DBSCAN（基于密度的聚类）<span class="star">★★★</span></h2>
+<p><b>为什么需要它</b>：k-Means 偏好球状、方差相近的簇，对 elongated 簇与异常点敏感，且须先知 k。DBSCAN 从密度出发：<b>一个簇 = 一片密度足够高的连通区域</b>。</p>
+<h3>两个参数</h3>
+<table class="tight">
+<thead><tr><th style="width:74pt">参数</th><th>含义</th><th>怎么定</th></tr></thead><tbody>
+<tr><td><b>ε（Eps）</b></td><td><b>邻域半径</b>：以 p 为中心、ε 为半径的邻域 N<sub>ε</sub>(p)</td><td>按到第 k 个近邻的距离排序画 <b>k-距离图</b>，取<b>拐点</b>附近为 ε</td></tr>
+<tr><td><b>MinPts</b></td><td><b>最小点数</b>：成为核心点所需的邻域最少点数（含自身）</td><td>经验：维度 + 1 或 2×维度，常用 4；噪声多时可增大</td></tr>
+</tbody></table>
+<h3>三类点</h3>
+<table class="tight">
+<thead><tr><th style="width:66pt">类型</th><th>定义</th></tr></thead><tbody>
+<tr><td><b>核心点</b></td><td>|N<sub>ε</sub>(p)| ≥ MinPts</td></tr>
+<tr><td><b>边界点</b></td><td>非核心点，但属于某核心点的 ε 邻域</td></tr>
+<tr><td><b>噪声点</b></td><td>非核心点，也不属于任何核心点的 ε 邻域</td></tr>
+</tbody></table>
+<h3>三个“密度”概念（常考名词解释）</h3>
+<table>
+<thead><tr><th style="width:96pt">概念</th><th>定义</th><th>直观理解</th></tr></thead><tbody>
+<tr><td><b>密度直达</b><br>directly density-reachable</td><td>q ∈ N<sub>ε</sub>(p)，且 <b>p 是核心点</b></td><td><b>一般不对称</b>：核心点可直达边界点，反之不成立</td></tr>
+<tr><td><b>密度可达</b><br>density-reachable</td><td>存在点链 p<sub>1</sub>=p, p<sub>2</sub>, …, p<sub>n</sub>=q，使每个 p<sub>i+1</sub> 由 p<sub>i</sub> 密度直达</td><td><b>可沿核心点链传递，仍一般不对称</b></td></tr>
+<tr><td><b>密度相连</b><br>density-connected</td><td>存在点 o，使 p 与 q 都由 o 密度可达</td><td><b>对称</b>；簇是密度相连的最大集合</td></tr>
+</tbody></table>
+<div class="k"><span class="lab">算法流程</span>① 取未访问点 p 并查 ε 邻域；② 点数不足先记为<b>噪声</b>（后续可改判为边界点）；③ 若为核心点则新建簇并加入其邻域，递归扩展其中的核心点；④ 簇不能扩张后继续，直到所有点被访问。</div>
+<div class="tbl">
+<table class="tight">
+<thead><tr><th style="width:50%">优点</th><th>缺点</th></tr></thead><tbody>
+<tr><td>① <b>无需预设簇数</b>；② 可发现<b>非球状簇</b>；③ 能<b>识别噪声</b>；④ 对顺序通常较稳健</td><td>① 对 <b>ε/MinPts 敏感</b>；② <b>密度差异大</b>时效果差；③ 高维距离易失效；④ 大数据需空间索引加速</td></tr>
+</tbody></table>
+</div>
+
+<div class="summary" style="font-size:8.5pt;line-height:1.55"><h4>本章必会</h4>① Canny 四步与 NMS/双阈值；② Hough 的 ρ=x cosθ+y sinθ 与点线对偶；③ Otsu 类间方差；④ SLIC 的 5 维向量、S=√(N/k)、搜索范围 2S×2S、紧凑度参数 m；⑤ k-Means 与 k 的确定；⑥ DBSCAN 的三种密度关系及 ε/MinPts。</div>
+
+<h1 class="ch"><span class="num">11</span><span class="txt">特征提取</span><span class="en">FEATURE EXTRACTION</span></h1>
+<p class="lead">这章是“大题的关键零件库”：<b>Hu 不变矩</b>（提纲明确说会作为大题关键步骤）、<b>PCA</b>、<b>Harris 角点</b>、<b>SIFT</b>。概念题很多，但都只要“说清作用 + 说清流程”。</p>
+
+<h2>11.1 什么是特征<span class="star">★★</span></h2>
+<div class="k"><span class="lab">定义</span><b>特征</b>本质就是<b>可以存储在计算机里的“数”</b>，是从复杂数据中挑出的“关键信息”，用来排除干扰、区分不同目标。一般情况下数值越大，特征越强烈。</div>
+<p>图像特征分四类：<b>颜色</b>（均值、直方图、颜色矩）、<b>纹理</b>（LBP、灰度共生矩阵）、<b>形状</b>（面积、周长、长宽比、矩）、<b>空间关系</b>（相邻、包含）。提取方法分传统（矩、边界、SIFT/HOG）与深度学习（CNN）。</p>
+
+<h2>11.2 拓扑描述子与欧拉数<span class="star">★★</span></h2>
+<p><b>拓扑描述子</b>：在<b>连续变形（拉伸、扭曲，但不撕裂、不粘连）下保持不变</b>的性质，与距离、大小无关。</p>
+<div class="f"><b>欧拉数 E = C − H</b>　（C = 连通分量个数，H = 孔洞个数）</div>
+<div class="ex"><span class="lab">例</span>字母 <b>A</b>：1 个连通分量、1 个孔洞 → E = 0；字母 <b>B</b>：1 个连通分量、2 个孔洞 → E = <b>−1</b>。<br><span style="color:#6b7686">用途：快速筛掉形状不对的候选目标。</span></div>
+
+<h2>11.3 矩与 Hu 不变矩<span class="star">★★★</span></h2>
+<h3>几何矩的物理意义</h3>
+<div class="f">M<sub>pq</sub> = Σ<sub>x</sub> Σ<sub>y</sub> x<sup>p</sup> y<sup>q</sup> f(x,y)　（p+q 为阶数）<span class="n">(11.34)</span></div>
+<table class="tight">
+<thead><tr><th style="width:70pt">阶数</th><th style="width:110pt">矩</th><th>物理意义</th></tr></thead><tbody>
+<tr><td><b>零阶</b></td><td>M<sub>00</sub></td><td><b>图像灰度总和（“质量”）</b>；二值图中前景为 1、背景为 0 时就是前景像素数（面积）</td></tr>
+<tr><td><b>一阶</b></td><td>M<sub>10</sub>、M<sub>01</sub></td><td>图像 x / y 方向的<b>灰度中心</b>（质心）</td></tr>
+<tr><td><b>二阶</b></td><td>M<sub>20</sub>、M<sub>02</sub>、M<sub>11</sub></td><td><b>惯性矩</b>；确定目标的<b>主轴、长轴、短轴</b>（用来描述椭圆的朝向与长短）</td></tr>
+<tr><td><b>三阶 / 四阶</b></td><td>M<sub>30</sub>、M<sub>03</sub>、M<sub>21</sub>、M<sub>12</sub> / M<sub>40</sub> 等</td><td>三阶 = 投影的<b>扭曲程度</b>（偏斜）；四阶 = <b>峰度</b></td></tr>
+</tbody></table>
+<p><b>问题</b>：几何矩会随图像的<b>平移、缩放、旋转、转置</b>而变化，不能直接用来匹配。于是要“造”不变性：</p>
+<div class="f">质心：x̄ = M<sub>10</sub>/M<sub>00</sub>，　ȳ = M<sub>01</sub>/M<sub>00</sub><span class="n">(11.36)</span><br>
+中心矩：μ<sub>pq</sub> = ΣΣ (x − x̄)<sup>p</sup> (y − ȳ)<sup>q</sup> f(x,y)　⟹ <b>平移不变</b><span class="n">(11.35)</span><br>
+归一化中心矩：η<sub>pq</sub> = μ<sub>pq</sub> / μ<sub>00</sub><sup>γ</sup>，　γ = (p+q)/2 + 1　⟹ <b>平移 + 缩放不变</b><span class="n">(11.37–11.38)</span></div>
+<div style="page-break-inside:avoid">
+<h3>Hu 的七个不变矩</h3>
+<p>用二阶、三阶归一化中心矩组合成 7 个量，它们对<b>平移、缩放、旋转</b>都不变（前 6 个镜像不变，第 7 个镜像变号）：</p>
+<div class="f" style="text-align:left;font-size:9.1pt;line-height:1.86;padding-left:12pt">
+φ<sub>1</sub> = η<sub>20</sub> + η<sub>02</sub><br>
+φ<sub>2</sub> = (η<sub>20</sub> − η<sub>02</sub>)² + 4η<sub>11</sub>²<br>
+φ<sub>3</sub> = (η<sub>30</sub> − 3η<sub>12</sub>)² + (3η<sub>21</sub> − η<sub>03</sub>)²<br>
+φ<sub>4</sub> = (η<sub>30</sub> + η<sub>12</sub>)² + (η<sub>21</sub> + η<sub>03</sub>)²<br>
+φ<sub>5</sub> = (η<sub>30</sub>−3η<sub>12</sub>)(η<sub>30</sub>+η<sub>12</sub>)[(η<sub>30</sub>+η<sub>12</sub>)² − 3(η<sub>21</sub>+η<sub>03</sub>)²] + (3η<sub>21</sub>−η<sub>03</sub>)(η<sub>21</sub>+η<sub>03</sub>)[3(η<sub>30</sub>+η<sub>12</sub>)² − (η<sub>21</sub>+η<sub>03</sub>)²]<br>
+φ<sub>6</sub> = (η<sub>20</sub>−η<sub>02</sub>)[(η<sub>30</sub>+η<sub>12</sub>)² − (η<sub>21</sub>+η<sub>03</sub>)²] + 4η<sub>11</sub>(η<sub>30</sub>+η<sub>12</sub>)(η<sub>21</sub>+η<sub>03</sub>)<br>
+φ<sub>7</sub> = (3η<sub>21</sub>−η<sub>03</sub>)(η<sub>30</sub>+η<sub>12</sub>)[(η<sub>30</sub>+η<sub>12</sub>)² − 3(η<sub>21</sub>+η<sub>03</sub>)²] − (η<sub>30</sub>−3η<sub>12</sub>)(η<sub>21</sub>+η<sub>03</sub>)[3(η<sub>30</sub>+η<sub>12</sub>)² − (η<sub>21</sub>+η<sub>03</sub>)²]
+<span class="n" style="float:none;display:block;text-align:right">(11.39–11.45)</span></div>
+</div>
+<div class="trap"><span class="lab">抓重点</span>这七个式子主要用于理解构成，通常无需手算。你应掌握：<b>知道它们是由归一化中心矩组合而成、具有平移/缩放/旋转不变性、共 7 个</b>，并且能<b>说清用于匹配的流程</b>。</div>
+<h3>Hu 不变矩做形状匹配的标准流程（大题直接套）</h3>
+<div class="flow" style="margin:0 0 2pt 0"><span>① 计算模板图像的 Hu 矩</span><em>→</em><span>② 目标图上连通区域分析，提取 ROI</span><em>→</em><span>③ 对每个 ROI 算 Hu 矩</span></div>
+<div class="flow" style="margin:0"><em>→</em><span>④ 算与模板的距离，最小者为匹配目标</span></div>
+<p><b>距离度量</b>（因为 Hu 矩数值跨几个数量级，先取对数或归一化再算）：常用 <b>d = Σ|m<sub>i</sub><sup>A</sup> − m<sub>i</sub><sup>B</sup>|</b> 或 <b>d = Σ|1/m<sub>i</sub><sup>A</sup> − 1/m<sub>i</sub><sup>B</sup>|</b>。工程上还会与<b>颜色距离</b>加权成“复合距离”，取最小者作为识别结果（课件无人机识别示例采用复合判据，具体公式以原图为准）。</p>
+
+<h2>11.4 PCA 主成分分析<span class="star">★★★</span></h2>
+<div class="k"><span class="lab">是什么</span>PCA 是<b>数据降维</b>的经典统计手段：把高维数据投影到少数几个“最重要”的方向上，用低维表示原数据，并<b>尽可能保留原始信息</b>。</div>
+<p><b>为什么要降维</b>：高维空间数据极度分散（100 维、每维 10 值就有 10¹⁰⁰ 种组合），导致样本稀疏、计算爆炸、易过拟合；特征间还常有<b>多重共线性</b>（如“房价”与“面积”几乎完全正相关，有一列多余）。</p>
+<h3>五个步骤</h3>
+<ol class="tight">
+<li><b>中心化</b>：每个特征减去其均值（把原点搬到数据重心）。</li>
+<li><b>求协方差矩阵</b>：C = (1/n)·Σ(x<sub>i</sub>−x̄)(x<sub>i</sub>−x̄)<sup>T</sup>，描述特征间的相关性。</li>
+<li><b>特征值分解 / 奇异值分解</b>：得到特征值 λ<sub>1</sub> ≥ λ<sub>2</sub> ≥ … 和对应特征向量。</li>
+<li><b>取前 k 个最大特征值对应的特征向量</b>作为新的坐标轴（主元 1、主元 2…）。</li>
+<li><b>投影</b>：把原数据乘上这组基，得到降维后的数据。</li>
+</ol>
+<div class="k"><span class="lab">一句话直觉</span>数据在二维平面上近似排成一条斜线，那“垂直于这条线”的那个坐标几乎没有信息。<b>把坐标轴旋转到与数据分布最“长”的方向重合，然后丢掉最短的方向</b>——这就是 PCA。丢掉的部分损失的信息最少。</div>
+<p><b>作用</b>：① 降维、减少计算量与存储；② <b>去相关</b>（消除多重共线性）；③ 抑制噪声；④ 缓解过拟合；⑤ 便于可视化（降到 2～3 维画图）。</p>
+
+<h2>11.5 Harris 角点检测<span class="star">★★★</span></h2>
+<div class="k"><span class="lab">什么是角点</span>用一个<b>固定窗口</b>在图像上沿<b>任意方向</b>滑动：<b>怎么动灰度都不变</b> → 平坦区域；<b>沿某一方向动不变、垂直方向动变化大</b> → 边缘；<b>往哪个方向动变化都很大</b> → <b>角点</b>。</div>
+<div class="f">E(u,v) = Σ<sub>x,y</sub> w(x,y)·[I(x+u, y+v) − I(x,y)]²<span class="n">课件公式</span><br>
+泰勒展开 ⇒ E(u,v) ≈ [u, v]·<b>M</b>·[u, v]<sup>T</sup>，　M = Σ w(x,y)·[[I<sub>x</sub>², I<sub>x</sub>I<sub>y</sub>], [I<sub>x</sub>I<sub>y</sub>, I<sub>y</sub>²]]<span class="n"></span></div>
+<p>M 的特征值 λ₁、λ₂ 描述了“两个方向上的变化速度”。为避免直接求特征值，Harris 定义响应：</p>
+<div class="f"><b>R = det(M) − k·[trace(M)]²</b>，　det(M) = λ<sub>1</sub>λ<sub>2</sub>，　trace(M) = λ<sub>1</sub> + λ<sub>2</sub></div>
+<table class="tight">
+<thead><tr><th style="width:130pt">特征值情况</th><th style="width:80pt">R 的值</th><th>判定</th></tr></thead><tbody>
+<tr><td>λ₁、λ₂ 都很小</td><td>|R| 很小</td><td><b>平坦区域</b></td></tr>
+<tr><td>一个大、一个小</td><td>R &lt; 0（为负）</td><td><b>边缘</b></td></tr>
+<tr><td>两个都很大</td><td>R 很大（正值）</td><td><b>角点</b></td></tr>
+</tbody></table>
+<p>系数 k 难以确定，<b>Shi-Tomasi 改进</b>为 <b>R = min(λ₁, λ₂)</b>。流程：① Sobel 求 I<sub>x</sub>、I<sub>y</sub>；② 构造 M；③ 算 R；④ 阈值 + 非极大值抑制。</p>
+<table class="tight">
+<thead><tr><th style="width:50%">优点</th><th>缺点</th></tr></thead><tbody>
+<tr><td>① 从灰度变化定义角点，<b>计算简单</b>；② 课件意义下具<b>旋转与光照变化的稳定性</b>（固定阈值下并非对任意光照绝对不变）</td><td>① 只适合简单背景/几何图形；② <b>缺少尺度不变性</b>（图像放大缩小后，原来判定为角点的可能变成边缘）</td></tr>
+</tbody></table>
+<p><b>应用</b>：棋盘格标定（算单应矩阵、校正镜头畸变）、图像拼接、运动跟踪。</p>
+
+<h2>11.6 SIFT 尺度不变特征变换<span class="star">★★★</span></h2>
+<div class="k"><span class="lab">要解决什么</span>同一物体在不同距离（尺度）、角度（旋转）、亮度下拍摄时，普通角点检测会失败。SIFT（1999，Lowe）提取的局部特征<b>对旋转、尺度缩放、亮度变化保持不变</b>，对视角变化、噪声也有一定稳定性——<b>在图像内容仍可见且处于算法适用范围内时，特征具有较好的重复性</b>。</div>
+<h3>三个关键概念（填空高频）</h3>
+<table class="tight">
+<thead><tr><th style="width:96pt">概念</th><th>含义</th></tr></thead><tbody>
+<tr><td><b>尺度空间</b></td><td>由<b>不同高斯尺度 σ 与不同 Octave 下采样</b>构成的一组图像，用于模拟不同观察尺度；下采样只是其中一步</td></tr>
+<tr><td><b>高斯金字塔</b></td><td>对尺度空间中每一层图像，在每个 Octave 内用<b>不同 σ 的高斯核</b>逐层模糊，Octave 之间再下采样；课件示例为同尺度多层图像</td></tr>
+<tr><td><b>高斯差分金字塔（DOG）</b></td><td>同一 Octave 内<b>相邻两层高斯模糊图相减</b>得到的新金字塔</td></tr>
+</tbody></table>
+<h3>四个步骤</h3>
+<div class="flow"><span>① 找关键点（尺度空间极值）</span><em>→</em><span>② 定方向</span><em>→</em><span>③ 做描述（生成特征向量）</span><em>→</em><span>④ 比特征（匹配）</span></div>
+<ol>
+<li><b>找关键点</b>：在 DOG 金字塔中，每个像素与它<b>同一层的 8 邻域 + 上下相邻两层的同位置 9×2 个点，共 26 个点</b>比较，是极值就作为候选关键点。这样在金字塔覆盖的尺度范围内可重复检测相应极值——这是尺度不变性的主要来源。</li>
+<li><b>定方向</b>：在以关键点为中心的邻域内，统计所有像素的<b>梯度方向直方图</b>（把 360° 分成 8 个方向，箭头长度表示梯度大小），<b>数量最多的方向即主方向</b>。之后所有计算都以主方向为基准——“摆正”了，所以旋转后特征不变。</li>
+<li><b>做描述</b>：取关键点周围 <b>16×16</b> 像素，分成 <b>4×4 个子区域</b>，每个子区域统计 8 个方向的梯度直方图 → <b>4×4×8 = 128 维</b>特征向量。<b>n 个特征点就有 n×128 维描述向量。</b></li>
+<li><b>比特征</b>：两特征向量越相似（欧氏距离越小）越是同一点，据此完成匹配（拼接、识别）。</li>
+</ol>
+<div class="trap"><span class="lab">易错</span>① 描述子为 <b>128 维</b>（SURF 常 64 维）；② 尺度不变性靠<b>金字塔 + DOG 极值检测</b>；③ 匹配还需几何一致性检验（如 RANSAC），不能只靠特征距离。</div>
+
+
+<h2>11.7 四件"特征工具"到底怎么选（易混点对比）<span class="star">★★</span></h2>
+<p>Hu 矩、PCA、Harris、SIFT 是本章四个最容易被问混的东西。它们的定位完全不同：<b>Hu 描述"一个区域长什么样"，PCA 处理"数据维度太高"，Harris 找"角点在哪"，SIFT 找"关键点并给它一个身份指纹"</b>。</p>
+<table class="tight">
+<thead><tr><th style="width:74pt">工具</th><th style="width:88pt">解决什么问题</th><th style="width:110pt">不变性</th><th style="width:80pt">输出</th><th>典型用途</th></tr></thead><tbody>
+<tr><td><b>Hu 不变矩</b></td><td>区域<b>形状</b>的定量描述</td><td>平移、缩放、旋转不变；<b>第 7 个镜像变号</b></td><td>7 维向量</td><td>形状匹配、字符识别、无人机降落标志识别</td></tr>
+<tr><td><b>PCA</b></td><td>高维数据<b>降维</b>、去相关</td><td>—（与几何变换无关）</td><td>主元（投影后的低维坐标）</td><td>特征压缩、去噪、可视化、缓解过拟合</td></tr>
+<tr><td><b>Harris</b></td><td><b>角点</b>在哪（点特征）</td><td>课件近似下具旋转/光照稳定性；<b>无尺度不变</b></td><td>角点坐标 + 响应 R</td><td>棋盘格标定、运动跟踪、图像拼接的初匹配</td></tr>
+<tr><td><b>SIFT</b></td><td>跨尺度/视角的<b>关键点 + 描述子</b></td><td>旋转、尺度、亮度不变；对视角变化、噪声有一定稳定性</td><td>关键点 + <b>128 维</b>描述子</td><td>图像拼接、目标识别、PCB 引脚匹配</td></tr>
+</tbody></table>
+<div class="tip"><span class="lab">一句话区分</span><b>要"认形状"用 Hu；要"减维度"用 PCA；要"找点"用 Harris；要"在不同尺度下都能认出来"用 SIFT。</b>大题里如果目标是"识别特定标志/字符"，标准组合是：<b>分割 → 连通分量 → Hu 矩 → 最小距离/距离最小者</b>；如果是"把两张图拼起来"，则是 <b>SIFT 提特征 → 匹配 → 几何变换</b>。</div>
+
+<div class="summary" style="padding:3pt 9pt;margin:4pt 0 0 0;font-size:8.6pt;line-height:1.55"><h4 style="margin:0 0 2pt 0;font-size:9pt">本章必会</h4>① 欧拉数 E=C−H；② 矩：0 阶质量、1 阶质心、2 阶惯性矩/主轴；③ Hu：7 个、平移缩放旋转不变；④ PCA：降维/去相关/防过拟合；⑤ Harris：R=det−k·tr²，<b>无尺度不变</b>；⑥ SIFT：四步 + 金字塔/DOG + 128 维。</div>
+
+<h1 class="ch"><span class="num">12</span><span class="txt">图像模式分类</span><span class="en">IMAGE PATTERN CLASSIFICATION</span></h1>
+<p class="lead">这章只有三块：<b>模式与模式类</b>、<b>最小距离/模板匹配</b>、<b>贝叶斯分类器</b>。提纲说贝叶斯“可能会在大题中作为关键步骤”，所以推导过程要能默写主干。</p>
+
+<h2>12.1 模式与模式类<span class="star">★★</span></h2>
+<div class="k"><span class="lab">定义</span><b>模式（Pattern）</b>是<b>描述子的组合</b>；<b>模式类（Pattern Class）</b>是<b>具有某些共同属性的一簇模式</b>。分类就是给未知模式贴上某个模式类的标签。</div>
+<p>三种表示形式：<b>向量</b>（定量描述，最常用，x = [x₁, x₂, …, xₙ]<sup>T</sup>）、<b>串</b>（结构描述，如边界用多边形近似后得到的符号串）、<b>树</b>（结构描述，如卫星图像的分层结构）。</p>
+<p>特征向量的例子：由 <b>Hu 不变矩</b>组成的 7 维向量；多光谱遥感图像各波段配准后同一像素级联成的向量；椭圆的 <b>[长轴, 短轴]<sup>T</sup></b>。</p>
+
+<h2>12.2 最小距离分类器<span class="star">★★★</span></h2>
+<div class="f">类原型（均值向量）：m<sub>j</sub> = (1/N<sub>j</sub>)·Σ<sub>x∈class j</sub> x，　j = 1, …, N<sub>c</sub><span class="n">(12.2)</span><br>
+距离：D<sub>j</sub>(x) = ‖x − m<sub>j</sub>‖，　<b>判为 D<sub>j</sub> 最小的那一类</b><span class="n">(12.3)</span></div>
+<p>把距离平方展开可以消掉 ‖x‖²（对所有类相同），得到等价判据：</p>
+<div class="f">d<sub>j</sub>(x) = m<sub>j</sub><sup>T</sup>x − ½ m<sub>j</sub><sup>T</sup>m<sub>j</sub>，　选<b>最大</b>的 d<sub>j</sub><span class="n">(12.4)</span></div>
+<p><b>决策边界</b>：令 d<sub>i</sub>(x) = d<sub>j</sub>(x)，得</p>
+<div class="f">x<sup>T</sup>(m<sub>i</sub> − m<sub>j</sub>) − ½(m<sub>i</sub> − m<sub>j</sub>)<sup>T</sup>(m<sub>i</sub> + m<sub>j</sub>) = 0<span class="n">(12.8)</span></div>
+<div class="k"><span class="lab">几何意义（重点）</span>在采用<b>欧氏距离</b>时，两类最小距离分类器的边界是连接 m<sub>i</sub> 与 m<sub>j</sub> 的线段的垂直平分线（超平面）：n=2 为直线，n=3 为平面，n&gt;3 为超平面。</div>
+<div class="ex"><span class="lab">例</span><span class="q">两类均值 m₁ = (2,2)、m₂ = (6,6)，判断 x = (3,4) 属于哪一类，并写出决策边界。</span><br>
+D₁ = √[(3−2)² + (4−2)²] = √5 ≈ 2.24；　D₂ = √[(3−6)² + (4−6)²] = √13 ≈ 3.61。<br>
+D₁ &lt; D₂ → <b>判为第 1 类</b>。<br>
+边界：中点为 (4,4)，方向向量 m₂−m₁ = (4,4)，故边界为 <b>x + y = 8</b>（过 (4,4) 且垂直于 (1,1) 方向）。</div>
+
+<h2>12.3 模板匹配（二维相关）<span class="star">★★★</span></h2>
+<p>当“原型”不是一个均值向量，而是一小块<b>图像模板</b>时，就用相关来匹配：</p>
+<div class="f">w ☆ f (x,y) = Σ<sub>s</sub> Σ<sub>t</sub> w(s,t)·f(x+s, y+t)<span class="n">(12.9)</span><br>
+γ(x,y) = ΣΣ[w(s,t) − w̄][f(x+s,y+t) − f̄<sub>xy</sub>] / {ΣΣ[w−w̄]² · ΣΣ[f−f̄<sub>xy</sub>]²}<sup>1/2</sup><span class="n">(12.10)</span></div>
+<p><b>归一化相关系数 γ 的取值范围是 [−1, 1]</b>；γ 取得<b>最大值</b>处即为最佳匹配位置。这就是“模板匹配”。除去了均值和能量，所以 γ 对<b>亮度整体偏移和对比度缩放</b>不敏感——这是它比裸相关好用的原因。</p>
+<p><b>模板匹配的优缺点</b>：优点是直观、易实现、光照稳定时效果好、有现成库；缺点是<b>模板尺寸变化或旋转会失效</b>、光照/对比度变化导致误匹配、<b>无法从数据中学习</b>，只适合受控或重复性场景。</p>
+
+<h2>12.4 最优（贝叶斯）统计分类器<span class="star">★★★</span></h2>
+<h3>推导主线（五步）</h3>
+<p><b>第 1 步：定义损失。</b>若模式 x 实际属于 c<sub>i</sub>，却被判为第 j 类，造成损失 L<sub>ij</sub>。则把 x 判为第 j 类的<b>平均损失（条件风险）</b>为：</p>
+<div class="f">r<sub>j</sub>(x) = Σ<sub>k=1</sub><sup>N<sub>c</sub></sup> L<sub>kj</sub>·p(c<sub>k</sub>|x)<span class="n">(12.16)</span></div>
+<p><b>第 2 步：用贝叶斯公式换掉后验概率。</b>p(a|b) = p(b|a)p(a)/p(b)：</p>
+<div class="f">r<sub>j</sub>(x) = (1/p(x))·Σ<sub>k</sub> L<sub>kj</sub>·p(x|c<sub>k</sub>)·P(c<sub>k</sub>)<span class="n">(12.17–12.18)</span></div>
+<p><b>第 3 步：代入 0-1 损失。</b>正确判 0、错误判 1：L<sub>ij</sub> = 1 − δ<sub>ij</sub>（δ=1 当 i=j，否则 0）：</p>
+<div class="f">r<sub>j</sub>(x) = Σ<sub>k</sub>(1−δ<sub>kj</sub>)p(x|c<sub>k</sub>)P(c<sub>k</sub>) = <b>p(x) − p(x|c<sub>j</sub>)P(c<sub>j</sub>)</b><span class="n">(12.20–12.22)</span></div>
+<p><b>第 4 步：得出决策规则。</b>因为 p(x) 对所有类相同，<b>最小化风险等价于最大化 p(x|c<sub>j</sub>)P(c<sub>j</sub>)</b>：</p>
+<div class="f"><b>d<sub>j</sub>(x) = p(x|c<sub>j</sub>)·P(c<sub>j</sub>)</b>，　若对所有 i ≠ j 有 d<sub>j</sub>(x) &gt; d<sub>i</sub>(x)，则把 x 判为 c<sub>j</sub><span class="n">(12.23–12.24)</span></div>
+<p><b>第 5 步：说明决策器的作用。</b>决策器（判决器）把特征空间划分成 N<sub>c</sub> 个<b>决策区域</b>，区域之间的分界就是<b>决策边界</b>（由 d<sub>i</sub> = d<sub>j</sub> 解出）。<b>它的作用就是：给定任意一个特征向量，输出它所属的类别，并使平均误判损失最小。</b></p>
+<div class="k"><span class="lab">一句话记住贝叶斯</span><b>后验 ∝ 似然 × 先验</b>。在 0–1 损失下，判为“似然×先验”最大的那一类，可实现最小错误率；一般损失下应最小化条件风险。</div>
+
+<h3>高斯模式类下的贝叶斯分类器</h3>
+<div class="f">一维决策函数：d<sub>j</sub>(x) = [1/(√(2π)σ<sub>j</sub>)]·e<sup>−(x−m<sub>j</sub>)²/2σ<sub>j</sub>²</sup>·P(c<sub>j</sub>)<span class="n">(12.25)</span><br>
+n 维：p(x|c<sub>j</sub>) = [1/((2π)<sup>n/2</sup>|C<sub>j</sub>|<sup>1/2</sup>)]·e<sup>−½(x−m<sub>j</sub>)<sup>T</sup>C<sub>j</sub><sup>−1</sup>(x−m<sub>j</sub>)</sup><span class="n">(12.26)</span><br>
+m<sub>j</sub> = E<sub>j</sub>{x}，　C<sub>j</sub> = E<sub>j</sub>{(x−m<sub>j</sub>)(x−m<sub>j</sub>)<sup>T</sup>}<span class="n">(12.27–12.30)</span></div>
+<p>取对数并假设各类<b>协方差相同</b>，二次项相互抵消，得到<b>线性决策函数（决策超平面）</b>：</p>
+<div class="f">d<sub>j</sub>(x) = ln P(c<sub>j</sub>) + x<sup>T</sup>C<sup>−1</sup>m<sub>j</sub> − ½ m<sub>j</sub><sup>T</sup>C<sup>−1</sup>m<sub>j</sub><span class="n">(12.34–12.35)</span></div>
+<div class="k"><span class="lab">与最小距离分类器的关系</span>各类均为高斯分布、<b>协方差均为 σ²I 且先验相等</b>时，贝叶斯分类器退化为<b>欧氏最小距离分类器</b>；若只共享一般协方差 C，则对应<b>马氏距离</b>，不一定是欧氏距离。不同协方差通常产生二次决策边界，共享协方差时才为线性边界。</div>
+
+<div class="summary"><h4>本章必会</h4>① 模式=描述子的组合，模式类=具有共同属性的一簇模式；② 最小距离：均值向量 + 欧氏距离，<b>决策边界是垂直平分线/超平面</b>；③ 归一化相关 γ ∈ [−1,1]，最大处最佳匹配；④ 贝叶斯三步推导：平均损失 → 贝叶斯公式 → 0-1 损失 → <b>d<sub>j</sub> = p(x|c<sub>j</sub>)P(c<sub>j</sub>) 取最大</b>；⑤ 决策器的作用：划分决策区域、最小化平均损失。</div>
+
+<h1 class="ch"><span class="num">13</span><span class="txt">大题模板：从场景到方案</span><span class="en">DESIGN EXAM TEMPLATE</span></h1>
+<p class="lead">《习题解答》里 11-38、11-39、12-33 三道题暴露了老师的出题套路：<b>给一个工程场景，让你写“详细步骤 + 背后原理 + 假设条件”</b>。这类题在简答/计算中可能占约 20%～30%（复习估计），有较固定的作答结构。这一章给你一套可套用的模板。</p>
+
+<h2>13.1 通用四段式（按点作答，尽量拿全）</h2>
+<table>
+<thead><tr><th style="width:64pt">段落</th><th style="width:110pt">写什么</th><th>固定句式</th></tr></thead><tbody>
+<tr><td><b>一、分析</b></td><td>图像特点 + 目标特征 + 难点</td><td>“该图像为 ___（灰度/彩色、尺寸、比特），目标与背景在 ___ 上有显著差异，主要难点是 ___。”</td></tr>
+<tr><td><b>二、流程</b></td><td>5～8 步，每步“做什么 + 为什么”</td><td>“① 用 ___ 做 ___，目的是 ___；② ……”（<b>一步一行，编号清楚</b>）</td></tr>
+<tr><td><b>三、判据</b></td><td>阈值怎么定、特征怎么算、怎么判定合格/类别</td><td>“以 ___ 为特征，若 ___ 则判为 ___；阈值由 ___ 确定。”</td></tr>
+<tr><td><b>四、假设与失效</b></td><td>3～5 条假设 + 每条不满足会怎样</td><td>“本方案依赖以下假设：① ___，否则 ___；② ……”</td></tr>
+</tbody></table>
+<div class="tip"><span class="lab">加分细节</span>① 每一步都点明<b>用第几章的方法</b>（老师一眼看到你学过）；② 最后补一句<b>“系统框图如上”</b>并画 5～7 个方框的流程图；③ <b>假设一定要写“否则会怎样”</b>，这是评分点，很多人只写假设不写后果，白丢分。</div>
+
+<h2>13.2 通用骨架：多数“检测/计数/识别”题可套用</h2>
+<div class="flow" style="margin:0 0 2pt 0">
+<span>① 预处理（高斯/中值滤波去噪）</span><em>→</em><span>② 增强（直方图均衡/顶帽校正光照）</span><em>→</em><span>③ 分割（Otsu/自适应阈值/边缘）</span>
+</div>
+<div class="flow" style="margin:0 0 2pt 0">
+<em>→</em><span>④ 形态学后处理（开去噪点、闭填孔洞）</span><em>→</em><span>⑤ 连通分量提取</span><em>→</em><span>⑥ 特征计算（面积/长短轴/Hu/颜色）</span>
+</div>
+<div class="flow" style="margin:0">
+<em>→</em><span>⑦ 分类判定（阈值规则/最小距离/贝叶斯）</span>
+</div>
+<table class="tight">
+<thead><tr><th style="width:100pt">环节</th><th style="width:130pt">首选方法</th><th>为什么选它（答题要点）</th></tr></thead><tbody>
+<tr><td>去噪</td><td>高斯滤波（连续噪声）／中值滤波（椒盐）</td><td>高斯滤波适合抑制高斯型随机噪声；中值保边、常用于脉冲噪声</td></tr>
+<tr><td>光照校正</td><td>顶帽变换（大结构元开运算估背景后相减）</td><td>消除不均匀光照，使全局阈值可用</td></tr>
+<tr><td>分割</td><td>Otsu（双峰、光照均匀）／自适应阈值（光照不均）</td><td>Otsu 自动、无需设参；光照不均优先考虑局部阈值或光照校正</td></tr>
+<tr><td>去小噪点</td><td><b>开运算</b></td><td>开运算删除无法容纳结构元的小亮细节；大物体轮廓也可能被平滑</td></tr>
+<tr><td>补孔洞/连断裂</td><td><b>闭运算</b>／孔洞填充／形态学重建</td><td>闭运算弥合窄间断，重建法能精确填充</td></tr>
+<tr><td>分离粘连</td><td>腐蚀／距离变换 + 分水岭</td><td>腐蚀断开细连接；分水岭按距离盆地分割粘连体</td></tr>
+<tr><td>计数</td><td>8 邻域连通分量标记 + 面积筛选</td><td>通常一个连通域对应一个目标；粘连目标需先分离，面积阈值还需结合像素尺寸和任务设定</td></tr>
+<tr><td>形状识别</td><td>Hu 不变矩（不受平移缩放旋转影响）</td><td>对姿态变化鲁棒，适合模板匹配式识别</td></tr>
+<tr><td>尺寸测量</td><td>二阶矩求主轴/长轴/短轴；像素→实际尺寸标定</td><td>惯性矩直接给出椭圆的长短轴与朝向</td></tr>
+<tr><td>分类</td><td>最小距离（类均值已知）／贝叶斯（有先验与分布）</td><td>贝叶斯考虑先验与类内离散度，误判代价最小</td></tr>
+</tbody></table>
+
+<h2>13.3 范例一：瓶装液位是否装满（习题 11-38）</h2>
+<table>
+<thead><tr><th style="width:52pt">步骤</th><th style="width:190pt">做法</th><th>原理 / 目的</th></tr></thead><tbody>
+<tr><td class="c">1</td><td>对瓶身图像做<b>高斯滤波</b></td><td>抑制传感器噪声，避免后续阈值分割把噪声当目标</td></tr>
+<tr><td class="c">2</td><td><b>Otsu 阈值分割</b>得二值图</td><td>液体与空区域的灰度差异显著、直方图近似双峰，Otsu 可自动求最优阈值，分离液体与空腔</td></tr>
+<tr><td class="c">3</td><td><b>垂直投影 + 连通域分析</b>定位单个瓶子</td><td>垂直投影的谷点对应瓶间空隙，用于把多瓶图像切成单瓶 ROI，避免相邻瓶干扰</td></tr>
+<tr><td class="c">4</td><td><b>Canny 边缘检测</b>提取瓶身轮廓</td><td>Canny 用 NMS 细化边缘、双阈值与连接改善连续性，通常还需后处理得到单像素宽边缘</td></tr>
+<tr><td class="c">5</td><td>由轮廓确定<b>底部、肩部的垂直坐标</b>，取其中点 y<sub>m</sub></td><td>把“装满”定义为“液面高于瓶身中部”，中点作为判定基准线</td></tr>
+<tr><td class="c">6</td><td>在二值图中提取<b>液位上边界的垂直坐标</b> y<sub>L</sub></td><td>液面是液体区域的上边界，可用行扫描找最上方的液体像素</td></tr>
+<tr><td class="c">7</td><td>若 <b>y<sub>L</sub> &gt; y<sub>m</sub></b>（y 轴向下，即液面在中点以下）→ 判为<b>未装满</b></td><td>几何判据，简单可靠</td></tr>
+</tbody></table>
+<div class="trap"><span class="lab">假设与失效</span>① <b>瓶子规格统一</b>——否则底部/肩部坐标检测偏差，判据失效；② <b>照明稳定</b>——否则液/空灰度差异波动，Otsu 误判；③ <b>瓶子无遮挡、无严重倾斜</b>——否则单瓶 ROI 定位受邻瓶干扰、中点不准；④ <b>图像分辨率足够</b>——否则肩部拐点、液位边界提不出来；⑤ <b>液体与空腔灰度差异显著</b>——否则阈值分割无法分离两者。</div>
+
+<h2>13.4 范例二：流体中气泡的面积占比与数量统计（习题 11-39）</h2>
+<table>
+<thead><tr><th style="width:52pt">步骤</th><th style="width:190pt">做法</th><th>原理 / 目的</th></tr></thead><tbody>
+<tr><td class="c">1</td><td>700×700、8 bit 图像做<b>高斯滤波</b></td><td>抑制噪声，避免把噪点计成气泡</td></tr>
+<tr><td class="c">2</td><td><b>Otsu 阈值分割</b>得二值图</td><td>气泡与背景灰度差异显著，双峰分布，自动定阈</td></tr>
+<tr><td class="c">3</td><td><b>开运算</b>去除噪声点；<b>孔洞填充</b>补全气泡内部</td><td>开运算删除小于结构元的孤立亮点；气泡内部高光会造成孔洞，需用形态学重建法填充，否则面积被低估</td></tr>
+<tr><td class="c">4</td><td>统计气泡像素总数 ÷ 总像素数 = <b>面积占比</b></td><td>前景像素数×单像素实际面积即面积；总面积占比还需统一阈值与 ROI</td></tr>
+<tr><td class="c">5</td><td><b>8 邻域连通域标记</b>统计气泡个数</td><td>一个连通域 = 一个气泡；8 邻域避免斜向断裂被误分为两个</td></tr>
+<tr><td class="c">6</td><td>气泡<b>粘连</b>时用<b>距离变换 + 分水岭</b>分割</td><td>距离变换找每个气泡的“中心峰”，分水岭在峰间筑坝，切开粘连</td></tr>
+<tr><td class="c">7</td><td>按课件给定方案，可靠检测下限取至少 <b>3×3 像素</b>，其示例换算面积约 1.286×10⁻⁴ cm²</td><td>这是该方案的<b>经验下限</b>，需题目给出像素实际尺寸才可换算；并非任何滤波器都必然删除小于 3×3 的目标</td></tr>
+</tbody></table>
+<div class="trap"><span class="lab">假设与失效</span>① 气泡与背景<b>灰度差异显著</b>；② <b>无严重粘连</b>（否则计数偏少，必须上分水岭）；③ <b>噪声水平低</b>（否则开运算会误删小气泡、或残留噪点被计数）；④ 气泡<b>内部无大孔洞</b>；⑤ <b>光照均匀</b>（否则阈值分割偏向一侧）。</div>
+
+<h2>13.5 范例三：三种大小椭圆的识别（习题 12-33）</h2>
+<table>
+<thead><tr><th style="width:52pt">步骤</th><th style="width:190pt">做法</th><th>原理 / 目的</th></tr></thead><tbody>
+<tr><td class="c">1</td><td>提取图像<b>连通分量</b></td><td>每个连通域是一个候选斑块（可能含粘连）</td></tr>
+<tr><td class="c">2</td><td>逐个检验<b>凸性</b>，剔除非凸区域</td><td>椭圆是凸形；非凸提示可能粘连或不是完整椭圆，需结合凸缺和形状进一步判断</td></tr>
+<tr><td class="c">3</td><td>把图像最外围行、列标为前景；与目标斑块<b>逐像素相与</b>；只要结果有 1 → 判为<b>接触边界的不完整斑块</b>并剔除</td><td>只保留完整斑块，避免半个椭圆被误分类（这是边界清除的思想）</td></tr>
+<tr><td class="c">4</td><td>对剩余斑块构造特征向量 <b>x = [x₁, x₂]<sup>T</sup></b>：x₁ = 长轴长度，x₂ = 短轴长度（也可用二阶矩求主轴）</td><td>二阶中心矩的惯性矩直接给出主轴方向与长短轴，对旋转不变</td></tr>
+<tr><td class="c">5</td><td>用<b>已知类别的完整椭圆作训练集</b>，分别求三类的<b>均值向量 m<sub>j</sub></b></td><td>最小距离分类器只需类均值，属于“原型匹配”</td></tr>
+<tr><td class="c">6</td><td>对每个待测斑块算 <b>D<sub>j</sub> = ‖x − m<sub>j</sub>‖</b>，判为 D<sub>j</sub> 最小的一类</td><td>欧氏距离最小 = 最相似；各类两两之间的决策边界是相应均值连线的垂直平分线</td></tr>
+</tbody></table>
+<div class="trap"><span class="lab">假设与失效</span>① 椭圆<b>大小差异明显</b>（三类在长短轴平面上可分），否则最小距离会错分；② <b>能拿到已知类别的训练样本</b>，否则无法求类均值；③ <b>斑块完整、不接触边界</b>；④ <b>无严重粘连</b>（粘连会使长短轴失真，须先腐蚀/分水岭分开）；⑤ <b>成像比例一致</b>（否则同一椭圆在不同距离下长短轴不同，需先标定）。</div>
+
+<h2>13.6 计算题五大题型速通</h2>
+<table>
+<thead><tr><th style="width:92pt">题型</th><th style="width:150pt">关键动作</th><th>易扣分点</th></tr></thead><tbody>
+<tr><td><b>直方图均衡</b></td><td>归一化 → 累加 → ×(L−1) → 四舍五入 → 合并统计</td><td>忘记乘 (L−1)；忘记四舍五入；没有合并同灰度</td></tr>
+<tr><td><b>卷积/相关</b></td><td>画出核覆盖的窗口 → 对应相乘 → 求和；卷积先翻转核</td><td>核翻转方向错；窗口取错（应以输出点为中心）</td></tr>
+<tr><td><b>腐蚀/膨胀</b></td><td>腐蚀：SE 全落入前景；膨胀：SE 反射后，平移与前景相交即置 1</td><td>把“原点位置”和“SE 覆盖位置”搞混；忘补背景边界</td></tr>
+<tr><td><b>Hough</b></td><td>斜率式 ↔ 法线式换算；点→正弦曲线，共线点→交点</td><td>θ 的范围/象限；ρ 的符号（可用线上一点验算）</td></tr>
+<tr><td><b>贝叶斯/最小距离</b></td><td>算距离或 d<sub>j</sub> = p(x|c<sub>j</sub>)P(c<sub>j</sub>)，取最大/最小</td><td>把“取最大”写成“取最小”；忘乘先验 P(c<sub>j</sub>)</td></tr>
+</tbody></table>
+
+<h1 class="ch"><span class="num">14</span><span class="txt">考前速记与易错清单</span><span class="en">LAST-MINUTE REVIEW</span></h1>
+<p class="lead">进考场前 30 分钟只看这三页。左边是公式，右边是陷阱。</p>
+
+<h2>14.1 公式速查表</h2>
+<table class="tight">
+<thead><tr><th style="width:96pt">名称</th><th>公式</th><th style="width:96pt">备注</th></tr></thead><tbody>
+<tr><td>图像模型</td><td>f(x,y) = i(x,y)·r(x,y)，0&lt;i&lt;∞，0≤r≤1</td><td>Ch2</td></tr>
+<tr><td>存储容量</td><td>b = M·N·k（bit）；L = 2<sup>k</sup></td><td>1024×1024×8bit = 1MB</td></tr>
+<tr><td>平均降噪</td><td>σ<sub>ḡ</sub> = σ<sub>η</sub>/√K</td><td>K 幅平均</td></tr>
+<tr><td>三距离</td><td>D<sub>e</sub>=√(Δx²+Δy²)；D<sub>4</sub>=|Δx|+|Δy|；D<sub>8</sub>=max(|Δx|,|Δy|)</td><td>圆/菱形/方形</td></tr>
+<tr><td>反转/对数/伽马</td><td>s=L−1−r；s=c·log(1+r)；s=c·r<sup>γ</sup></td><td>Ch3</td></tr>
+<tr><td>直方图均衡</td><td>s<sub>k</sub> = (L−1)·Σ<sub>j≤k</sub> p<sub>r</sub>(r<sub>j</sub>)</td><td><b>重点</b></td></tr>
+<tr><td>相关/卷积</td><td>ΣΣ w(s,t)f(x+s,y+t) / ΣΣ w(s,t)f(x−s,y−t)</td><td>卷积=翻转核</td></tr>
+<tr><td>拉普拉斯</td><td>∇²f = f(x+1,y)+f(x−1,y)+f(x,y+1)+f(x,y−1)−4f(x,y)</td><td>核 [[0,1,0],[1,−4,1],[0,1,0]]</td></tr>
+<tr><td>梯度幅值</td><td>M = √(g<sub>x</sub>²+g<sub>y</sub>²) ≈ |g<sub>x</sub>|+|g<sub>y</sub>|</td><td>Sobel</td></tr>
+<tr><td>DFT/IDFT</td><td>F(u,v)=ΣΣ f·e<sup>−j2π(ux/M+vy/N)</sup>；f=(1/MN)ΣΣ F·e<sup>j2π(…)</sup></td><td>Ch4</td></tr>
+<tr><td>低通三式</td><td>ILPF：阶跃；GLPF：e<sup>−D²/2D₀²</sup>；BLPF：1/[1+(D/D₀)<sup>2n</sup>]</td><td>振铃：理想&gt;巴&gt;高斯</td></tr>
+<tr><td>高通</td><td>H<sub>HP</sub> = 1 − H<sub>LP</sub></td><td>Ch4</td></tr>
+<tr><td>反谐波</td><td>Σg<sup>Q+1</sup>/Σg<sup>Q</sup>；Q&gt;0 去胡椒，Q&lt;0 去盐</td><td>Ch5</td></tr>
+<tr><td>色度坐标</td><td>x=X/(X+Y+Z)，y=…，z=1−x−y</td><td>Ch6</td></tr>
+<tr><td>CMY</td><td>[C,M,Y]<sup>T</sup> = [1,1,1]<sup>T</sup> − [R,G,B]<sup>T</sup></td><td>Ch6</td></tr>
+<tr><td>腐蚀/膨胀</td><td>A⊖B={z|(B)<sub>z</sub>⊆A}；A⊕B={z|(B̂)<sub>z</sub>∩A≠∅}</td><td>Ch9</td></tr>
+<tr><td>开/闭</td><td>A∘B=(A⊖B)⊕B；A·B=(A⊕B)⊖B</td><td>先腐后膨 / 先膨后腐</td></tr>
+<tr><td>边界/孔洞/连通</td><td>β(A)=A−(A⊖B)；X<sub>k</sub>=(X<sub>k−1</sub>⊕B)∩A<sup>c</sup>；X<sub>k</sub>=(X<sub>k−1</sub>⊕B)∩A</td><td>Ch9</td></tr>
+<tr><td>灰度形态学</td><td>腐蚀=min，膨胀=max；梯度=(f⊕b)−(f⊖b)；顶帽=f−(f∘b)</td><td>Ch9</td></tr>
+<tr><td>Canny 梯度</td><td>M=√(g<sub>x</sub>²+g<sub>y</sub>²)，α=arctan(g<sub>y</sub>/g<sub>x</sub>)</td><td>NMS 沿 α</td></tr>
+<tr><td>Hough</td><td>ρ = x cosθ + y sinθ</td><td>θ∈[0°,180°)</td></tr>
+<tr><td>Otsu</td><td>σ<sub>B</sub>² = P₁P₂(m₁−m₂)²，取最大</td><td>双峰适用</td></tr>
+<tr><td>k-Means</td><td>E=ΣΣ|z−m<sub>i</sub>|²，m<sub>i</sub>=均值</td><td>Ch10</td></tr>
+<tr><td>SLIC</td><td>S=√(N/k)；D=√[(d<sub>c</sub>/m)²+(d<sub>s</sub>/S)²]</td><td>m 大→规整</td></tr>
+<tr><td>欧拉数</td><td>E = C − H</td><td>Ch11</td></tr>
+<tr><td>归一化中心矩</td><td>η<sub>pq</sub>=μ<sub>pq</sub>/μ<sub>00</sub><sup>γ</sup>，γ=(p+q)/2+1</td><td>Hu 的原料</td></tr>
+<tr><td>Harris</td><td>R = det(M) − k·trace(M)²</td><td>或 min(λ₁,λ₂)</td></tr>
+<tr><td>最小距离</td><td>D<sub>j</sub>=‖x−m<sub>j</sub>‖，取最小；边界=垂直平分线</td><td>Ch12</td></tr>
+<tr><td>归一化相关</td><td>γ∈[−1,1]，最大处最佳匹配</td><td>Ch12</td></tr>
+<tr><td>贝叶斯</td><td>d<sub>j</sub>(x)=p(x|c<sub>j</sub>)P(c<sub>j</sub>)，取最大</td><td>后验=似然×先验</td></tr>
+</tbody></table>
+
+<h2>14.2 高频易错清单（考前扫一遍）</h2>
+<div class="cols2">
+<ul class="nodot">
+<li><b>量化</b>离散的是灰度，<b>采样</b>离散的是坐标。别写反。</li>
+<li><b>图像中心</b>要四舍五入：1281/2 = 640.5 → <b>641</b>。</li>
+<li>空间分辨率<b>必须绑定物理尺寸</b>才有意义。</li>
+<li><b>直方图→图像不唯一</b>（反之才唯一）。</li>
+<li>离散直方图均衡<b>通常不会增加灰度级数</b>，只是重映射与合并。</li>
+<li>卷积<b>必须翻转核</b>；对称核则相关=卷积。</li>
+<li>中值滤波首选治<b>椒盐</b>；对高斯噪声通常不是最优。</li>
+<li>锐化 = 原图 <b>减</b>拉普拉斯（中心系数为负时）。</li>
+<li>Sobel 的 x 核检测<b>竖直</b>边缘（核方向⊥边缘）。</li>
+<li>水平直线的频谱是<b>竖直</b>亮线。</li>
+<li>用 DFT 实现<b>线性卷积</b>时应补零防混叠；若本意就是周期滤波则按题意处理。</li>
+<li>ILPF 有<b>振铃</b>，GLPF 没有。</li>
+<li>谐波滤波<b>不能</b>用于胡椒噪声（除 0）。</li>
+<li>反谐波 Q 符号别记反：<b>正去黑、负去白</b>。</li>
+<li>饱和度与白光成<b>反比</b>。</li>
+<li>HSI 只改 <b>I</b> 可保持 H、S 不变；RGB 三通道同时改常会影响颜色。</li>
+<li>彩色单通道噪声<b>可能通过 RGB→HSI 变换耦合到其他 HSI 分量</b>。</li>
+<li>腐蚀=收缩，膨胀=扩张；开=<b>先腐后膨</b>。</li>
+<li>开运算<b>幂等</b>：重复做没变化。</li>
+<li>连通分量提取与 <b>A</b> 相交，孔洞填充与 <b>A<sup>c</sup></b> 相交。</li>
+<li>凸壳是<b>最小凸集</b>，H−S 叫凸缺。</li>
+<li>灰度腐蚀取 <b>min</b>，膨胀取 <b>max</b>。</li>
+<li>Canny 的 NMS 是<b>沿梯度方向</b>比较，不是沿边缘方向。</li>
+<li>双阈值中<b>高阈值</b>保可靠、<b>低阈值</b>保连续。</li>
+<li>Otsu 在<b>近似双峰</b>时通常效果好；小目标或单峰时需谨慎。</li>
+<li>DBSCAN 的<b>密度直达不对称</b>，密度相连才对称。</li>
+<li>SLIC 的 m <b>越大越规整</b>，越小越贴边。</li>
+<li>Hu 矩对平移/缩放/旋转不变，<b>镜像下部分分量会改变符号</b>。</li>
+<li>Harris 在课件近似下有旋转/光照不变性，<b>缺少尺度不变性</b>。</li>
+<li>SIFT 描述子是 <b>128</b> 维。</li>
+<li>最小距离边界是<b>垂直平分线</b>；贝叶斯取<b>最大</b>。</li>
+</ul>
+</div>
+
+<h2>14.3 考场时间策略（150 分钟示例）</h2>
+<table class="tight">
+<thead><tr><th style="width:96pt">题型</th><th style="width:56pt">分值</th><th style="width:56pt">建议用时</th><th>策略</th></tr></thead><tbody>
+<tr><td>选择 + 判断</td><td class="c">30</td><td class="c">25 min</td><td>先扫一遍，不会的先标记跳过；判断注意“一定/必须/只有”这类绝对词</td></tr>
+<tr><td>填空</td><td class="c">20</td><td class="c">20 min</td><td>写关键词即可，公式里的符号别漏（如 p(r<sub>k</sub>)、L−1）</td></tr>
+<tr><td>简答</td><td class="c">20</td><td class="c">30 min</td><td>分点作答（①②③），每题 3～5 点，先写定义再写区别/作用</td></tr>
+<tr><td>计算</td><td class="c">30</td><td class="c">45 min</td><td><b>先做直方图均衡和腐蚀膨胀</b>（最稳），Hough/贝叶斯留后面；过程分比结果分多</td></tr>
+<tr><td>检查</td><td class="c">—</td><td class="c">30 min</td><td>重点核：公式符号、四舍五入、方向性结论（核⊥边缘等）</td></tr>
+</tbody></table>
+
+<h2>14.4 术语中英对照（简答题写英文名可加分）</h2>
+<table class="tight">
+<thead><tr><th style="width:25%">中文</th><th style="width:25%">English</th><th style="width:25%">中文</th><th>English</th></tr></thead><tbody>
+<tr><td>采样 / 量化</td><td>Sampling / Quantization</td><td>直方图均衡</td><td>Histogram Equalization</td></tr>
+<tr><td>空间/灰度分辨率</td><td>Spatial / Intensity Resolution</td><td>边界延拓</td><td>Padding</td></tr>
+<tr><td>相关 / 卷积</td><td>Correlation / Convolution</td><td>中值滤波</td><td>Median Filter</td></tr>
+<tr><td>拉普拉斯算子</td><td>Laplacian</td><td>梯度</td><td>Gradient</td></tr>
+<tr><td>离散傅里叶变换</td><td>DFT</td><td>陷波滤波器</td><td>Notch Filter</td></tr>
+<tr><td>椒盐噪声</td><td>Salt-and-Pepper Noise</td><td>反谐波均值</td><td>Contraharmonic Mean</td></tr>
+<tr><td>色调/饱和度/亮度</td><td>Hue / Saturation / Intensity</td><td>伪彩色</td><td>Pseudo-color</td></tr>
+<tr><td>结构元</td><td>Structuring Element</td><td>腐蚀 / 膨胀</td><td>Erosion / Dilation</td></tr>
+<tr><td>开运算 / 闭运算</td><td>Opening / Closing</td><td>凸壳</td><td>Convex Hull</td></tr>
+<tr><td>连通分量</td><td>Connected Component</td><td>细化 / 骨架</td><td>Thinning / Skeleton</td></tr>
+<tr><td>顶帽变换</td><td>Top-hat Transform</td><td>形态学重建</td><td>Morphological Reconstruction</td></tr>
+<tr><td>边缘检测</td><td>Edge Detection</td><td>非极大值抑制</td><td>Nonmaxima Suppression</td></tr>
+<tr><td>双阈值处理</td><td>Double Thresholding</td><td>霍夫变换</td><td>Hough Transform</td></tr>
+<tr><td>阈值处理</td><td>Thresholding</td><td>超像素</td><td>Superpixel</td></tr>
+<tr><td>聚类</td><td>Clustering</td><td>密度可达</td><td>Density-reachable</td></tr>
+<tr><td>不变矩</td><td>Invariant Moment</td><td>主成分分析</td><td>PCA</td></tr>
+<tr><td>角点检测</td><td>Corner Detection</td><td>尺度空间</td><td>Scale Space</td></tr>
+<tr><td>模式 / 模式类</td><td>Pattern / Pattern Class</td><td>贝叶斯分类器</td><td>Bayes Classifier</td></tr>
+<tr><td>决策边界</td><td>Decision Boundary</td><td>模板匹配</td><td>Template Matching</td></tr>
+</tbody></table>
+
+
+<h2>14.5 七天冲刺复习计划（按剩余时间选一种）</h2>
+<table class="tight">
+<thead><tr><th style="width:44pt">天数</th><th style="width:120pt">主攻内容</th><th style="width:130pt">动手做什么</th><th>过关标准</th></tr></thead><tbody>
+<tr><td class="c">D1</td><td>第 2、3 章</td><td>把例 3.5 的直方图均衡<b>默写一遍</b>；做 3 道卷积/相关小题</td><td>能不看答案算出 s<sub>k</sub> 表；能说清相关与卷积差在哪</td></tr>
+<tr><td class="c">D2</td><td>第 9 章</td><td>用盖章法做 5 组腐蚀/膨胀，每组再算一次开/闭</td><td>10 分钟内正确画完 5×5 网格结果</td></tr>
+<tr><td class="c">D3</td><td>第 10 章（上）</td><td>Canny 四步 + NMS 图示复述；Hough 换算 3 道</td><td>能讲清“双阈值为什么能连边不断边”</td></tr>
+<tr><td class="c">D4</td><td>第 10 章（下）</td><td>Otsu 算 1 道；k-Means、SLIC、DBSCAN 各写 5 行流程</td><td>能说出 SLIC 相对 k-Means 的两个改进</td></tr>
+<tr><td class="c">D5</td><td>第 11、12 章</td><td>Hu/PCA/Harris/SIFT 各写一段 100 字简介；贝叶斯推导默写</td><td>贝叶斯五步能连续写出，不看书</td></tr>
+<tr><td class="c">D6</td><td>第 4、5、6 章</td><td>三张对比表（低通三兄弟、六种噪声、三种彩色模型）默画</td><td>能立刻答出“某噪声→某滤波器”</td></tr>
+<tr><td class="c">D7</td><td>第 13 章 + 刷题</td><td>完整写 2 道方案设计大题（四段式）；刷 100 道选择/判断</td><td>四段式能在 15 分钟内写满一页</td></tr>
+</tbody></table>
+
+<h2>14.6 如果只剩一天</h2>
+<div class="k"><span class="lab">极限操作</span>优先做三件事：① 背 <b>14.1 公式速查表</b>（尤其直方图均衡、腐蚀膨胀、Hough、Otsu、贝叶斯五个）；② 把 <b>14.2 易错清单</b>读三遍（覆盖大部分高频判断/选择题）；③ 把 <b>13.1 四段式</b>和 <b>13.2 通用骨架</b>背下来，大题按骨架填词。<b>这三件事有助于保住基础分，不能代替完整复习。</b></div>
+
+<div class="summary" style="margin-top:14pt"><h4>最后一句</h4>
+按课件题型比例，可把复习拆成：<b>计算题靠“会算”，简答题靠“会说”，选择判断填空靠“记得住”。</b>优先练熟第 3、9、10 章的重点计算，再掌握第 13 章的四段式模板。<b>分数目标只是努力方向，不作保证；以教师实际考纲为准。</b></div>
+</div><div class="doc-end">数字图像处理 · 期末复习精讲 ｜ 网页阅读版 ｜ <a href="assets/DIP-review.pdf" download>下载 PDF</a> ｜ <a href="index.html">返回刷题站</a></div></main></div>
+<div class="mobile-mask" id="mobileMask"></div>
+<script>
+(function(){
+  var content=document.getElementById("reviewContent");
+  var toc=document.getElementById("tocNav");
+  Array.prototype.forEach.call(content.querySelectorAll("table:not(.bin)"),function(t){if(t.parentElement&&t.parentElement.classList.contains("table-scroll"))return;var w=document.createElement("div");w.className="table-scroll";t.parentNode.insertBefore(w,t);w.appendChild(t);});
+  var hs=Array.prototype.slice.call(content.querySelectorAll("h1.ch,h1.plain,h2")).filter(function(h){return !h.closest(".toc");});
+  var links=[];
+  function cleanText(s){return String(s||"").replace(/[★☆]/g,"").replace(/\s+/g," ").trim();}
+  hs.forEach(function(h,i){
+    h.id="sec-"+(i+1);
+    var label="";
+    if(h.classList.contains("ch")){var t=h.querySelector(".txt");label=(h.querySelector(".num")?cleanText(h.querySelector(".num").textContent)+" ":"")+cleanText(t?t.textContent:h.textContent);}
+    else if(h.classList.contains("plain")){var clone=h.cloneNode(true);var sp=clone.querySelector("span");if(sp)sp.remove();label=cleanText(clone.textContent);}else{label=cleanText(h.textContent);}
+    var a=document.createElement("a");a.href="#"+h.id;a.className="lv"+(h.tagName==="H1"?"1":"2");a.textContent=label;toc.appendChild(a);links.push(a);
+  });
+  function updateProgress(){var d=document.documentElement;var max=d.scrollHeight-d.clientHeight;var p=max>0?Math.min(100,Math.max(0,d.scrollTop/max*100)):0;document.getElementById("progressBar").style.width=p+"%";}
+  function updateActive(){var y=window.scrollY+120;var cur=links[0];links.forEach(function(a){var el=document.getElementById(a.getAttribute("href").slice(1));if(el&&el.offsetTop<=y)cur=a;});links.forEach(function(a){a.classList.toggle("active",a===cur);});}
+  window.addEventListener("scroll",function(){updateProgress();updateActive();},{passive:true});updateProgress();updateActive();
+  var side=document.getElementById("reviewSide"),mask=document.getElementById("mobileMask");
+  document.getElementById("tocToggle").onclick=function(){side.classList.toggle("open");mask.classList.toggle("open");};
+  mask.onclick=function(){side.classList.remove("open");mask.classList.remove("open");};
+  toc.addEventListener("click",function(e){if(e.target.tagName==="A"&&window.innerWidth<=980){side.classList.remove("open");mask.classList.remove("open");}});
+})();
+</script>
+</body></html>

@@ -326,7 +326,7 @@ html[data-theme="magazine"] .doc-end a{color:#8f3a25}
 }
 </style>
 </head><body>
-<div class="review-top"><a class="back-link" href="index.html">← 刷题站</a><div><div class="review-title">数字图像处理 · 期末复习精讲</div><div class="review-sub">WEB READING EDITION · 44 页内容（含课本习题附录）</div></div><div class="review-actions"><label class="theme-picker" title="阅读主题"><span>主题</span><select id="themeSelect" aria-label="阅读主题"><option value="dark">深色</option><option value="light">浅色</option><option value="magazine">杂志风</option></select></label><button class="toc-toggle" id="tocToggle">目录</button><a class="btn-download" href="assets/DIP-review.pdf" download>下载 PDF</a></div></div>
+<div class="review-top"><a class="back-link" href="index.html">← 刷题站</a><div><div class="review-title">数字图像处理 · 期末复习精讲</div><div class="review-sub">WEB READING EDITION · 45 页内容（含课本习题附录）</div></div><div class="review-actions"><label class="theme-picker" title="阅读主题"><span>主题</span><select id="themeSelect" aria-label="阅读主题"><option value="dark">深色</option><option value="light">浅色</option><option value="magazine">杂志风</option></select></label><button class="toc-toggle" id="tocToggle">目录</button><a class="btn-download" href="assets/DIP-review.pdf" download>下载 PDF</a></div></div>
 <div class="reading-progress"><span id="progressBar"></span></div>
 <div class="review-shell"><aside class="review-side" id="reviewSide"><div class="side-eyebrow">CONTENTS</div><div class="side-title">复习精讲 · 目录</div><nav id="tocNav"></nav><div class="side-note">本页是网页阅读版，已从 A4 打印版重排；手机端可用左上角「目录」快速跳转。需要打印或离线保存时下载 PDF。</div></aside><main class="review-doc"><div id="reviewContent">
 
@@ -1237,7 +1237,8 @@ d<sub>c</sub> = √[(l<sub>j</sub>−l<sub>i</sub>)² + (a<sub>j</sub>−a<sub>i
 <p>第 ② 步的作用：<b>避免把超像素“种”在边缘上，也减少用噪声像素做种子</b>。SLIC 默认主要设置<b>超像素数 k</b>，还可调节紧凑度参数 m。优点：① 超像素紧凑整齐；② 彩色/灰度图都能分；③ 参数极少；④ 速度快、轮廓保持好。</p>
 
 <h2>10.8 DBSCAN（基于密度的聚类）<span class="star">★★★</span></h2>
-<p><b>为什么需要它</b>：k-Means 偏好球状、方差相近的簇，对 elongated 簇与异常点敏感，且须先知 k。DBSCAN 从密度出发：<b>一个簇 = 一片密度足够高的连通区域</b>。</p>
+<p><b>为什么需要它</b>：k-Means 偏好球状、方差相近的簇，对拉长的簇与异常点敏感，且必须预先给定 k。DBSCAN 从密度出发：<b>把足够密集的区域划为一簇</b>，能在有噪声的数据中发现<b>任意形状</b>的簇；<b>簇定义为密度相连的点的最大集合</b>。</p>
+<div class="k"><span class="lab">定义</span>DBSCAN（Density-Based Spatial Clustering of Applications with Noise）是一种基于密度的空间聚类算法。它把数据点分成三类：<b>核心点、边界点、噪声点</b>；不属于任何簇的点就是噪声。</div>
 <h3>两个参数</h3>
 <table class="tight">
 <thead><tr><th style="width:74pt">参数</th><th>含义</th><th>怎么定</th></tr></thead><tbody>
@@ -1246,27 +1247,27 @@ d<sub>c</sub> = √[(l<sub>j</sub>−l<sub>i</sub>)² + (a<sub>j</sub>−a<sub>i
 </tbody></table>
 <h3>三类点</h3>
 <table class="tight">
-<thead><tr><th style="width:66pt">类型</th><th>定义</th></tr></thead><tbody>
-<tr><td><b>核心点</b></td><td>|N<sub>ε</sub>(p)| ≥ MinPts</td></tr>
-<tr><td><b>边界点</b></td><td>非核心点，但属于某核心点的 ε 邻域</td></tr>
-<tr><td><b>噪声点</b></td><td>非核心点，也不属于任何核心点的 ε 邻域</td></tr>
+<thead><tr><th style="width:66pt">类型</th><th>定义</th><th>直观理解</th></tr></thead><tbody>
+<tr><td><b>核心点</b></td><td>|N<sub>ε</sub>(p)| ≥ MinPts</td><td>周围足够“拥挤”，可以作为簇的种子</td></tr>
+<tr><td><b>边界点</b></td><td>不是核心点，但落在某个核心点的 ε 邻域内</td><td>在簇的边缘，本身不足以扩展簇</td></tr>
+<tr><td><b>噪声点</b></td><td>既不是核心点，也不在任何核心点的 ε 邻域内</td><td>不属于任何簇，最后被丢弃</td></tr>
 </tbody></table>
 <h3>三个“密度”概念（常考名词解释）</h3>
 <table>
 <thead><tr><th style="width:96pt">概念</th><th>定义</th><th>直观理解</th></tr></thead><tbody>
-<tr><td><b>密度直达</b><br>directly density-reachable</td><td>q ∈ N<sub>ε</sub>(p)，且 <b>p 是核心点</b></td><td><b>一般不对称</b>：核心点可直达边界点，反之不成立</td></tr>
-<tr><td><b>密度可达</b><br>density-reachable</td><td>存在点链 p<sub>1</sub>=p, p<sub>2</sub>, …, p<sub>n</sub>=q，使每个 p<sub>i+1</sub> 由 p<sub>i</sub> 密度直达</td><td><b>可沿核心点链传递，仍一般不对称</b></td></tr>
-<tr><td><b>密度相连</b><br>density-connected</td><td>存在点 o，使 p 与 q 都由 o 密度可达</td><td><b>对称</b>；簇是密度相连的最大集合</td></tr>
+<tr><td><b>密度直达</b><br>directly density-reachable</td><td>p ∈ N<sub>ε</sub>(q)，且 <b>q 是核心点</b>（|N<sub>ε</sub>(q)| ≥ MinPts）；称 p 由 q 密度直达</td><td><b>一般不对称</b>：核心点可以“直达”边界点，反过来不一定成立</td></tr>
+<tr><td><b>密度可达</b><br>density-reachable</td><td>存在点链 q=p<sub>1</sub>, p<sub>2</sub>, …, p<sub>n</sub>=p，使每个 p<sub>i+1</sub> 由 p<sub>i</sub> 密度直达</td><td>沿核心点链传递，<b>仍一般不对称</b></td></tr>
+<tr><td><b>密度相连</b><br>density-connected</td><td>存在<b>核心点</b> o，使 p 和 q 都由 o 密度可达</td><td><b>对称</b>；簇是密度相连点的最大集合</td></tr>
 </tbody></table>
-<div class="k"><span class="lab">算法流程</span>① 取未访问点 p 并查 ε 邻域；② 点数不足先记为<b>噪声</b>（后续可改判为边界点）；③ 若为核心点则新建簇并加入其邻域，递归扩展其中的核心点；④ 簇不能扩张后继续，直到所有点被访问。</div>
+<div class="k"><span class="lab">算法流程（按新课件两步）</span>① <b>找核心点、形成临时簇</b>：扫描全部样本，若 |N<sub>ε</sub>(p)| ≥ MinPts，把 p 纳入核心点列表，并把它的密度直达点组成临时聚类簇。② <b>合并临时簇</b>：遍历临时簇，若簇内点也是核心点，就合并其对应临时簇，反复合并直到所有核心点的密度直达点都归入本簇；该簇升为正式簇。重复处理剩余临时簇，直到全部完成。</div>
 <div class="tbl">
 <table class="tight">
 <thead><tr><th style="width:50%">优点</th><th>缺点</th></tr></thead><tbody>
-<tr><td>① <b>无需预设簇数</b>；② 可发现<b>非球状簇</b>；③ 能<b>识别噪声</b>；④ 对顺序通常较稳健</td><td>① 对 <b>ε/MinPts 敏感</b>；② <b>密度差异大</b>时效果差；③ 高维距离易失效；④ 大数据需空间索引加速</td></tr>
+<tr><td>① <b>不需要预先指定簇数</b>；② 能发现<b>任意形状</b>的簇；③ 能<b>识别并排除噪声点</b>；④ 不受初始聚类中心影响（k-Means 对初始值敏感）</td><td>① <b>密度不均匀、类间距相差很大</b>时效果差；② 样本集大时收敛慢；③ <b>簇交界处的点可能因处理次序不同而归入不同簇</b>；④ ε 与 MinPts 需要<b>联合调整</b></td></tr>
 </tbody></table>
 </div>
-
-<div class="summary" style="font-size:8.5pt;line-height:1.55"><h4>本章必会</h4>① Canny 四步与 NMS/双阈值；② Hough 的 ρ=x cosθ+y sinθ 与点线对偶；③ Otsu 类间方差；④ SLIC 的 5 维向量、S=√(N/k)、搜索范围 2S×2S、紧凑度参数 m；⑤ k-Means 与 k 的确定；⑥ DBSCAN 的三种密度关系及 ε/MinPts。</div>
+<div class="tip"><span class="lab">考试口径</span>记住三句话：<b>核心点看 |N<sub>ε</sub>(p)| 与 MinPts；密度直达不对称，密度相连才对称；DBSCAN 的簇是密度相连点的最大集合。</b>答题时先写定义，再写算法两步，最后补优缺点。</div>
+<div class="summary" style="font-size:8.5pt;line-height:1.55"><h4>本章必会</h4>① Canny 四步与 NMS/双阈值；② Hough 的 ρ=x cosθ+y sinθ 与点线对偶；③ Otsu 类间方差；④ SLIC 的 5 维向量、S=√(N/k)、搜索范围 2S×2S、紧凑度参数 m；⑤ k-Means 与 k 的确定；⑥ DBSCAN 的三类点、三种密度关系、算法两步及优缺点。</div>
 
 <h1 class="ch"><span class="num">11</span><span class="txt">特征提取</span><span class="en">FEATURE EXTRACTION</span></h1>
 <p class="lead">这章是“大题的关键零件库”：<b>Hu 不变矩</b>（提纲明确说会作为大题关键步骤）、<b>PCA</b>、<b>Harris 角点</b>、<b>SIFT</b>。概念题很多，但都只要“说清作用 + 说清流程”。</p>

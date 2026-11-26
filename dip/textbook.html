@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="数字图像处理（第四版）课本习题索引：9 章 403 题，含老师已解答的 25 道重点题和补充题。">
+<title>课本习题 · 数字图像处理（第四版）</title>
+<style>
+:root{--bg:#f3f6fa;--panel:#fff;--ink:#102a43;--muted:#627d98;--line:#d9e2ec;--navy:#0b2545;--teal:#0f766e;--amber:#b45309;--soft:#e8f7f2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Han Sans SC","Noto Sans CJK SC","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.75}
+a{color:var(--teal)}
+.tb-top{position:sticky;top:0;z-index:20;height:62px;display:flex;align-items:center;gap:12px;padding:0 22px;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.tb-back{border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px 11px;text-decoration:none;color:var(--teal);font-size:13px;font-weight:700;white-space:nowrap}
+.tb-brand{font-size:15px;font-weight:800;line-height:1.2}.tb-brand small{display:block;font-size:10px;color:var(--muted);letter-spacing:.12em;font-weight:600;margin-top:2px}
+.tb-actions{margin-left:auto;display:flex;gap:8px}.tb-btn{background:var(--teal);color:#fff!important;text-decoration:none;border-radius:9px;padding:8px 12px;font-size:12px;font-weight:700;white-space:nowrap}.tb-btn.ghost{background:#fff;color:var(--teal)!important;border:1px solid var(--line)}
+.tb-wrap{max-width:1120px;margin:0 auto;padding:24px 20px 60px}
+.tb-hero{background:linear-gradient(125deg,#0b2545,#13315c 55%,#0f766e);border-radius:18px;padding:30px 32px;color:#fff;position:relative;overflow:hidden}
+.tb-hero:after{content:"";position:absolute;width:240px;height:240px;border:1px solid rgba(153,246,228,.28);border-radius:50%;right:-80px;bottom:-120px;box-shadow:0 0 0 26px rgba(153,246,228,.05),0 0 0 52px rgba(153,246,228,.04)}
+.tb-kicker{font-size:10px;letter-spacing:.18em;color:#99f6e4;font-weight:800}
+.tb-hero h1{font-family:Georgia,"Songti SC","Source Han Serif CN",serif;font-size:clamp(27px,4.6vw,46px);line-height:1.2;margin:8px 0 8px;font-weight:800}
+.tb-hero p{margin:0;color:#d7e6f4;font-size:14px;max-width:760px}
+.tb-stats{display:flex;flex-wrap:wrap;gap:14px 28px;margin-top:18px;position:relative;z-index:1}.tb-stat b{display:block;font-size:26px;line-height:1;color:#99f6e4}.tb-stat span{font-size:11px;color:#bcd0e8}
+.tb-sec{margin-top:28px}.tb-sec-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:12px}.tb-sec h2{font-size:22px;margin:0;letter-spacing:.01em}.tb-sec p{margin:3px 0 0;color:var(--muted);font-size:13px}
+.tb-note{background:#fff;border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:10px;padding:10px 13px;font-size:12.5px;color:#52657a;margin:0 0 14px}
+.chapter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.chapter-card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:15px 16px;cursor:pointer;transition:.15s;min-width:0}.chapter-card:hover{border-color:#9ed8cc;box-shadow:0 8px 22px rgba(15,42,67,.07);transform:translateY(-1px)}
+.chapter-top{display:flex;align-items:center;gap:10px}.chapter-num{font-family:Georgia,serif;font-size:24px;font-weight:800;color:#c3cddb;line-height:1}.chapter-name{font-size:16px;font-weight:800}.chapter-meta{font-size:11px;color:var(--muted);margin-top:2px}
+.chapter-range{margin-top:8px;font-size:12px;color:#1c3f6e;font-weight:700}.chapter-topics{font-size:12px;color:#52657a;margin-top:4px}.chapter-priority{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}.chip{font-size:10.5px;background:#f0f4f9;border:1px solid #d9e2ec;color:#1c3f6e;border-radius:20px;padding:2px 7px;white-space:nowrap}.chip.hot{background:#fdf1ef;border-color:#f0c7bf;color:#9a4a1f}.chapter-count{margin-left:auto;font-size:11px;color:var(--muted);background:#f3f6fa;border-radius:20px;padding:2px 7px;white-space:nowrap}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 14px}.search{flex:1;min-width:200px;background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 12px;font:inherit;font-size:13px;color:var(--ink)}.search:focus{outline:2px solid #99f6e4;border-color:var(--teal)}
+.filter{background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 11px;font:inherit;font-size:12px;color:var(--ink)}
+.card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.qcard{background:#fff;border:1px solid var(--line);border-radius:13px;padding:15px 16px;min-width:0}.qcard[hidden]{display:none}
+.qhead{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.qnum{font-family:Georgia,serif;font-weight:800;color:var(--teal);font-size:14px}.qtype{font-size:10px;background:var(--soft);color:var(--teal);border-radius:20px;padding:2px 7px;font-weight:700}.qtitle{font-size:15px;font-weight:800;margin:5px 0 4px}.qstem{font-size:13px;color:#334e68;margin:0}.qsrc{font-size:10.5px;color:var(--muted);margin-top:7px}
+.qcard details{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}.qcard summary{cursor:pointer;color:var(--teal);font-size:12px;font-weight:800;outline:none}.answer{font-size:12.5px;color:#334e68;margin-top:7px}.answer p{margin:0 0 6px}.answer p:last-child{margin-bottom:0}
+.empty{display:none;background:#fff;border:1px dashed var(--line);border-radius:12px;padding:20px;text-align:center;color:var(--muted);font-size:13px}
+.foot{margin-top:30px;color:var(--muted);font-size:11.5px;line-height:1.9;border-top:1px solid var(--line);padding-top:14px}
+.allnums{background:#fff;border:1px solid var(--line);border-radius:13px;margin-top:12px;padding:12px 14px}.allnums summary{cursor:pointer;color:var(--teal);font-weight:800;font-size:13px;outline:none}.allnums-body{margin-top:10px}.allnums-group{font-size:11px;color:var(--muted);margin:9px 0 4px;font-weight:700}.numchip{display:inline-block;font-size:10px;background:#f3f6fa;border:1px solid var(--line);border-radius:5px;padding:1px 5px;margin:2px;color:#52657a;font-family:Georgia,serif}@media(max-width:760px){.tb-top{padding:0 12px;gap:7px}.tb-brand{font-size:13px}.tb-brand small{display:none}.tb-actions .tb-btn.ghost{display:none}.tb-wrap{padding:14px 12px 40px}.tb-hero{padding:24px 20px;border-radius:14px}.tb-stats{gap:14px 20px}.tb-stat b{font-size:22px}.chapter-grid,.card-grid{grid-template-columns:1fr}.tb-sec{margin-top:22px}.tb-sec h2{font-size:19px}.chapter-card{padding:13px 14px}.qcard{padding:13px 14px}}
+</style>
+</head>
+<body>
+<header class="tb-top"><a class="tb-back" href="index.html">← 刷题站</a><div class="tb-brand">课本习题 · 第四版<small>DIGITAL IMAGE PROCESSING · EXERCISE INDEX</small></div><div class="tb-actions"><a class="tb-btn ghost" href="review.html">复习精讲</a><a class="tb-btn" href="assets/DIP-review.pdf" download>下载 PDF</a></div></header>
+<main class="tb-wrap">
+<section class="tb-hero"><div class="tb-kicker">TEXTBOOK EXERCISES · GONZALEZ 4E</div><h1>课本习题，<br>先看全局再做题。</h1><p>根据你拍摄的 43 页课本习题照片整理。全量题号按章归档；老师《习题解答》中的 25 道重点题已整理成可展开的答案卡，另补 4 道第 5 章典型题。</p><div class="tb-stats"><div class="tb-stat"><b>9</b><span>章覆盖</span></div><div class="tb-stat"><b>403</b><span>道课本习题</span></div><div class="tb-stat"><b>43</b><span>页照片</span></div><div class="tb-stat"><b>29</b><span>道详解题</span></div></div></section>
+<section class="tb-sec"><div class="tb-sec-head"><div><h2>全量题号索引</h2><p>按课本章节列出连续题号范围；点卡片可筛选下方详解题。</p></div></div><div class="tb-note">说明：原题照片仅保存在本地学习资料中，未上传公网；这里提供题号、考点和老师解答题整理。题干如与教材原文有出入，以教材为准。</div><div class="chapter-grid" id="chapterGrid"></div><details class="allnums"><summary>展开全部 403 个题号（按章）</summary><div class="allnums-body" id="allNums"></div></details></section>
+<section class="tb-sec" id="selected"><div class="tb-sec-head"><div><h2>重点题与老师解答</h2><p>25 道来自《习题解答》的题 + 4 道第 5 章补充题；点“答案与要点”展开。</p></div></div><div class="toolbar"><input class="search" id="search" type="search" placeholder="搜索题号、关键词，如 直方图 / Hough / 12.33"><select class="filter" id="chapterFilter"><option value="">全部章节</option></select></div><div class="card-grid" id="selectedGrid"></div><div class="empty" id="empty">没有匹配的题，换个关键词试试。</div></section>
+<div class="foot">教材：Rafael C. Gonzalez、Richard E. Woods《数字图像处理》（第四版），阮秋琦、阮宇智等译，电子工业出版社，2020，ISBN 978-7-121-37747-1。<br>本页用于课程复习；题号依据课本第 4 版，题干为学习整理，不替代原书。</div>
+</main>
+<script src="assets/textbook-data.js"></script>
+<script>
+(function(){
+ var D=window.TEXTBOOK_DATA; if(!D) return;
+ var cg=document.getElementById('chapterGrid'), sg=document.getElementById('selectedGrid'), cf=document.getElementById('chapterFilter'), search=document.getElementById('search'), empty=document.getElementById('empty');
+ D.chapters.forEach(function(c){
+  var card=document.createElement('div'); card.className='chapter-card'; card.dataset.chapter=c.num;
+  card.innerHTML='<div class="chapter-top"><div class="chapter-num">'+String(c.num).padStart(2,'0')+'</div><div><div class="chapter-name">'+c.name+'</div><div class="chapter-meta">'+c.en+' · 课本第 '+c.pages+' 页</div></div><span class="chapter-count">'+c.count+' 题</span></div>'
+   +'<div class="chapter-range">题号范围：'+c.range+'</div><div class="chapter-topics">'+c.topics.join(' · ')+'</div><div class="chapter-priority">'+c.priority.map(function(n){return '<span class="chip hot">'+n+'</span>';}).join('')+'</div>';
+  card.onclick=function(){cf.value=String(c.num); apply(); document.getElementById('selected').scrollIntoView({behavior:'smooth'});};
+  cg.appendChild(card);
+  var opt=document.createElement('option'); opt.value=String(c.num); opt.textContent='第 '+c.num+' 章 · '+c.name; cf.appendChild(opt);
+ });
+ var an=document.getElementById('allNums'); D.chapters.forEach(function(c){var m=c.range.match(/(\d+)\.(\d+)[–-](\d+)\.(\d+)/); if(!m)return; var g=document.createElement('div');g.className='allnums-group';g.textContent='第 '+c.num+' 章 · '+c.range+'（'+c.count+' 题）';an.appendChild(g); for(var i=+m[2];i<=+m[4];i++){var sp=document.createElement('span');sp.className='numchip';sp.textContent=c.num+'.'+i;an.appendChild(sp);}});
+ D.selected.forEach(function(q){
+  var card=document.createElement('article'); card.className='qcard'; card.dataset.chapter=q.ch;
+  card.dataset.search=(q.num+' '+q.title+' '+q.stem+' '+q.source+' '+q.answer.join(' ')).toLowerCase();
+  card.innerHTML='<div class="qhead"><span class="qnum">'+q.num+'</span><span class="qtype">'+q.type+'</span></div><div class="qtitle">'+q.title+'</div><p class="qstem">'+q.stem+'</p><div class="qsrc">'+q.source+' · 第 '+q.ch+' 章</div><details><summary>答案与要点</summary><div class="answer">'+q.answer.map(function(p){return '<p>'+p+'</p>';}).join('')+'</div></details>';
+  sg.appendChild(card);
+ });
+ function apply(){
+  var ch=cf.value, kw=(search.value||'').trim().toLowerCase(), n=0;
+  Array.prototype.forEach.call(sg.children,function(el){
+   var ok=(!ch||el.dataset.chapter===ch)&&(!kw||el.dataset.search.indexOf(kw)>=0);
+   el.hidden=!ok; if(ok)n++;
+  });
+  empty.style.display=n?'none':'block';
+ }
+ search.addEventListener('input',apply); cf.addEventListener('change',apply);
+})();
+</script>
+</body></html>
